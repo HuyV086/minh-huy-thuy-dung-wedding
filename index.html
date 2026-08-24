@@ -335,6 +335,12 @@
   }
   .g-item{
     display:block;
+    width:100%;
+    border:0;
+    background:none;
+    padding:0;
+    font:inherit;
+    text-align:left;
     text-decoration:none;
     cursor:zoom-in;
   }
@@ -352,6 +358,11 @@
     object-fit:contain;
     transition:transform .5s ease;
   }
+  .g-item img, #lightboxImg{
+    -webkit-user-drag:none;
+    -webkit-touch-callout:none;
+    user-select:none;
+  }
   .g-item:hover img, .g-item:focus-visible img{transform:scale(1.03);}
   .g-item:focus-visible{outline:2px solid var(--gold);outline-offset:4px;}
   figcaption{
@@ -368,6 +379,39 @@
   }
   .g-item:hover .expand, .g-item:focus-visible .expand{opacity:1;background:var(--rose);}
   .g-item .expand svg{width:14px;height:14px;fill:none;stroke:var(--ivory);stroke-width:2;}
+
+  /* ---------- lightbox ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:100;
+    display:none;
+    align-items:center;justify-content:center;
+    background:rgba(20,12,11,0.94);
+    padding:8vh 6vw;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{
+    max-width:100%;max-height:100%;
+    object-fit:contain;
+    box-shadow:0 12px 48px rgba(0,0,0,0.5);
+    pointer-events:none;
+  }
+  .lightbox-close{
+    position:absolute;top:20px;right:20px;
+    width:42px;height:42px;border-radius:50%;
+    border:1px solid rgba(251,246,239,0.35);
+    background:rgba(251,246,239,0.08);
+    color:var(--ivory);
+    font-size:1.3rem;line-height:1;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+  }
+  .lightbox-close:hover, .lightbox-close:focus-visible{background:rgba(251,246,239,0.2);}
+  .lightbox-cap{
+    position:absolute;left:24px;bottom:18px;
+    font-family:var(--font-display);font-style:italic;
+    color:var(--ivory);font-size:1rem;opacity:0.85;
+  }
 
   /* ---------- footer ---------- */
   footer{
@@ -527,29 +571,35 @@
     <h2>Album trước ngày cưới</h2>
   </div>
   <div class="gallery-grid">
-    <a class="g-item" href="images/ba-son.jpg" target="_blank" rel="noopener" aria-label="Xem ảnh Ba Son cỡ đầy đủ ở tab mới">
+    <button type="button" class="g-item" data-src="images/ba-son.jpg" data-caption="Ba Son" aria-label="Xem ảnh Ba Son phóng to">
       <figure>
         <img src="images/ba-son.jpg" alt="Ảnh cưới bên cầu, Ba Son" loading="lazy">
         <figcaption>Ba Son</figcaption>
         <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
       </figure>
-    </a>
-    <a class="g-item" href="images/diamond.jpg" target="_blank" rel="noopener" aria-label="Xem ảnh Diamond cỡ đầy đủ ở tab mới">
+    </button>
+    <button type="button" class="g-item" data-src="images/diamond.jpg" data-caption="Diamond" aria-label="Xem ảnh Diamond phóng to">
       <figure>
         <img src="images/diamond.jpg" alt="Ảnh cưới phố, Diamond" loading="lazy">
         <figcaption>Diamond</figcaption>
         <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
       </figure>
-    </a>
-    <a class="g-item" href="images/hero-bao-tang.jpg" target="_blank" rel="noopener" aria-label="Xem ảnh Bảo tàng cỡ đầy đủ ở tab mới">
+    </button>
+    <button type="button" class="g-item" data-src="images/hero-bao-tang.jpg" data-caption="Bảo tàng" aria-label="Xem ảnh Bảo tàng phóng to">
       <figure>
         <img src="images/hero-bao-tang.jpg" alt="Ảnh cưới tại Bảo tàng" loading="lazy">
         <figcaption>Bảo tàng</figcaption>
         <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
       </figure>
-    </a>
+    </button>
   </div>
 </section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Đóng">✕</button>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-cap" id="lightboxCap"></div>
+</div>
 
 <footer class="reveal">
   <div class="mono-big">H &amp; D</div>
@@ -587,6 +637,51 @@
       });
     }, {threshold:0.12});
     els.forEach(function(e){ io.observe(e); });
+  })();
+
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightboxImg');
+    var lightboxCap = document.getElementById('lightboxCap');
+    var closeBtn = document.getElementById('lightboxClose');
+    var items = document.querySelectorAll('.g-item');
+    var lastFocused = null;
+
+    function openLightbox(btn){
+      lastFocused = btn;
+      lightboxImg.src = btn.dataset.src;
+      lightboxImg.alt = btn.querySelector('img').alt;
+      lightboxCap.textContent = btn.dataset.caption || '';
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+      if(lastFocused){ lastFocused.focus(); }
+    }
+    items.forEach(function(btn){
+      btn.addEventListener('click', function(){ openLightbox(btn); });
+    });
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function(e){
+      if(e.target === lightbox){ closeLightbox(); }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && lightbox.classList.contains('open')){ closeLightbox(); }
+    });
+
+    /* Hạn chế lưu ảnh: chặn menu chuột phải và kéo-thả trên ảnh gallery + ảnh phóng to.
+       Đây chỉ là rào cản nhẹ cho người dùng thông thường, không chặn được người cố tình
+       (chụp màn hình, DevTools... luôn lấy được ảnh đã hiển thị trên trình duyệt). */
+    var protectedImgs = document.querySelectorAll('.g-item img, #lightboxImg');
+    protectedImgs.forEach(function(img){
+      img.setAttribute('draggable', 'false');
+      img.addEventListener('contextmenu', function(e){ e.preventDefault(); });
+      img.addEventListener('dragstart', function(e){ e.preventDefault(); });
+    });
   })();
 </script>
 
