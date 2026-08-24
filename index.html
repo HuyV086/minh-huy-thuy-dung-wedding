@@ -329,20 +329,45 @@
     max-width:1080px;
     margin:0 auto;
     display:grid;
-    grid-template-columns:1.3fr 1fr;
-    grid-template-rows:auto auto;
-    gap:1.4rem;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1.6rem;
+    align-items:start;
   }
-  .gallery-grid figure{margin:0;overflow:hidden;position:relative;}
-  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
-  .gallery-grid a:hover img{transform:scale(1.04);}
-  .g-main{grid-row:1 / 3;aspect-ratio:3/4;}
-  .g-sub{aspect-ratio:4/3;}
+  .g-item{
+    display:block;
+    text-decoration:none;
+    cursor:zoom-in;
+  }
+  .g-item figure{
+    margin:0;
+    position:relative;
+    overflow:hidden;
+    background:var(--ivory);
+    box-shadow:0 1px 3px rgba(43,27,26,0.12);
+  }
+  .g-item img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    transition:transform .5s ease;
+  }
+  .g-item:hover img, .g-item:focus-visible img{transform:scale(1.03);}
+  .g-item:focus-visible{outline:2px solid var(--gold);outline-offset:4px;}
   figcaption{
     position:absolute;left:14px;bottom:12px;
     font-family:var(--font-display);font-style:italic;font-size:0.85rem;
     color:var(--ivory);text-shadow:0 1px 6px rgba(0,0,0,0.45);
   }
+  .g-item .expand{
+    position:absolute;right:12px;bottom:12px;
+    width:30px;height:30px;border-radius:50%;
+    background:rgba(43,27,26,0.55);
+    display:flex;align-items:center;justify-content:center;
+    opacity:0.85;transition:opacity .2s ease, background .2s ease;
+  }
+  .g-item:hover .expand, .g-item:focus-visible .expand{opacity:1;background:var(--rose);}
+  .g-item .expand svg{width:14px;height:14px;fill:none;stroke:var(--ivory);stroke-width:2;}
 
   /* ---------- footer ---------- */
   footer{
@@ -400,8 +425,7 @@
     .families-mono{flex-direction:row;padding:0;}
     .families-mono .stick{width:64px;height:1px;}
     .timeline{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:1fr;}
-    .g-main{aspect-ratio:4/3;}
+    .gallery-grid{grid-template-columns:1fr;max-width:420px;}
     section{padding:5rem 6vw;}
   }
 </style>
@@ -503,15 +527,27 @@
     <h2>Album trước ngày cưới</h2>
   </div>
   <div class="gallery-grid">
-    <div class="g-main">
-      <figure><img src="images/ba-son.jpg" alt="Ảnh cưới bên cầu"><figcaption>Ba Son</figcaption></figure>
-    </div>
-    <div class="g-sub">
-      <figure><img src="images/diamond.jpg" alt="Ảnh cưới phố"><figcaption>Diamond</figcaption></figure>
-    </div>
-    <div class="g-sub">
-      <figure><img src="images/hero-bao-tang.jpg" alt="Ảnh cưới tại Bảo tàng" style="object-position:50% 20%;"><figcaption>Bảo tàng</figcaption></figure>
-    </div>
+    <a class="g-item" href="images/ba-son.jpg" target="_blank" rel="noopener" aria-label="Xem ảnh Ba Son cỡ đầy đủ ở tab mới">
+      <figure>
+        <img src="images/ba-son.jpg" alt="Ảnh cưới bên cầu, Ba Son" loading="lazy">
+        <figcaption>Ba Son</figcaption>
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </a>
+    <a class="g-item" href="images/diamond.jpg" target="_blank" rel="noopener" aria-label="Xem ảnh Diamond cỡ đầy đủ ở tab mới">
+      <figure>
+        <img src="images/diamond.jpg" alt="Ảnh cưới phố, Diamond" loading="lazy">
+        <figcaption>Diamond</figcaption>
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </a>
+    <a class="g-item" href="images/hero-bao-tang.jpg" target="_blank" rel="noopener" aria-label="Xem ảnh Bảo tàng cỡ đầy đủ ở tab mới">
+      <figure>
+        <img src="images/hero-bao-tang.jpg" alt="Ảnh cưới tại Bảo tàng" loading="lazy">
+        <figcaption>Bảo tàng</figcaption>
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </a>
   </div>
 </section>
 
