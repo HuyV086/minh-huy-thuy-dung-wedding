@@ -28,8 +28,8 @@ Nhà gái: Ông Bùi Văn Phiền, Bà Phùng Thị Ánh Loan (Minh Phụng, Tp.
 
 ## Deploy
 
-Repo GitHub: **takahome1986/minh-huy-thuy-dung-wedding** (Public — bắt buộc để dùng GitHub Pages free tier).
-Live: https://takahome1986.github.io/minh-huy-thuy-dung-wedding/
+Repo GitHub: **HuyV086/minh-huy-thuy-dung-wedding** (Public — bắt buộc để dùng GitHub Pages free tier).
+Live: https://huyv086.github.io/minh-huy-thuy-dung-wedding/
 
 ```bash
 git add -A && git commit -m "..." && git push
@@ -37,7 +37,7 @@ git add -A && git commit -m "..." && git push
 
 GitHub Pages tự rebuild sau ~1 phút. Kiểm tra trạng thái build:
 ```bash
-gh api repos/takahome1986/minh-huy-thuy-dung-wedding/pages/builds/latest --jq .status
+gh api repos/HuyV086/minh-huy-thuy-dung-wedding/pages/builds/latest --jq .status
 ```
 
 Xem thử local: `python3 -m http.server 8000` rồi mở `http://localhost:8000`.
