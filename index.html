@@ -139,20 +139,6 @@
     font-weight:600;
     color:var(--ink);
   }
-  .scroll-cue{
-    position:absolute; left:6vw; bottom:6vh;
-    display:flex; align-items:center; gap:10px;
-    font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-  .scroll-cue .stick{width:1px;height:34px;background:var(--rule);position:relative;overflow:hidden;}
-  .scroll-cue .stick::after{
-    content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;
-    background:var(--rose);
-    animation:drip 2.2s ease-in-out infinite;
-  }
-  @keyframes drip{ 0%{top:-40%;} 60%{top:100%;} 100%{top:100%;} }
-
   /* ---------- countdown ---------- */
   .countdown{
     background:var(--rose);
@@ -592,7 +578,6 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .reveal{opacity:1;transform:none;transition:none;}
-    .scroll-cue .stick::after{animation:none;top:0;height:100%;}
   }
 
   /* ---------- responsive ---------- */
@@ -630,7 +615,6 @@
       <div class="solar">Tháng 10 · 2026</div>
     </div>
   </div>
-  <div class="scroll-cue"><span class="stick"></span> Cuộn xuống</div>
 </div>
 
 <div class="countdown reveal" id="countdown">
@@ -662,7 +646,7 @@
     </div>
   </div>
   <div class="union-block">
-    <p class="lead">Gia đình chúng tôi trân trọng báo tin</p>
+    <p class="lead">Trân trọng báo tin LỄ THÀNH HÔN của con chúng tôi</p>
     <div class="families-grid union-grid">
       <div class="family-col">
         <div class="role">Út Nam</div>
@@ -722,7 +706,7 @@
     <div class="mag-teaser-frame">
       <img src="images/hero.jpg" alt="Bìa album ảnh cưới Minh Huy và Thùy Dung" loading="lazy">
       <div class="mag-teaser-mast">
-        <span class="eyebrow">Ba hành trình · Một chuyện tình</span>
+        <span class="eyebrow">Một hành trình mới</span>
         <h3>Khoảnh Khắc</h3>
         <span class="mag-teaser-cta">Mở album <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
@@ -797,7 +781,7 @@
       {
         roman: 'I',
         title: 'Ba Son',
-        subtitle: 'Khoảnh khắc thơ mộng bên cầu Ba Son',
+        subtitle: 'Rộng mở',
         spreads: [
           {imgs:[4],   cap:'Sông vẫn chảy, chỉ có lòng người là neo lại.'},
           {imgs:[3],   cap:'Giữa thành phố rộng lớn, anh chỉ cần đứng đây, nhìn vào mắt em.'},
@@ -810,12 +794,12 @@
       {
         roman: 'II',
         title: 'Diamond Plaza',
-        subtitle: 'Rủ nhau ra phố thị Diamond Plaza',
+        subtitle: 'Phố thị',
         spreads: [
           {imgs:[10,11], cap:'Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt.'},
           {imgs:[12,18], cap:'Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau.'},
-          {imgs:[13,14], cap:'Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết.'},
-          {imgs:[15,19], cap:'Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày.'},
+          {imgs:[13,14], cap:'Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày.'},
+          {imgs:[15,19], cap:'Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết.'},
           {imgs:[16],    cap:'Cứ nắm tay chạy đi, ngày vui này không đợi ai cả.'},
           {imgs:[17],    cap:'Tự tin lên, vì đằng sau luôn có một người thương mình vô điều kiện.'}
         ]
@@ -823,12 +807,12 @@
       {
         roman: 'III',
         title: 'Bảo Tàng',
-        subtitle: 'Cùng nhau hoài niệm tại Bảo Tàng',
+        subtitle: 'Thời gian',
         spreads: [
           {imgs:[20],       cap:'Giữa những điều xưa cũ, tình yêu này vẫn còn rất mới.'},
           {imgs:[21],       cap:'Cứ đi chậm lại một chút, để tận hưởng trọn vẹn ngày hôm nay.'},
           {imgs:[22,24],    cap:'Một mình dạo bước, chẳng bao lâu đã có người theo cùng.'},
-          {imgs:[23],       cap:'Dưới mái ngói trăm năm, hai người trẻ hẹn nhau một đời.'},
+          {imgs:[23],       cap:'Dưới mái ngói trăm năm, mình hẹn nhau một đời.'},
           {imgs:[25,27],    cap:'Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau.'},
           {imgs:[26],       cap:'Đoá sen trắng trong tay, và một trái tim đỏ đã trao trọn.'},
           {imgs:[28,30],    cap:'Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại.'},
