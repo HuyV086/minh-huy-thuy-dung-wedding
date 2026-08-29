@@ -139,12 +139,6 @@
     font-weight:600;
     color:var(--ink);
   }
-  .hero-date .lunar{
-    font-size:0.92rem;
-    color:var(--ink-soft);
-    letter-spacing:0.02em;
-  }
-  .hero-date .lunar b{color:var(--rose);font-weight:600;}
   .scroll-cue{
     position:absolute; left:6vw; bottom:6vh;
     display:flex; align-items:center; gap:10px;
@@ -259,25 +253,17 @@
     line-height:1.7;
   }
   .union-block{
-    max-width:560px;margin:3rem auto 0;text-align:center;
+    margin:3.6rem auto 0;text-align:center;
   }
   .union-block .lead{
+    max-width:560px;margin:0 auto 2.2rem;
     font-family:var(--font-display);
     font-weight:500;
     font-size:clamp(1.5rem, 3.4vw, 2rem);
     color:var(--ink);
-    margin:0 0 0.7rem;
     text-wrap:balance;
   }
-  .union-block .names{
-    font-family:var(--font-display);
-    font-style:italic;
-    font-size:1.2rem;
-    color:var(--rose);
-    line-height:1.6;
-    margin:0;
-  }
-  .union-block .names b{font-style:normal;font-weight:600;}
+  .union-grid{margin:0 auto;}
 
   /* ---------- timeline ---------- */
   .timeline{
@@ -633,7 +619,7 @@
   </div>
   <div class="hero-info">
     <div class="save-date">
-      <span class="eyebrow">Một ngày. Một lời hẹn với</span>
+      <span class="eyebrow">Bạn có hẹn với</span>
     </div>
     <h1 class="names">
       Minh Huy
@@ -641,8 +627,7 @@
       Thùy Dung
     </h1>
     <div class="hero-date">
-      <div class="solar">Chủ Nhật, 18 · 10 · 2026</div>
-      <div class="lunar">Nhằm ngày <b>9 · 9</b> năm <b>Bính Ngọ</b></div>
+      <div class="solar">Tháng 10 · 2026</div>
     </div>
   </div>
   <div class="scroll-cue"><span class="stick"></span> Cuộn xuống</div>
@@ -659,9 +644,6 @@
 </div>
 
 <section class="families reveal">
-  <div class="section-head">
-    <span class="eyebrow">Thành hôn</span>
-  </div>
   <div class="families-grid">
     <div class="family-col">
       <div class="role">Nhà Trai</div>
@@ -681,15 +663,28 @@
   </div>
   <div class="union-block">
     <p class="lead">Gia đình chúng tôi trân trọng báo tin</p>
-    <p class="names">Út Nam <b>Võ Minh Huy</b><br>kết duyên cùng Trưởng Nữ <b>Bùi Việt Thùy Dung</b></p>
+    <div class="families-grid union-grid">
+      <div class="family-col">
+        <div class="role">Út Nam</div>
+        <div class="parents">Võ Minh Huy</div>
+      </div>
+      <div class="families-mono">
+        <span class="stick"></span>
+        <span class="mono">&amp;</span>
+        <span class="stick"></span>
+      </div>
+      <div class="family-col">
+        <div class="role">Trưởng Nữ</div>
+        <div class="parents">Bùi Việt Thùy Dung</div>
+      </div>
+    </div>
   </div>
-  <p class="invite-line">"Sự hiện diện của quý vị là niềm vinh hạnh cho gia đình chúng tôi<br>trong ngày vui trọng đại này."</p>
+  <p class="invite-line">"Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi<br>trong ngày vui trọng đại này."</p>
 </section>
 
 <section class="events reveal">
   <div class="section-head">
-    <span class="eyebrow">Chương trình</span>
-    <h2>Sự kiện trọng đại</h2>
+    <span class="eyebrow">Sự kiện</span>
   </div>
   <div class="timeline">
     <div class="event-card">
@@ -1051,10 +1046,13 @@
 
     var touchStartX = null;
     reader.addEventListener('touchstart', function(e){
-      touchStartX = e.changedTouches[0].clientX;
+      touchStartX = e.touches.length === 1 ? e.changedTouches[0].clientX : null;
+    }, {passive:true});
+    reader.addEventListener('touchmove', function(e){
+      if(e.touches.length > 1){ touchStartX = null; }
     }, {passive:true});
     reader.addEventListener('touchend', function(e){
-      if(touchStartX === null){ return; }
+      if(touchStartX === null || e.touches.length > 0){ touchStartX = null; return; }
       var dx = e.changedTouches[0].clientX - touchStartX;
       if(Math.abs(dx) > 40){ dx < 0 ? nextPage() : prevPage(); }
       touchStartX = null;
