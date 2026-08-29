@@ -35,6 +35,33 @@
   }
   img{max-width:100%;display:block;}
 
+  .lang-toggle{
+    position:fixed;top:1.3rem;right:1.3rem;z-index:60;
+    display:flex;align-items:center;gap:0.35rem;
+    padding:0.35rem 0.5rem;
+    border-radius:999px;
+    background:rgba(251,246,239,0.82);
+    border:1px solid var(--gold-soft);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    box-shadow:0 4px 14px rgba(43,27,26,0.12);
+  }
+  .lang-btn{
+    appearance:none;-webkit-appearance:none;
+    border:0;background:none;cursor:pointer;
+    font-family:var(--font-body);font-weight:600;font-size:0.72rem;
+    letter-spacing:0.06em;
+    padding:0.3rem 0.55rem;border-radius:999px;
+    color:var(--ink-soft);
+    transition:background .2s ease, color .2s ease;
+  }
+  .lang-btn.active{background:var(--rose);color:var(--ivory);}
+  .lang-sep{color:var(--rule);font-size:0.7rem;}
+  @media (max-width:760px){
+    .lang-toggle{top:0.85rem;right:0.85rem;padding:0.3rem 0.4rem;}
+    .lang-btn{font-size:0.64rem;padding:0.24rem 0.42rem;}
+  }
+
   .eyebrow{
     font-family:var(--font-body);
     font-size:0.72rem;
@@ -609,14 +636,19 @@
 
 </head>
 <body>
+<div class="lang-toggle" id="langToggle" role="group" aria-label="Language / Ngôn ngữ">
+  <button type="button" class="lang-btn" data-lang="vi">VI</button>
+  <span class="lang-sep">/</span>
+  <button type="button" class="lang-btn" data-lang="en">EN</button>
+</div>
 <div class="hero">
   <div class="hero-photo">
     <img src="images/hero.jpg" alt="Minh Huy và Thùy Dung">
-    <div class="frame-tag">Bảo tàng, Sài Gòn</div>
+    <div class="frame-tag" data-i18n="heroFrameTag">Bảo tàng, Sài Gòn</div>
   </div>
   <div class="hero-info">
     <div class="save-date">
-      <span class="eyebrow">Bạn có hẹn với</span>
+      <span class="eyebrow" data-i18n="heroEyebrow">Bạn có hẹn với</span>
     </div>
     <h1 class="names">
       Minh Huy
@@ -624,27 +656,27 @@
       Thùy Dung
     </h1>
     <div class="hero-date">
-      <div class="solar">Tháng 10 · 2026</div>
+      <div class="solar" data-i18n="heroDate">Tháng 10 · 2026</div>
     </div>
   </div>
 </div>
 
 <div class="countdown reveal" id="countdown">
-  <div class="cd-item"><div class="num" id="cd-days">--</div><div class="lbl">Ngày</div></div>
+  <div class="cd-item"><div class="num" id="cd-days">--</div><div class="lbl" data-i18n="cdDays">Ngày</div></div>
   <div class="cd-sep">·</div>
-  <div class="cd-item"><div class="num" id="cd-hours">--</div><div class="lbl">Giờ</div></div>
+  <div class="cd-item"><div class="num" id="cd-hours">--</div><div class="lbl" data-i18n="cdHours">Giờ</div></div>
   <div class="cd-sep">·</div>
-  <div class="cd-item"><div class="num" id="cd-min">--</div><div class="lbl">Phút</div></div>
+  <div class="cd-item"><div class="num" id="cd-min">--</div><div class="lbl" data-i18n="cdMin">Phút</div></div>
   <div class="cd-sep">·</div>
-  <div class="cd-item"><div class="num" id="cd-sec">--</div><div class="lbl">Giây</div></div>
+  <div class="cd-item"><div class="num" id="cd-sec">--</div><div class="lbl" data-i18n="cdSec">Giây</div></div>
 </div>
 
 <section class="families reveal">
   <div class="families-grid">
     <div class="family-col">
-      <div class="role">Nhà Trai</div>
-      <div class="parents">Ông Võ Minh Hùng<br>Bà Đỗ Thị Kim Liên</div>
-      <div class="place">Long Xuyên, An Giang</div>
+      <div class="role" data-i18n="roleGroomFamily">Nhà Trai</div>
+      <div class="parents" data-i18n="groomParents">Ông Võ Minh Hùng<br>Bà Đỗ Thị Kim Liên</div>
+      <div class="place" data-i18n="groomPlace">Long Xuyên, An Giang</div>
     </div>
     <div class="families-mono">
       <span class="stick"></span>
@@ -652,92 +684,92 @@
       <span class="stick"></span>
     </div>
     <div class="family-col">
-      <div class="role">Nhà Gái</div>
-      <div class="parents">Ông Bùi Văn Phiền<br>Bà Phùng Thị Ánh Loan</div>
-      <div class="place">Minh Phụng, Tp. Hồ Chí Minh</div>
+      <div class="role" data-i18n="roleBrideFamily">Nhà Gái</div>
+      <div class="parents" data-i18n="brideParents">Ông Bùi Văn Phiền<br>Bà Phùng Thị Ánh Loan</div>
+      <div class="place" data-i18n="bridePlace">Minh Phụng, Tp. Hồ Chí Minh</div>
     </div>
   </div>
   <div class="union-block">
-    <p class="lead">Trân trọng báo tin LỄ THÀNH HÔN của con chúng tôi</p>
+    <p class="lead" data-i18n="unionLead">Trân trọng báo tin LỄ THÀNH HÔN của con chúng tôi</p>
     <div class="families-grid union-grid">
       <div class="family-col">
-        <div class="role">Út Nam</div>
+        <div class="role" data-i18n="roleGroom">Út Nam</div>
         <div class="parents">Võ Minh Huy</div>
       </div>
       <div class="families-mono">
         <span class="mono ring-mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="13" r="6.2"/><circle cx="15" cy="13" r="6.2"/></svg></span>
       </div>
       <div class="family-col">
-        <div class="role">Trưởng Nữ</div>
+        <div class="role" data-i18n="roleBride">Trưởng Nữ</div>
         <div class="parents">Bùi Việt Thùy Dung</div>
       </div>
     </div>
   </div>
-  <p class="invite-line">"Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi<br>trong ngày vui trọng đại này."</p>
+  <p class="invite-line" data-i18n="inviteLine">"Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi<br>trong ngày vui trọng đại này."</p>
 </section>
 
 <section class="events reveal">
   <div class="section-head">
-    <span class="eyebrow">Sự kiện</span>
+    <span class="eyebrow" data-i18n="eventsEyebrow">Sự kiện</span>
   </div>
   <div class="timeline">
     <div class="event-card">
       <div class="ev-date">18</div>
-      <div class="ev-month">Tháng 10 · Lễ Gia Tiên</div>
-      <h3>Vu Quy</h3>
-      <div class="ev-time">09:00 sáng</div>
-      <div class="ev-venue">Rước dâu &amp; lễ gia tiên<br>tại tư gia, Long Xuyên</div>
+      <div class="ev-month" data-i18n="ev1Month">Tháng 10 · Lễ Gia Tiên</div>
+      <h3 data-i18n="ev1Title">Vu Quy</h3>
+      <div class="ev-time" data-i18n="ev1Time">09:00 sáng</div>
+      <div class="ev-venue" data-i18n="ev1Venue">Rước dâu &amp; lễ gia tiên<br>tại tư gia, Long Xuyên</div>
     </div>
     <div class="event-card">
       <div class="ev-date">18</div>
-      <div class="ev-month">Tháng 10 · Tiệc Cưới</div>
-      <h3>Long Xuyên</h3>
-      <div class="ev-time">Khai tiệc 11:00</div>
-      <div class="ev-venue">Nhà hàng Hoà Bình 2 — Sảnh B<br>Số 8 Lê Hồng Phong, An Giang</div>
-      <a class="ev-map" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20h%C3%A0ng%20Ho%C3%A0%20B%C3%ACnh%202%2C%20S%E1%BB%91%208%20L%C3%AA%20H%E1%BB%93ng%20Phong%2C%20Long%20Xuy%C3%AAn%2C%20An%20Giang" target="_blank" rel="noopener">Xem bản đồ →</a>
+      <div class="ev-month" data-i18n="ev2Month">Tháng 10 · Tiệc Cưới</div>
+      <h3 data-i18n="ev2Title">Long Xuyên</h3>
+      <div class="ev-time" data-i18n="ev2Time">Khai tiệc 11:00</div>
+      <div class="ev-venue" data-i18n="ev2Venue">Nhà hàng Hoà Bình 2 — Sảnh B<br>Số 8 Lê Hồng Phong, An Giang</div>
+      <a class="ev-map" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20h%C3%A0ng%20Ho%C3%A0%20B%C3%ACnh%202%2C%20S%E1%BB%91%208%20L%C3%AA%20H%E1%BB%93ng%20Phong%2C%20Long%20Xuy%C3%AAn%2C%20An%20Giang" target="_blank" rel="noopener" data-i18n="mapLink">Xem bản đồ →</a>
     </div>
     <div class="event-card">
       <div class="ev-date">31</div>
-      <div class="ev-month">Tháng 10 · Báo Hỷ</div>
-      <h3>Sài Gòn</h3>
-      <div class="ev-time">Khai tiệc 19:00</div>
-      <div class="ev-venue">Nhà hàng Bách Việt — Sảnh Gold, Lầu 1<br>90 Mạc Đĩnh Chi, Tân Định, Tp.HCM</div>
-      <a class="ev-map" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20h%C3%A0ng%20B%C3%A1ch%20Vi%E1%BB%87t%2C%2090%20M%E1%BA%A1c%20%C4%90%C4%A9nh%20Chi%2C%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh" target="_blank" rel="noopener">Xem bản đồ →</a>
+      <div class="ev-month" data-i18n="ev3Month">Tháng 10 · Báo Hỷ</div>
+      <h3 data-i18n="ev3Title">Sài Gòn</h3>
+      <div class="ev-time" data-i18n="ev3Time">Khai tiệc 19:00</div>
+      <div class="ev-venue" data-i18n="ev3Venue">Nhà hàng Bách Việt — Sảnh Gold, Lầu 1<br>90 Mạc Đĩnh Chi, Tân Định, Tp.HCM</div>
+      <a class="ev-map" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0%20h%C3%A0ng%20B%C3%A1ch%20Vi%E1%BB%87t%2C%2090%20M%E1%BA%A1c%20%C4%90%C4%A9nh%20Chi%2C%20T%C3%A2n%20%C4%90%E1%BB%8Bnh%2C%20Th%C3%A0nh%20ph%E1%BB%91%20H%E1%BB%93%20Ch%C3%AD%20Minh" target="_blank" rel="noopener" data-i18n="mapLink">Xem bản đồ →</a>
     </div>
   </div>
 </section>
 
 <section class="gallery reveal">
   <div class="section-head">
-    <span class="eyebrow">Khoảnh khắc</span>
-    <h2>Hồ Chí Minh, 2026</h2>
+    <span class="eyebrow" data-i18n="galleryEyebrow">Khoảnh khắc</span>
+    <h2 data-i18n="galleryHeading">Hồ Chí Minh, 2026</h2>
   </div>
-  <button type="button" class="mag-teaser" id="magOpen" aria-label="Mở album ảnh cưới">
+  <button type="button" class="mag-teaser" id="magOpen" aria-label="Mở album ảnh cưới" data-i18n-aria="magOpenAria">
     <div class="mag-teaser-frame">
       <img src="images/hero.jpg" alt="Bìa album ảnh cưới Minh Huy và Thùy Dung" loading="lazy">
       <div class="mag-teaser-mast">
-        <span class="eyebrow">Một hành trình mới</span>
-        <h3>Khoảnh Khắc</h3>
-        <span class="mag-teaser-cta">Mở album <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="eyebrow" data-i18n="teaserEyebrow">Một hành trình mới</span>
+        <h3 data-i18n="teaserTitle">Khoảnh Khắc</h3>
+        <span class="mag-teaser-cta"><span data-i18n="teaserCta">Mở album</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </div>
     </div>
   </button>
 </section>
 
-<div class="mag-reader" id="magReader" role="dialog" aria-modal="true" aria-label="Album ảnh cưới">
+<div class="mag-reader" id="magReader" role="dialog" aria-modal="true" aria-label="Album ảnh cưới" data-i18n-aria="magReaderAria">
   <div class="mag-progress" id="magProgress"></div>
   <div class="mag-bar">
     <span class="mag-bar-info" id="magBarInfo"></span>
-    <button type="button" class="mag-close" id="magClose" aria-label="Đóng album">✕</button>
+    <button type="button" class="mag-close" id="magClose" aria-label="Đóng album" data-i18n-aria="magCloseAria">✕</button>
   </div>
   <div class="mag-stage">
     <button type="button" class="mag-clickzone left" id="magZoneLeft" aria-hidden="true" tabindex="-1"></button>
     <button type="button" class="mag-clickzone right" id="magZoneRight" aria-hidden="true" tabindex="-1"></button>
-    <button type="button" class="mag-nav mag-prev" id="magPrev" aria-label="Trang trước">
+    <button type="button" class="mag-nav mag-prev" id="magPrev" aria-label="Trang trước" data-i18n-aria="magPrevAria">
       <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
     </button>
     <div id="magPageHost"></div>
-    <button type="button" class="mag-nav mag-next" id="magNext" aria-label="Trang sau">
+    <button type="button" class="mag-nav mag-next" id="magNext" aria-label="Trang sau" data-i18n-aria="magNextAria">
       <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
     </button>
   </div>
@@ -745,7 +777,7 @@
 
 <footer class="reveal">
   <div class="mono-big">H &amp; D</div>
-  <p class="thanks">"Cảm ơn vì đã là một phần trong câu chuyện của chúng tôi — và sẽ tiếp tục là một phần trong chương mới này."</p>
+  <p class="thanks" data-i18n="footerThanks">"Cảm ơn vì đã là một phần trong câu chuyện của chúng tôi — và sẽ tiếp tục là một phần trong chương mới này."</p>
   <div class="foot-names">Minh Huy &amp; Thùy Dung · 18.10.2026</div>
 </footer>
 
@@ -789,47 +821,54 @@
     var CHAPTERS = [
       {
         roman: 'I',
-        title: 'Rộng mở',
-        subtitle: 'Ba Son',
+        title: {vi:'Rộng mở', en:'Wide Open'},
+        subtitle: {vi:'Ba Son', en:'Ba Son'},
         spreads: [
-          {imgs:[4],   cap:'Giữa thành phố rộng lớn, anh chỉ cần đứng đây, nhìn vào mắt em.'},
-          {imgs:[3],   cap:'Sông vẫn chảy, chỉ có lòng người là neo lại.'},
-          {imgs:[1,2], cap:'Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy.'},
-          {imgs:[5,7], cap:'Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài.'},
-          {imgs:[6],   cap:'Giữa đất trời rộng lớn, may mà có nhau.'},
-          {imgs:[8,9], cap:'Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường.'}
+          {imgs:[4],   cap:{vi:'Giữa thành phố rộng lớn, anh chỉ cần đứng đây, nhìn vào mắt em.', en:'In this vast city, all I need is to stand here, looking into your eyes.'}},
+          {imgs:[3],   cap:{vi:'Sông vẫn chảy, chỉ có lòng người là neo lại.', en:'The river keeps flowing, but our hearts have found their anchor.'}},
+          {imgs:[1,2], cap:{vi:'Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy.', en:'Watching the sunset alone, until a hand quietly reached for mine.'}},
+          {imgs:[5,7], cap:{vi:'Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài.', en:'Just one kiss on the forehead, and the whole long day melts away.'}},
+          {imgs:[6],   cap:{vi:'Giữa đất trời rộng lớn, may mà có nhau.', en:'In this wide world, how lucky we are to have each other.'}},
+          {imgs:[8,9], cap:{vi:'Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường.', en:'Smile as bright as you can — from now on, someone will always be waiting at the end of the road.'}}
         ]
       },
       {
         roman: 'II',
-        title: 'Phố thị',
-        subtitle: 'Diamond Plaza',
+        title: {vi:'Phố thị', en:'City Lights'},
+        subtitle: {vi:'Diamond Plaza', en:'Diamond Plaza'},
         spreads: [
-          {imgs:[10,11], cap:'Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt.'},
-          {imgs:[12,18], cap:'Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau.'},
-          {imgs:[13,14], cap:'Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày.'},
-          {imgs:[15,19], cap:'Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết.'},
-          {imgs:[16],    cap:'Cứ nắm tay chạy đi, ngày vui này không đợi ai cả.'},
-          {imgs:[17],    cap:'Tự tin lên, vì đằng sau luôn có một người thương mình vô điều kiện.'}
+          {imgs:[10,11], cap:{vi:'Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt.', en:"Dressed to the nines, because today someone can't take their eyes off you."}},
+          {imgs:[12,18], cap:{vi:'Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau.', en:"Amid the city's glittering streets, the most beautiful thing is still just being together."}},
+          {imgs:[13,14], cap:{vi:'Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày.', en:'Standing beside you, I feel prettier wherever we go.'}},
+          {imgs:[15,19], cap:{vi:'Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết.', en:'The ring is on now — time to show the whole world.'}},
+          {imgs:[16],    cap:{vi:'Cứ nắm tay chạy đi, ngày vui này không đợi ai cả.', en:"Grab my hand and run — this joyful day won't wait for anyone."}},
+          {imgs:[17],    cap:{vi:'Tự tin lên, vì đằng sau luôn có một người thương mình vô điều kiện.', en:'Stand tall, because someone behind you loves you unconditionally.'}}
         ]
       },
       {
         roman: 'III',
-        title: 'Thời gian',
-        subtitle: 'Bảo Tàng',
+        title: {vi:'Thời gian', en:'Time'},
+        subtitle: {vi:'Bảo Tàng', en:'The Museum'},
         spreads: [
-          {imgs:[20],       cap:'Giữa những điều xưa cũ, tình yêu này vẫn còn rất mới.'},
-          {imgs:[21],       cap:'Cứ đi chậm lại một chút, để tận hưởng trọn vẹn ngày hôm nay.'},
-          {imgs:[22,24],    cap:'Một mình dạo bước, chẳng bao lâu đã có người theo cùng.'},
-          {imgs:[23],       cap:'Dưới mái ngói trăm năm, mình hẹn nhau một đời.'},
-          {imgs:[25,27],    cap:'Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau.'},
-          {imgs:[26],       cap:'Đoá sen trắng trong tay, và một trái tim đỏ đã trao trọn.'},
-          {imgs:[28,30],    cap:'Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại.'},
-          {imgs:[29],       cap:'Không cần nói gì nhiều, chỉ cần đứng cạnh nhau là đủ.'},
-          {imgs:[31,32,33], cap:'Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày.'}
+          {imgs:[20],       cap:{vi:'Giữa những điều xưa cũ, tình yêu này vẫn còn rất mới.', en:'Amid all things old, this love is still brand new.'}},
+          {imgs:[21],       cap:{vi:'Cứ đi chậm lại một chút, để tận hưởng trọn vẹn ngày hôm nay.', en:'Slow down a little, and savor this day completely.'}},
+          {imgs:[22,24],    cap:{vi:'Một mình dạo bước, chẳng bao lâu đã có người theo cùng.', en:'Walking alone at first, before long someone came along beside me.'}},
+          {imgs:[23],       cap:{vi:'Dưới mái ngói trăm năm, mình hẹn nhau một đời.', en:'Under this century-old roof, we promised each other a lifetime.'}},
+          {imgs:[25,27],    cap:{vi:'Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau.', en:'Wherever we go, I keep looking back, afraid to miss a single moment of you.'}},
+          {imgs:[26],       cap:{vi:'Đoá sen trắng trong tay, và một trái tim đỏ đã trao trọn.', en:'A white lotus in hand, and a heart fully given away.'}},
+          {imgs:[28,30],    cap:{vi:'Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại.', en:'Just one spin, and the whole world around us slows down.'}},
+          {imgs:[29],       cap:{vi:'Không cần nói gì nhiều, chỉ cần đứng cạnh nhau là đủ.', en:'No need for many words — standing side by side is enough.'}},
+          {imgs:[31,32,33], cap:{vi:'Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày.', en:'And so we keep writing this story — together, every day.'}}
         ]
       }
     ];
+
+    var currentLang = 'vi';
+    function T(field){ return field[currentLang]; }
+    var MAG_STRINGS = {
+      vi: {coverEyebrow:'Album ảnh cưới', coverTitle:'Khoảnh Khắc', coverPeople:'Minh Huy & Thùy Dung · 18.10.2026', coverAlt:'Bìa album ảnh cưới Minh Huy và Thùy Dung', chapterWord:'Chương', coverLabel:'Bìa', pageWord:'Trang', altPrefix:'Khoảnh khắc ', altMiddle:', ảnh '},
+      en: {coverEyebrow:'Wedding Album', coverTitle:'Moments', coverPeople:'Minh Huy & Thùy Dung · 18.10.2026', coverAlt:"Cover of Minh Huy and Thùy Dung's wedding album", chapterWord:'Chapter', coverLabel:'Cover', pageWord:'Page', altPrefix:'Moment from ', altMiddle:', photo '}
+    };
 
     var PAGES = [{type:'cover'}];
     var chapterTitlePage = [];
@@ -881,11 +920,11 @@
       art.className = 'mag-cover-art';
       var img = document.createElement('img');
       img.src = 'images/hero.jpg';
-      img.alt = 'Bìa album ảnh cưới Minh Huy và Thùy Dung';
+      img.alt = MAG_STRINGS[currentLang].coverAlt;
       protect(img);
       var mast = document.createElement('div');
       mast.className = 'mag-cover-mast';
-      mast.innerHTML = '<span class="eyebrow">Album ảnh cưới</span><h2>Khoảnh Khắc</h2><p>Minh Huy &amp; Thùy Dung · 18.10.2026</p>';
+      mast.innerHTML = '<span class="eyebrow">' + MAG_STRINGS[currentLang].coverEyebrow + '</span><h2>' + MAG_STRINGS[currentLang].coverTitle + '</h2><p>' + MAG_STRINGS[currentLang].coverPeople + '</p>';
       art.appendChild(img);
       art.appendChild(mast);
 
@@ -896,7 +935,7 @@
         item.type = 'button';
         item.className = 'mag-toc-item';
         item.innerHTML = '<span class="num">' + ch.roman + '</span>' +
-          '<span class="txt"><b>' + ch.title + '</b><span>' + ch.subtitle + '</span></span>' +
+          '<span class="txt"><b>' + T(ch.title) + '</b><span>' + T(ch.subtitle) + '</span></span>' +
           '<span class="arrow">→</span>';
         item.addEventListener('click', function(){ goTo(chapterTitlePage[ci], 'next'); });
         toc.appendChild(item);
@@ -910,9 +949,9 @@
     function buildTitle(container, chapter){
       var wrap = document.createElement('div');
       wrap.className = 'mag-title-page';
-      wrap.innerHTML = '<div class="roman">Chương ' + chapter.roman + '</div>' +
-        '<h2>' + chapter.title + '</h2>' +
-        '<p>' + chapter.subtitle + '</p>' +
+      wrap.innerHTML = '<div class="roman">' + MAG_STRINGS[currentLang].chapterWord + ' ' + chapter.roman + '</div>' +
+        '<h2>' + T(chapter.title) + '</h2>' +
+        '<p>' + T(chapter.subtitle) + '</p>' +
         '<div class="rule"></div>';
       container.appendChild(wrap);
     }
@@ -923,18 +962,18 @@
       var spread = document.createElement('div');
       spread.className = 'mag-spread type-' + type;
       imgs.forEach(function(n){
-        spread.appendChild(makeImg(n, 'Khoảnh khắc ' + page.chapter.title + ', ảnh ' + n));
+        spread.appendChild(makeImg(n, MAG_STRINGS[currentLang].altPrefix + T(page.chapter.title) + MAG_STRINGS[currentLang].altMiddle + n));
       });
       container.appendChild(spread);
       if(page.cap){
         var quote = document.createElement('p');
         quote.className = 'mag-quote';
-        quote.textContent = '“' + page.cap + '”';
+        quote.textContent = '“' + T(page.cap) + '”';
         container.appendChild(quote);
       }
       var folio = document.createElement('div');
       folio.className = 'mag-folio';
-      folio.textContent = page.chapter.title + ' · Trang ' + (page.spreadIndex + 1) + '/' + page.chapter.spreads.length;
+      folio.textContent = T(page.chapter.title) + ' · ' + MAG_STRINGS[currentLang].pageWord + ' ' + (page.spreadIndex + 1) + '/' + page.chapter.spreads.length;
       container.appendChild(folio);
     }
 
@@ -956,8 +995,8 @@
 
     function updateChrome(){
       var page = PAGES[currentIndex];
-      var label = page.type === 'cover' ? 'Bìa' : page.chapter.title;
-      barInfo.innerHTML = 'Trang <b>' + (currentIndex + 1) + '</b> / ' + PAGES.length + ' · ' + label;
+      var label = page.type === 'cover' ? MAG_STRINGS[currentLang].coverLabel : T(page.chapter.title);
+      barInfo.innerHTML = MAG_STRINGS[currentLang].pageWord + ' <b>' + (currentIndex + 1) + '</b> / ' + PAGES.length + ' · ' + label;
       progress.style.width = (((currentIndex + 1) / PAGES.length) * 100) + '%';
       prevBtn.disabled = currentIndex <= 0;
       nextBtn.disabled = currentIndex >= PAGES.length - 1;
@@ -1050,6 +1089,92 @@
       if(Math.abs(dx) > 40){ dx < 0 ? nextPage() : prevPage(); }
       touchStartX = null;
     }, {passive:true});
+
+    document.addEventListener('langchange', function(e){
+      currentLang = e.detail.lang;
+      if(reader.classList.contains('open') && currentIndex >= 0){
+        var el = host.firstElementChild;
+        if(el){ el.innerHTML = ''; renderInto(el, PAGES[currentIndex]); }
+        updateChrome();
+      }
+    });
+  })();
+
+  (function(){
+    var STATIC_I18N = {
+      heroEyebrow: {vi:'Bạn có hẹn với', en:'You have a date with'},
+      heroFrameTag: {vi:'Bảo tàng, Sài Gòn', en:'Museum, Saigon'},
+      heroDate: {vi:'Tháng 10 · 2026', en:'October · 2026'},
+      cdDays: {vi:'Ngày', en:'Days'},
+      cdHours: {vi:'Giờ', en:'Hours'},
+      cdMin: {vi:'Phút', en:'Minutes'},
+      cdSec: {vi:'Giây', en:'Seconds'},
+      roleGroomFamily: {vi:'Nhà Trai', en:"Groom's Family"},
+      groomParents: {vi:'Ông Võ Minh Hùng<br>Bà Đỗ Thị Kim Liên', en:'Mr. Võ Minh Hùng<br>Mrs. Đỗ Thị Kim Liên'},
+      groomPlace: {vi:'Long Xuyên, An Giang', en:'Long Xuyên, An Giang'},
+      roleBrideFamily: {vi:'Nhà Gái', en:"Bride's Family"},
+      brideParents: {vi:'Ông Bùi Văn Phiền<br>Bà Phùng Thị Ánh Loan', en:'Mr. Bùi Văn Phiền<br>Mrs. Phùng Thị Ánh Loan'},
+      bridePlace: {vi:'Minh Phụng, Tp. Hồ Chí Minh', en:'Minh Phụng, Ho Chi Minh City'},
+      unionLead: {vi:'Trân trọng báo tin LỄ THÀNH HÔN của con chúng tôi', en:'We joyfully announce THE WEDDING of our children'},
+      roleGroom: {vi:'Út Nam', en:'The Groom'},
+      roleBride: {vi:'Trưởng Nữ', en:'The Bride'},
+      inviteLine: {vi:'"Sự hiện diện của bạn là niềm vinh hạnh cho gia đình chúng tôi<br>trong ngày vui trọng đại này."', en:'"Your presence would be the greatest honor for our families<br>on this special day."'},
+      eventsEyebrow: {vi:'Sự kiện', en:'Events'},
+      ev1Month: {vi:'Tháng 10 · Lễ Gia Tiên', en:'October · Ancestral Ceremony'},
+      ev1Title: {vi:'Vu Quy', en:'Vu Quy Ceremony'},
+      ev1Time: {vi:'09:00 sáng', en:'9:00 AM'},
+      ev1Venue: {vi:'Rước dâu &amp; lễ gia tiên<br>tại tư gia, Long Xuyên', en:'Bridal procession &amp; ancestral rites<br>at the family home, Long Xuyên'},
+      ev2Month: {vi:'Tháng 10 · Tiệc Cưới', en:'October · Wedding Reception'},
+      ev2Title: {vi:'Long Xuyên', en:'Long Xuyên'},
+      ev2Time: {vi:'Khai tiệc 11:00', en:'Reception begins 11:00 AM'},
+      ev2Venue: {vi:'Nhà hàng Hoà Bình 2 — Sảnh B<br>Số 8 Lê Hồng Phong, An Giang', en:'Hoà Bình 2 Restaurant — Hall B<br>8 Lê Hồng Phong St., An Giang'},
+      mapLink: {vi:'Xem bản đồ →', en:'View map →'},
+      ev3Month: {vi:'Tháng 10 · Báo Hỷ', en:'October · Celebration'},
+      ev3Title: {vi:'Sài Gòn', en:'Saigon'},
+      ev3Time: {vi:'Khai tiệc 19:00', en:'Reception begins 7:00 PM'},
+      ev3Venue: {vi:'Nhà hàng Bách Việt — Sảnh Gold, Lầu 1<br>90 Mạc Đĩnh Chi, Tân Định, Tp.HCM', en:'Bách Việt Restaurant — Gold Hall, 1st Floor<br>90 Mạc Đĩnh Chi, Tân Định, Ho Chi Minh City'},
+      galleryEyebrow: {vi:'Khoảnh khắc', en:'Moments'},
+      galleryHeading: {vi:'Hồ Chí Minh, 2026', en:'Ho Chi Minh City, 2026'},
+      magOpenAria: {vi:'Mở album ảnh cưới', en:'Open wedding album'},
+      teaserEyebrow: {vi:'Một hành trình mới', en:'A New Journey'},
+      teaserTitle: {vi:'Khoảnh Khắc', en:'Moments'},
+      teaserCta: {vi:'Mở album', en:'Open Album'},
+      magReaderAria: {vi:'Album ảnh cưới', en:'Wedding Album'},
+      magCloseAria: {vi:'Đóng album', en:'Close album'},
+      magPrevAria: {vi:'Trang trước', en:'Previous page'},
+      magNextAria: {vi:'Trang sau', en:'Next page'},
+      footerThanks: {vi:'"Cảm ơn vì đã là một phần trong câu chuyện của chúng tôi — và sẽ tiếp tục là một phần trong chương mới này."', en:'"Thank you for being part of our story — and for continuing to be part of this new chapter."'}
+    };
+
+    var toggle = document.getElementById('langToggle');
+    var buttons = toggle.querySelectorAll('.lang-btn');
+
+    function applyStaticI18n(lang){
+      document.documentElement.setAttribute('lang', lang);
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var entry = STATIC_I18N[el.getAttribute('data-i18n')];
+        if(entry){ el.innerHTML = entry[lang]; }
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
+        var entry = STATIC_I18N[el.getAttribute('data-i18n-aria')];
+        if(entry){ el.setAttribute('aria-label', entry[lang]); }
+      });
+    }
+
+    function setLang(lang){
+      applyStaticI18n(lang);
+      buttons.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+      try{ localStorage.setItem('lang', lang); }catch(e){}
+      document.dispatchEvent(new CustomEvent('langchange', {detail:{lang:lang}}));
+    }
+
+    buttons.forEach(function(b){
+      b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+    });
+
+    var saved = 'vi';
+    try{ saved = localStorage.getItem('lang') === 'en' ? 'en' : 'vi'; }catch(e){}
+    setLang(saved);
   })();
 </script>
 

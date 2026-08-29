@@ -19,12 +19,19 @@ Nhà gái: Ông Bùi Văn Phiền, Bà Phùng Thị Ánh Loan (Minh Phụng, Tp.
 - `images/hero.jpg` — ảnh hero (bản hậu kỳ hoàn chỉnh của ảnh bìa album, gốc `IMG_5960_BIA.jpg`).
 - `images/album/album-01.jpg` … `album-33.jpg` — toàn bộ 33 ảnh album cưới đã hậu kỳ (nguồn: folder "18.7 HUY MINH VO │ Le Thanh Phuong Bridal_XOG" trong Downloads), resize max 2000px cạnh dài, quality 82, EXIF đã xoay đúng.
 - Gallery ("Khoảnh khắc"): trình bày dạng **tạp chí ảnh cưới (magazine reader)**, KHÔNG hiện hết 33 ảnh cùng lúc. Trên trang chính chỉ có 1 thẻ bìa tạp chí (`.mag-teaser`, dùng `images/hero.jpg`) — bấm vào mở overlay toàn màn hình (`#magReader`) cho xem lần lượt từng trang kiểu lật tạp chí thật.
-  - Cấu trúc dữ liệu: mảng `CHAPTERS` trong `<script>` (3 chương: Ba Son 9 ảnh, Diamond Plaza 10 ảnh, Bảo Tàng 14 ảnh — mỗi chương có `roman`, `title`, `subtitle`, `spreads` là mảng object `{imgs:[...], cap:'...'}` theo số thứ tự global 1–33 tương ứng `images/album/album-NN.jpg`. `cap` là câu trích dẫn ngắn hiển thị dưới ảnh trên trang đó (có thể để trống nếu không cần).
+  - Cấu trúc dữ liệu: mảng `CHAPTERS` trong `<script>` (3 chương: Ba Son 9 ảnh, Diamond Plaza 10 ảnh, Bảo Tàng 14 ảnh — mỗi chương có `roman`, `title`, `subtitle`, `spreads` là mảng object `{imgs:[...], cap:{...}}` theo số thứ tự global 1–33 tương ứng `images/album/album-NN.jpg`. `cap` là câu trích dẫn ngắn hiển thị dưới ảnh trên trang đó (có thể để trống nếu không cần). `title`/`subtitle`/`cap` đều là object `{vi:'...', en:'...'}` (xem mục Đa ngôn ngữ bên dưới).
   - Khi ghép nhiều ảnh vào 1 trang (`imgs` có ≥2 phần tử), LUÔN đảm bảo trang đó có ít nhất 1 ảnh có mặt cả cô dâu lẫn chú rể — không ghép 2 ảnh solo-1-người (dù khác người) vào chung 1 trang, sẽ đọc như "mất" người còn lại khỏi trang đó.
   - Mỗi lần mở, JS build danh sách `PAGES` phẳng: 1 trang bìa (có mục lục 3 chương, bấm vào nhảy thẳng tới trang tiêu đề chương) + với mỗi chương: 1 trang tiêu đề (roman số + tên chương + câu mô tả) + các trang ảnh (spread) render theo layout `solo` / `solo-landscape` / `duo` / `trio` tuỳ số ảnh và tỷ lệ khung hình (mảng `LANDSCAPE` liệt kê ảnh nào nằm ngang: 4, 6, 23, 26, 29).
   - Chỉ ảnh của trang hiện tại mới có trong DOM (ảnh trang trước/sau được preload ngầm bằng `new Image()`, không chèn vào DOM) — tránh tải hết 33 ảnh cùng lúc.
   - Điều hướng: nút Trước/Sau, click vùng trái/phải màn hình (click-zone), phím mũi tên, vuốt trái/phải trên mobile, ESC đóng. Có thanh tiến độ + "Trang X / 25 · [Chương]" ở góc trên. Chặn nhẹ right-click/kéo-thả ảnh như cũ.
   - Khi cần đổi/thêm ảnh: xử lý ảnh gốc bằng Pillow (`ImageOps.exif_transpose` + resize max 2000px + `quality=82`) → `images/album/album-NN.jpg`, rồi sửa mảng `CHAPTERS`/`spreads`/`LANDSCAPE` trong `<script>` cho khớp (không cần đụng HTML, toàn bộ trang tạp chí là JS-driven).
+
+## Đa ngôn ngữ (VI/EN)
+
+- Nút chuyển ngôn ngữ (`#langToggle`, VI/EN) cố định góc trên-phải, mặc định **tiếng Việt**, lưu lựa chọn vào `localStorage('lang')` để nhớ giữa các lần ghé.
+- Nội dung tĩnh (hero, gia đình, sự kiện, gallery teaser, footer, aria-label): gắn `data-i18n="key"` (hoặc `data-i18n-aria="key"` cho thuộc tính aria-label) trên element, bản dịch nằm trong object `STATIC_I18N` ở cuối `<script>`. Thêm text tĩnh mới → thêm attribute + 1 dòng trong `STATIC_I18N`.
+- Nội dung tạp chí (JS-driven): `CHAPTERS[i].title`, `.subtitle`, và mỗi `spreads[j].cap` là object `{vi, en}` thay vì string. `MAG_STRINGS.vi/.en` chứa các chữ khung cố định (Trang/Page, Chương/Chapter, Bìa/Cover...). Khi đổi ngôn ngữ lúc đang mở album, trang hiện tại được render lại tại chỗ (event `langchange`) — không nhảy về trang bìa.
+- Bản dịch tiếng Anh của các quote trong tạp chí là dịch thoát ý (không dịch từng chữ) để giữ giọng văn tự nhiên.
 
 ## Design system
 
