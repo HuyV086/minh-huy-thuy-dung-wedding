@@ -18,8 +18,12 @@ Nhà gái: Ông Bùi Văn Phiền, Bà Phùng Thị Ánh Loan (Minh Phụng, Tp.
 - `index.html` — toàn bộ trang, không phụ thuộc build tool. Ảnh dùng đường dẫn tương đối tới `images/`, KHÔNG nhúng base64.
 - `images/hero.jpg` — ảnh hero (bản hậu kỳ hoàn chỉnh của ảnh bìa album, gốc `IMG_5960_BIA.jpg`).
 - `images/album/album-01.jpg` … `album-33.jpg` — toàn bộ 33 ảnh album cưới đã hậu kỳ (nguồn: folder "18.7 HUY MINH VO │ Le Thanh Phuong Bridal_XOG" trong Downloads), resize max 2000px cạnh dài, quality 82, EXIF đã xoay đúng.
-- Gallery ("Khoảnh khắc"): masonry layout (CSS `column-count`, responsive 3/2/1 cột), ảnh hiển thị full không crop. Click/tap mở **lightbox riêng của trang** (không phải tab mới) với nút Trước/Sau, đếm số ảnh (`x / 33`), phím mũi tên trái/phải, vuốt trái/phải trên mobile, Esc để đóng. Có chặn nhẹ right-click/kéo-thả ảnh (chỉ cản người dùng thông thường, không chặn được screenshot/DevTools).
-- Khi cần thêm/đổi ảnh album: xử lý ảnh gốc bằng Pillow (`ImageOps.exif_transpose` + resize max 2000px + `quality=82`) trước khi bỏ vào `images/album/`, đặt tên tuần tự `album-NN.jpg`, rồi generate lại các `<button class="g-item">` tương ứng trong `index.html` (xem cấu trúc 1 button mẫu trong file).
+- Gallery ("Khoảnh khắc"): trình bày dạng **tạp chí ảnh cưới (magazine reader)**, KHÔNG hiện hết 33 ảnh cùng lúc. Trên trang chính chỉ có 1 thẻ bìa tạp chí (`.mag-teaser`, dùng `images/hero.jpg`) — bấm vào mở overlay toàn màn hình (`#magReader`) cho xem lần lượt từng trang kiểu lật tạp chí thật.
+  - Cấu trúc dữ liệu: mảng `CHAPTERS` trong `<script>` (3 chương: Ba Son 9 ảnh, Diamond Plaza 10 ảnh, Bảo Tàng 14 ảnh — mỗi chương có `roman`, `title`, `subtitle`, `spreads` là mảng các nhóm ảnh `[1]`/`[2,3]`/`[1,2,3]` theo số thứ tự global 1–33 tương ứng `images/album/album-NN.jpg`).
+  - Mỗi lần mở, JS build danh sách `PAGES` phẳng: 1 trang bìa (có mục lục 3 chương, bấm vào nhảy thẳng tới trang tiêu đề chương) + với mỗi chương: 1 trang tiêu đề (roman số + tên chương + câu mô tả) + các trang ảnh (spread) render theo layout `solo` / `solo-landscape` / `duo` / `trio` tuỳ số ảnh và tỷ lệ khung hình (mảng `LANDSCAPE` liệt kê ảnh nào nằm ngang: 4, 6, 23, 26, 29).
+  - Chỉ ảnh của trang hiện tại mới có trong DOM (ảnh trang trước/sau được preload ngầm bằng `new Image()`, không chèn vào DOM) — tránh tải hết 33 ảnh cùng lúc.
+  - Điều hướng: nút Trước/Sau, click vùng trái/phải màn hình (click-zone), phím mũi tên, vuốt trái/phải trên mobile, ESC đóng. Có thanh tiến độ + "Trang X / 25 · [Chương]" ở góc trên. Chặn nhẹ right-click/kéo-thả ảnh như cũ.
+  - Khi cần đổi/thêm ảnh: xử lý ảnh gốc bằng Pillow (`ImageOps.exif_transpose` + resize max 2000px + `quality=82`) → `images/album/album-NN.jpg`, rồi sửa mảng `CHAPTERS`/`spreads`/`LANDSCAPE` trong `<script>` cho khớp (không cần đụng HTML, toàn bộ trang tạp chí là JS-driven).
 
 ## Design system
 

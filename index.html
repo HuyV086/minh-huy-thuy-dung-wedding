@@ -323,128 +323,193 @@
   .event-card .ev-map:hover{opacity:0.6;}
   .event-card .ev-map:focus-visible, .ev-map:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
 
-  /* ---------- gallery ---------- */
+  /* ---------- gallery : magazine cover teaser ---------- */
   .gallery{background:var(--ivory-deep);}
-  .gallery-count{
-    text-align:center;
-    margin:-2.2rem auto 2.6rem;
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    letter-spacing:0.02em;
-  }
-  .gallery-grid{
-    max-width:1120px;
+  .mag-teaser{
+    max-width:640px;
     margin:0 auto;
-    column-count:3;
-    column-gap:1.4rem;
-  }
-  .g-item{
     display:block;
-    width:100%;
     border:0;
-    background:none;
     padding:0;
-    margin:0 0 1.4rem;
+    background:none;
     font:inherit;
     text-align:left;
-    text-decoration:none;
-    cursor:zoom-in;
-    break-inside:avoid;
-  }
-  .g-item figure{
-    margin:0;
-    position:relative;
-    overflow:hidden;
-    background:var(--ivory);
-    box-shadow:0 1px 3px rgba(43,27,26,0.12);
-    transition:box-shadow .3s ease;
-  }
-  .g-item:hover figure, .g-item:focus-visible figure{box-shadow:0 10px 28px rgba(43,27,26,0.22);}
-  .g-item img{
+    cursor:pointer;
     width:100%;
-    height:auto;
-    display:block;
-    transition:transform .5s ease;
   }
-  .g-item img, #lightboxImg{
-    -webkit-user-drag:none;
-    -webkit-touch-callout:none;
-    user-select:none;
+  .mag-teaser-frame{
+    position:relative;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    box-shadow:0 18px 44px rgba(43,27,26,0.28);
+    transition:transform .4s ease, box-shadow .4s ease;
   }
-  .g-item:hover img, .g-item:focus-visible img{transform:scale(1.035);}
-  .g-item:focus-visible{outline:2px solid var(--gold);outline-offset:4px;}
-  .g-item .expand{
-    position:absolute;right:12px;bottom:12px;
-    width:30px;height:30px;border-radius:50%;
-    background:rgba(43,27,26,0.55);
-    display:flex;align-items:center;justify-content:center;
-    opacity:0;transition:opacity .2s ease, background .2s ease;
+  .mag-teaser:hover .mag-teaser-frame, .mag-teaser:focus-visible .mag-teaser-frame{
+    transform:translateY(-4px);
+    box-shadow:0 26px 56px rgba(43,27,26,0.34);
   }
-  .g-item:hover .expand, .g-item:focus-visible .expand{opacity:1;background:var(--rose);}
-  .g-item .expand svg{width:14px;height:14px;fill:none;stroke:var(--ivory);stroke-width:2;}
-  @media (hover:none){ .g-item .expand{opacity:0.85;} }
+  .mag-teaser:focus-visible{outline:2px solid var(--gold);outline-offset:6px;}
+  .mag-teaser-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mag-teaser-frame::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(43,27,26,0.05) 40%, rgba(20,12,11,0.62) 100%);
+  }
+  .mag-teaser-mast{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:2rem 1.8rem 1.7rem;
+    color:var(--ivory);
+    z-index:1;
+  }
+  .mag-teaser-mast .eyebrow{color:var(--gold-soft);display:block;margin-bottom:0.5rem;}
+  .mag-teaser-mast h3{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(2rem, 5vw, 2.6rem);
+    margin:0 0 0.6rem;
+    text-wrap:balance;
+  }
+  .mag-teaser-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:600;
+    border-bottom:1px solid var(--gold-soft);
+    padding-bottom:3px;
+  }
+  .mag-teaser-cta svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;}
 
-  /* ---------- lightbox ---------- */
-  .lightbox{
+  /* ---------- magazine reader ---------- */
+  .mag-reader{
     position:fixed;inset:0;z-index:100;
     display:none;
-    align-items:center;justify-content:center;
-    background:rgba(20,12,11,0.96);
-    padding:9vh 5vw;
+    background:var(--ivory-deep);
   }
-  .lightbox.open{display:flex;}
-  .lightbox-stage{
-    position:relative;
-    max-width:100%;max-height:100%;
-    display:flex;align-items:center;justify-content:center;
+  .mag-reader.open{display:block;}
+  .mag-bar{
+    position:absolute;top:0;left:0;right:0;z-index:5;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:1rem;
+    padding:1.1rem 1.4rem;
+    background:linear-gradient(180deg, rgba(251,246,239,0.92), rgba(251,246,239,0));
   }
-  .lightbox img{
-    max-width:100%;max-height:82vh;
-    object-fit:contain;
-    box-shadow:0 12px 48px rgba(0,0,0,0.5);
-    pointer-events:none;
-    opacity:0;
-    transition:opacity .25s ease;
-  }
-  .lightbox img.loaded{opacity:1;}
-  .lightbox-close{
-    position:absolute;top:20px;right:20px;
-    width:42px;height:42px;border-radius:50%;
-    border:1px solid rgba(251,246,239,0.35);
-    background:rgba(251,246,239,0.08);
-    color:var(--ivory);
-    font-size:1.3rem;line-height:1;
-    cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    transition:background .2s ease;
-    z-index:2;
-  }
-  .lightbox-close:hover, .lightbox-close:focus-visible{background:rgba(251,246,239,0.2);}
-  .lightbox-nav{
-    position:absolute;top:50%;transform:translateY(-50%);
-    width:46px;height:46px;border-radius:50%;
-    border:1px solid rgba(251,246,239,0.35);
-    background:rgba(251,246,239,0.08);
-    color:var(--ivory);
-    cursor:pointer;
-    display:flex;align-items:center;justify-content:center;
-    transition:background .2s ease;
-    z-index:2;
-  }
-  .lightbox-nav:hover, .lightbox-nav:focus-visible{background:rgba(251,246,239,0.2);}
-  .lightbox-nav svg{width:20px;height:20px;fill:none;stroke:var(--ivory);stroke-width:2;}
-  .lightbox-prev{left:20px;}
-  .lightbox-next{right:20px;}
-  .lightbox-cap{
-    position:absolute;left:0;bottom:-38px;
-    font-family:var(--font-body);font-weight:600;letter-spacing:0.08em;
-    color:var(--ivory);font-size:0.8rem;opacity:0.75;
+  .mag-bar-info{
+    font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-soft);font-weight:600;
     font-variant-numeric:tabular-nums;
   }
-  @media (max-width:900px){
-    .lightbox-prev{left:6px;}
-    .lightbox-next{right:6px;}
-    .lightbox-nav{width:38px;height:38px;background:rgba(20,12,11,0.5);}
+  .mag-bar-info b{color:var(--rose);}
+  .mag-progress{
+    position:absolute;top:0;left:0;height:2px;
+    background:var(--rose);
+    transition:width .35s ease;
+    z-index:6;
+  }
+  .mag-close{
+    width:38px;height:38px;border-radius:50%;
+    border:1px solid var(--rule);
+    background:var(--ivory);
+    color:var(--ink);
+    font-size:1.1rem;line-height:1;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+    flex:none;
+  }
+  .mag-close:hover, .mag-close:focus-visible{background:var(--rose);color:var(--ivory);border-color:var(--rose);}
+  .mag-stage{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    padding:5.4rem 6vw 3.2rem;
+    overflow:hidden;
+  }
+  .mag-page{
+    width:100%;height:100%;
+    max-width:1100px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transition:opacity .28s ease, transform .28s ease;
+  }
+  #magPageHost{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+
+  .mag-clickzone{position:absolute;top:0;bottom:0;width:16%;z-index:3;cursor:pointer;}
+  .mag-clickzone.left{left:0;}
+  .mag-clickzone.right{right:0;}
+
+  .mag-nav{
+    position:absolute;top:50%;transform:translateY(-50%);z-index:4;
+    width:44px;height:44px;border-radius:50%;
+    border:1px solid var(--rule);
+    background:var(--ivory);
+    color:var(--ink);
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease, color .2s ease, opacity .2s ease;
+    box-shadow:0 4px 14px rgba(43,27,26,0.14);
+  }
+  .mag-nav:hover, .mag-nav:focus-visible{background:var(--rose);color:var(--ivory);}
+  .mag-nav[disabled]{opacity:0;pointer-events:none;}
+  .mag-nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;}
+  .mag-prev{left:20px;}
+  .mag-next{right:20px;}
+
+  .mag-folio{
+    margin-top:1rem;
+    font-family:var(--font-body);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+    font-size:0.72rem;color:var(--ink-soft);
+    font-variant-numeric:tabular-nums;
+  }
+
+  /* cover page inside reader */
+  .mag-cover-page{width:100%;height:100%;max-width:720px;display:flex;flex-direction:column;}
+  .mag-cover-art{position:relative;flex:1 1 62%;min-height:0;overflow:hidden;box-shadow:0 18px 44px rgba(43,27,26,0.24);}
+  .mag-cover-art img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mag-cover-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(43,27,26,0.02) 55%, rgba(20,12,11,0.55) 100%);}
+  .mag-cover-mast{position:absolute;left:0;right:0;bottom:0;padding:1.8rem;color:var(--ivory);text-align:center;}
+  .mag-cover-mast .eyebrow{color:var(--gold-soft);}
+  .mag-cover-mast h2{font-family:var(--font-display);font-weight:500;font-size:clamp(2.4rem,6vw,3.4rem);margin:0.3rem 0;}
+  .mag-cover-mast p{font-family:var(--font-display);font-style:italic;font-size:1.05rem;opacity:0.9;margin:0;}
+  .mag-toc{flex:1 1 38%;min-height:0;overflow-y:auto;padding:1.6rem 0.4rem 0.4rem;display:flex;flex-direction:column;gap:0.7rem;}
+  .mag-toc-item{
+    display:flex;align-items:baseline;gap:1rem;
+    background:none;border:0;border-top:1px solid var(--rule);
+    padding:0.8rem 0.3rem;width:100%;text-align:left;cursor:pointer;font:inherit;
+  }
+  .mag-toc-item:last-child{border-bottom:1px solid var(--rule);}
+  .mag-toc-item .num{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--gold);flex:none;}
+  .mag-toc-item .txt{flex:1;}
+  .mag-toc-item .txt b{display:block;font-family:var(--font-display);font-size:1.15rem;font-weight:600;color:var(--ink);}
+  .mag-toc-item .txt span{display:block;font-size:0.82rem;color:var(--ink-soft);margin-top:0.15rem;}
+  .mag-toc-item .arrow{flex:none;font-size:1rem;color:var(--rose);align-self:center;}
+
+  /* chapter title page */
+  .mag-title-page{text-align:center;max-width:520px;}
+  .mag-title-page .roman{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--gold);margin-bottom:1rem;}
+  .mag-title-page h2{font-family:var(--font-display);font-weight:500;font-size:clamp(2.2rem,5vw,3.1rem);color:var(--rose);margin:0 0 1.2rem;text-wrap:balance;}
+  .mag-title-page p{font-family:var(--font-display);font-style:italic;font-size:1.2rem;color:var(--ink-soft);line-height:1.6;margin:0;text-wrap:balance;}
+  .mag-title-page .rule{width:64px;height:1px;background:var(--rule);margin:1.6rem auto 0;}
+
+  /* photo spreads */
+  .mag-spread{width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:1.2rem;}
+  .mag-spread img{
+    display:block;object-fit:cover;border-radius:1px;
+    box-shadow:0 14px 34px rgba(43,27,26,0.22);
+    -webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;
+  }
+  .mag-spread.type-solo{max-width:520px;}
+  .mag-spread.type-solo img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 18px 40px rgba(43,27,26,0.26);}
+  .mag-spread.type-solo-landscape img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;}
+  .mag-spread.type-duo img{flex:1;height:100%;min-width:0;}
+  .mag-spread.type-trio{gap:0.8rem;}
+  .mag-spread.type-trio img{flex:1;height:78%;min-width:0;align-self:center;}
+  @media (max-width:760px){
+    .mag-spread{flex-direction:column;gap:0.7rem;}
+    .mag-spread.type-duo img, .mag-spread.type-trio img{width:100%;height:auto;max-height:46%;flex:none;object-fit:contain;}
+    .mag-cover-page{max-width:420px;}
+    .mag-stage{padding:4.6rem 5vw 2.4rem;}
+    .mag-prev{left:8px;}
+    .mag-next{right:8px;}
+    .mag-nav{width:36px;height:36px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .mag-page{transition:opacity .01s linear;transform:none !important;}
   }
 
   /* ---------- footer ---------- */
@@ -494,9 +559,6 @@
   }
 
   /* ---------- responsive ---------- */
-  @media (max-width:900px){
-    .gallery-grid{column-count:2;}
-  }
   @media (max-width:860px){
     .hero{grid-template-columns:1fr;}
     .hero-photo{min-height:56vh;}
@@ -507,9 +569,6 @@
     .families-mono .stick{width:64px;height:1px;}
     .timeline{grid-template-columns:1fr;}
     section{padding:5rem 6vw;}
-  }
-  @media (max-width:520px){
-    .gallery-grid{column-count:1;max-width:420px;}
   }
 </style>
 
@@ -607,222 +666,36 @@
 <section class="gallery reveal">
   <div class="section-head">
     <span class="eyebrow">Khoảnh khắc</span>
-    <h2>Album trước ngày cưới</h2>
+    <h2>Tạp chí ảnh cưới</h2>
   </div>
-  <p class="gallery-count">33 khoảnh khắc từ buổi chụp ảnh cưới — chạm vào ảnh để xem đầy đủ</p>
-  <div class="gallery-grid">
-    <button type="button" class="g-item" data-src="images/album/album-01.jpg" aria-label="Xem ảnh 1 phóng to">
-      <figure>
-        <img src="images/album/album-01.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 1" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-02.jpg" aria-label="Xem ảnh 2 phóng to">
-      <figure>
-        <img src="images/album/album-02.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 2" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-03.jpg" aria-label="Xem ảnh 3 phóng to">
-      <figure>
-        <img src="images/album/album-03.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 3" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-04.jpg" aria-label="Xem ảnh 4 phóng to">
-      <figure>
-        <img src="images/album/album-04.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 4" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-05.jpg" aria-label="Xem ảnh 5 phóng to">
-      <figure>
-        <img src="images/album/album-05.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 5" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-06.jpg" aria-label="Xem ảnh 6 phóng to">
-      <figure>
-        <img src="images/album/album-06.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 6" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-07.jpg" aria-label="Xem ảnh 7 phóng to">
-      <figure>
-        <img src="images/album/album-07.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 7" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-08.jpg" aria-label="Xem ảnh 8 phóng to">
-      <figure>
-        <img src="images/album/album-08.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 8" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-09.jpg" aria-label="Xem ảnh 9 phóng to">
-      <figure>
-        <img src="images/album/album-09.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 9" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-10.jpg" aria-label="Xem ảnh 10 phóng to">
-      <figure>
-        <img src="images/album/album-10.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 10" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-11.jpg" aria-label="Xem ảnh 11 phóng to">
-      <figure>
-        <img src="images/album/album-11.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 11" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-12.jpg" aria-label="Xem ảnh 12 phóng to">
-      <figure>
-        <img src="images/album/album-12.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 12" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-13.jpg" aria-label="Xem ảnh 13 phóng to">
-      <figure>
-        <img src="images/album/album-13.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 13" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-14.jpg" aria-label="Xem ảnh 14 phóng to">
-      <figure>
-        <img src="images/album/album-14.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 14" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-15.jpg" aria-label="Xem ảnh 15 phóng to">
-      <figure>
-        <img src="images/album/album-15.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 15" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-16.jpg" aria-label="Xem ảnh 16 phóng to">
-      <figure>
-        <img src="images/album/album-16.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 16" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-17.jpg" aria-label="Xem ảnh 17 phóng to">
-      <figure>
-        <img src="images/album/album-17.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 17" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-18.jpg" aria-label="Xem ảnh 18 phóng to">
-      <figure>
-        <img src="images/album/album-18.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 18" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-19.jpg" aria-label="Xem ảnh 19 phóng to">
-      <figure>
-        <img src="images/album/album-19.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 19" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-20.jpg" aria-label="Xem ảnh 20 phóng to">
-      <figure>
-        <img src="images/album/album-20.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 20" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-21.jpg" aria-label="Xem ảnh 21 phóng to">
-      <figure>
-        <img src="images/album/album-21.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 21" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-22.jpg" aria-label="Xem ảnh 22 phóng to">
-      <figure>
-        <img src="images/album/album-22.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 22" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-23.jpg" aria-label="Xem ảnh 23 phóng to">
-      <figure>
-        <img src="images/album/album-23.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 23" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-24.jpg" aria-label="Xem ảnh 24 phóng to">
-      <figure>
-        <img src="images/album/album-24.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 24" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-25.jpg" aria-label="Xem ảnh 25 phóng to">
-      <figure>
-        <img src="images/album/album-25.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 25" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-26.jpg" aria-label="Xem ảnh 26 phóng to">
-      <figure>
-        <img src="images/album/album-26.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 26" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-27.jpg" aria-label="Xem ảnh 27 phóng to">
-      <figure>
-        <img src="images/album/album-27.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 27" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-28.jpg" aria-label="Xem ảnh 28 phóng to">
-      <figure>
-        <img src="images/album/album-28.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 28" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-29.jpg" aria-label="Xem ảnh 29 phóng to">
-      <figure>
-        <img src="images/album/album-29.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 29" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-30.jpg" aria-label="Xem ảnh 30 phóng to">
-      <figure>
-        <img src="images/album/album-30.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 30" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-31.jpg" aria-label="Xem ảnh 31 phóng to">
-      <figure>
-        <img src="images/album/album-31.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 31" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-32.jpg" aria-label="Xem ảnh 32 phóng to">
-      <figure>
-        <img src="images/album/album-32.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 32" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-    <button type="button" class="g-item" data-src="images/album/album-33.jpg" aria-label="Xem ảnh 33 phóng to">
-      <figure>
-        <img src="images/album/album-33.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 33" loading="lazy">
-        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
-      </figure>
-    </button>
-  </div>
+  <button type="button" class="mag-teaser" id="magOpen" aria-label="Mở tạp chí ảnh cưới">
+    <div class="mag-teaser-frame">
+      <img src="images/hero.jpg" alt="Bìa tạp chí ảnh cưới Minh Huy và Thuỳ Dung" loading="lazy">
+      <div class="mag-teaser-mast">
+        <span class="eyebrow">33 khoảnh khắc · 3 chương</span>
+        <h3>Khoảnh Khắc</h3>
+        <span class="mag-teaser-cta">Mở tạp chí <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>
+    </div>
+  </button>
 </section>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
-  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Đóng">✕</button>
-  <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">
-    <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
-  </button>
-  <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp theo">
-    <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
-  </button>
-  <div class="lightbox-stage">
-    <img id="lightboxImg" src="" alt="">
-    <div class="lightbox-cap" id="lightboxCap"></div>
+<div class="mag-reader" id="magReader" role="dialog" aria-modal="true" aria-label="Tạp chí ảnh cưới">
+  <div class="mag-progress" id="magProgress"></div>
+  <div class="mag-bar">
+    <span class="mag-bar-info" id="magBarInfo"></span>
+    <button type="button" class="mag-close" id="magClose" aria-label="Đóng tạp chí">✕</button>
+  </div>
+  <div class="mag-stage">
+    <button type="button" class="mag-clickzone left" id="magZoneLeft" aria-hidden="true" tabindex="-1"></button>
+    <button type="button" class="mag-clickzone right" id="magZoneRight" aria-hidden="true" tabindex="-1"></button>
+    <button type="button" class="mag-nav mag-prev" id="magPrev" aria-label="Trang trước">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <div id="magPageHost"></div>
+    <button type="button" class="mag-nav mag-next" id="magNext" aria-label="Trang sau">
+      <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
   </div>
 </div>
 
@@ -865,79 +738,239 @@
   })();
 
   (function(){
-    var lightbox = document.getElementById('lightbox');
-    var lightboxImg = document.getElementById('lightboxImg');
-    var lightboxCap = document.getElementById('lightboxCap');
-    var closeBtn = document.getElementById('lightboxClose');
-    var prevBtn = document.getElementById('lightboxPrev');
-    var nextBtn = document.getElementById('lightboxNext');
-    var items = Array.prototype.slice.call(document.querySelectorAll('.g-item'));
+    function pad2(n){ return n < 10 ? '0' + n : '' + n; }
+    function imgSrc(n){ return 'images/album/album-' + pad2(n) + '.jpg'; }
+
+    var LANDSCAPE = {4:1, 6:1, 23:1, 26:1, 29:1};
+
+    var CHAPTERS = [
+      {
+        roman: 'I',
+        title: 'Ba Son',
+        subtitle: 'Khoảnh khắc thơ mộng bên cầu Ba Son',
+        spreads: [[1],[2,3],[4],[5,7],[6],[8,9]]
+      },
+      {
+        roman: 'II',
+        title: 'Diamond Plaza',
+        subtitle: 'Rủ nhau ra phố thị Diamond Plaza',
+        spreads: [[10,11],[12],[13,14],[15],[16],[17,18,19]]
+      },
+      {
+        roman: 'III',
+        title: 'Bảo Tàng',
+        subtitle: 'Cùng nhau hoài niệm tại Bảo Tàng',
+        spreads: [[20],[21],[22,24],[23],[25,27],[26],[28,30],[29],[31,32,33]]
+      }
+    ];
+
+    var PAGES = [{type:'cover'}];
+    var chapterTitlePage = [];
+    CHAPTERS.forEach(function(ch, ci){
+      var count = ch.spreads.reduce(function(sum, g){ return sum + g.length; }, 0);
+      ch.count = count;
+      chapterTitlePage[ci] = PAGES.length;
+      PAGES.push({type:'title', chapter:ch, chapterIndex:ci});
+      ch.spreads.forEach(function(imgs, si){
+        PAGES.push({type:'spread', chapter:ch, chapterIndex:ci, imgs:imgs, spreadIndex:si});
+      });
+    });
+
+    var reader = document.getElementById('magReader');
+    var host = document.getElementById('magPageHost');
+    var progress = document.getElementById('magProgress');
+    var barInfo = document.getElementById('magBarInfo');
+    var openBtn = document.getElementById('magOpen');
+    var closeBtn = document.getElementById('magClose');
+    var prevBtn = document.getElementById('magPrev');
+    var nextBtn = document.getElementById('magNext');
+    var zoneLeft = document.getElementById('magZoneLeft');
+    var zoneRight = document.getElementById('magZoneRight');
+
+    var currentIndex = -1;
     var lastFocused = null;
-    var currentIndex = 0;
+    var animating = false;
 
-    function show(index){
-      currentIndex = (index + items.length) % items.length;
-      var btn = items[currentIndex];
-      lightboxImg.classList.remove('loaded');
-      lightboxImg.src = btn.dataset.src;
-      lightboxImg.alt = btn.querySelector('img').alt;
-      lightboxCap.textContent = (currentIndex + 1) + ' / ' + items.length;
-    }
-    lightboxImg.addEventListener('load', function(){ lightboxImg.classList.add('loaded'); });
-
-    function openLightbox(index){
-      lastFocused = document.activeElement;
-      show(index);
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      closeBtn.focus();
-    }
-    function closeLightbox(){
-      lightbox.classList.remove('open');
-      lightboxImg.src = '';
-      document.body.style.overflow = '';
-      if(lastFocused){ lastFocused.focus(); }
-    }
-    function nextImage(){ show(currentIndex + 1); }
-    function prevImage(){ show(currentIndex - 1); }
-
-    items.forEach(function(btn, i){
-      btn.addEventListener('click', function(){ openLightbox(i); });
-    });
-    closeBtn.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', prevImage);
-    nextBtn.addEventListener('click', nextImage);
-    lightbox.addEventListener('click', function(e){
-      if(e.target === lightbox){ closeLightbox(); }
-    });
-    document.addEventListener('keydown', function(e){
-      if(!lightbox.classList.contains('open')){ return; }
-      if(e.key === 'Escape'){ closeLightbox(); }
-      else if(e.key === 'ArrowRight'){ nextImage(); }
-      else if(e.key === 'ArrowLeft'){ prevImage(); }
-    });
-
-    /* Vuốt trái/phải trên mobile để chuyển ảnh */
-    var touchStartX = null;
-    lightbox.addEventListener('touchstart', function(e){
-      touchStartX = e.changedTouches[0].clientX;
-    }, {passive:true});
-    lightbox.addEventListener('touchend', function(e){
-      if(touchStartX === null){ return; }
-      var dx = e.changedTouches[0].clientX - touchStartX;
-      if(Math.abs(dx) > 40){ dx < 0 ? nextImage() : prevImage(); }
-      touchStartX = null;
-    }, {passive:true});
-
-    /* Hạn chế lưu ảnh: chặn menu chuột phải và kéo-thả trên ảnh gallery + ảnh phóng to.
-       Đây chỉ là rào cản nhẹ cho người dùng thông thường, không chặn được người cố tình
-       (chụp màn hình, DevTools... luôn lấy được ảnh đã hiển thị trên trình duyệt). */
-    var protectedImgs = document.querySelectorAll('.g-item img, #lightboxImg');
-    protectedImgs.forEach(function(img){
+    function protect(img){
       img.setAttribute('draggable', 'false');
       img.addEventListener('contextmenu', function(e){ e.preventDefault(); });
       img.addEventListener('dragstart', function(e){ e.preventDefault(); });
+    }
+
+    function makeImg(n, alt){
+      var img = document.createElement('img');
+      img.src = imgSrc(n);
+      img.alt = alt;
+      img.loading = 'eager';
+      protect(img);
+      return img;
+    }
+
+    function buildCover(container){
+      var wrap = document.createElement('div');
+      wrap.className = 'mag-cover-page';
+
+      var art = document.createElement('div');
+      art.className = 'mag-cover-art';
+      var img = document.createElement('img');
+      img.src = 'images/hero.jpg';
+      img.alt = 'Bìa tạp chí ảnh cưới Minh Huy và Thuỳ Dung';
+      protect(img);
+      var mast = document.createElement('div');
+      mast.className = 'mag-cover-mast';
+      mast.innerHTML = '<span class="eyebrow">Album ảnh cưới</span><h2>Khoảnh Khắc</h2><p>Minh Huy &amp; Thuỳ Dung · 18.10.2026</p>';
+      art.appendChild(img);
+      art.appendChild(mast);
+
+      var toc = document.createElement('div');
+      toc.className = 'mag-toc';
+      CHAPTERS.forEach(function(ch, ci){
+        var item = document.createElement('button');
+        item.type = 'button';
+        item.className = 'mag-toc-item';
+        item.innerHTML = '<span class="num">' + ch.roman + '</span>' +
+          '<span class="txt"><b>' + ch.title + '</b><span>' + ch.subtitle + ' · ' + ch.count + ' ảnh</span></span>' +
+          '<span class="arrow">→</span>';
+        item.addEventListener('click', function(){ goTo(chapterTitlePage[ci], 'next'); });
+        toc.appendChild(item);
+      });
+
+      wrap.appendChild(art);
+      wrap.appendChild(toc);
+      container.appendChild(wrap);
+    }
+
+    function buildTitle(container, chapter){
+      var wrap = document.createElement('div');
+      wrap.className = 'mag-title-page';
+      wrap.innerHTML = '<div class="roman">Chương ' + chapter.roman + '</div>' +
+        '<h2>' + chapter.title + '</h2>' +
+        '<p>"' + chapter.subtitle + '"</p>' +
+        '<div class="rule"></div>';
+      container.appendChild(wrap);
+    }
+
+    function buildSpread(container, page){
+      var imgs = page.imgs;
+      var type = imgs.length === 1 ? (LANDSCAPE[imgs[0]] ? 'solo-landscape' : 'solo') : (imgs.length === 2 ? 'duo' : 'trio');
+      var spread = document.createElement('div');
+      spread.className = 'mag-spread type-' + type;
+      imgs.forEach(function(n){
+        spread.appendChild(makeImg(n, 'Khoảnh khắc ' + page.chapter.title + ', ảnh ' + n));
+      });
+      container.appendChild(spread);
+      var folio = document.createElement('div');
+      folio.className = 'mag-folio';
+      folio.textContent = page.chapter.title + ' · Trang ' + (page.spreadIndex + 1) + '/' + page.chapter.spreads.length;
+      container.appendChild(folio);
+    }
+
+    function renderInto(container, page){
+      if(page.type === 'cover'){ buildCover(container); }
+      else if(page.type === 'title'){ buildTitle(container, page.chapter); }
+      else { buildSpread(container, page); }
+    }
+
+    function preload(n){
+      if(n < 0 || n >= PAGES.length){ return; }
+      var page = PAGES[n];
+      if(page.type === 'spread'){
+        page.imgs.forEach(function(i){ var im = new Image(); im.src = imgSrc(i); });
+      } else if(page.type === 'cover'){
+        var im2 = new Image(); im2.src = 'images/hero.jpg';
+      }
+    }
+
+    function updateChrome(){
+      var page = PAGES[currentIndex];
+      var label = page.type === 'cover' ? 'Bìa' : page.chapter.title;
+      barInfo.innerHTML = 'Trang <b>' + (currentIndex + 1) + '</b> / ' + PAGES.length + ' · ' + label;
+      progress.style.width = (((currentIndex + 1) / PAGES.length) * 100) + '%';
+      prevBtn.disabled = currentIndex <= 0;
+      nextBtn.disabled = currentIndex >= PAGES.length - 1;
+    }
+
+    function goTo(index, direction){
+      index = Math.max(0, Math.min(PAGES.length - 1, index));
+      if(index === currentIndex || animating){ return; }
+      animating = true;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var outgoing = host.firstElementChild;
+      var dir = direction || (index > currentIndex ? 'next' : 'prev');
+
+      function insertNew(){
+        if(outgoing && outgoing.parentNode){ outgoing.parentNode.removeChild(outgoing); }
+        currentIndex = index;
+        var el = document.createElement('div');
+        el.className = 'mag-page';
+        renderInto(el, PAGES[currentIndex]);
+        if(!reduced){
+          el.style.opacity = '0';
+          el.style.transform = 'translateX(' + (dir === 'prev' ? '-22px' : '22px') + ')';
+        }
+        host.appendChild(el);
+        void el.offsetWidth;
+        requestAnimationFrame(function(){
+          el.style.opacity = '1';
+          el.style.transform = 'translateX(0)';
+        });
+        updateChrome();
+        preload(currentIndex - 1);
+        preload(currentIndex + 1);
+        animating = false;
+      }
+
+      if(outgoing && !reduced){
+        outgoing.style.opacity = '0';
+        outgoing.style.transform = 'translateX(' + (dir === 'prev' ? '22px' : '-22px') + ')';
+        setTimeout(insertNew, 230);
+      } else {
+        insertNew();
+      }
+    }
+
+    function nextPage(){ goTo(currentIndex + 1, 'next'); }
+    function prevPage(){ goTo(currentIndex - 1, 'prev'); }
+
+    function openReader(){
+      lastFocused = document.activeElement;
+      reader.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      currentIndex = -1;
+      goTo(0, 'next');
+      closeBtn.focus();
+    }
+    function closeReader(){
+      reader.classList.remove('open');
+      document.body.style.overflow = '';
+      host.innerHTML = '';
+      if(lastFocused){ lastFocused.focus(); }
+    }
+
+    openBtn.addEventListener('click', openReader);
+    closeBtn.addEventListener('click', closeReader);
+    prevBtn.addEventListener('click', prevPage);
+    nextBtn.addEventListener('click', nextPage);
+    zoneLeft.addEventListener('click', prevPage);
+    zoneRight.addEventListener('click', nextPage);
+
+    document.addEventListener('keydown', function(e){
+      if(!reader.classList.contains('open')){ return; }
+      if(e.key === 'Escape'){ closeReader(); }
+      else if(e.key === 'ArrowRight'){ nextPage(); }
+      else if(e.key === 'ArrowLeft'){ prevPage(); }
     });
+
+    var touchStartX = null;
+    reader.addEventListener('touchstart', function(e){
+      touchStartX = e.changedTouches[0].clientX;
+    }, {passive:true});
+    reader.addEventListener('touchend', function(e){
+      if(touchStartX === null){ return; }
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(dx) > 40){ dx < 0 ? nextPage() : prevPage(); }
+      touchStartX = null;
+    }, {passive:true});
   })();
 </script>
 
