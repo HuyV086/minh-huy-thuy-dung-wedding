@@ -401,7 +401,7 @@
   /* ---------- magazine reader ---------- */
   .mag-reader{
     position:fixed;inset:0;z-index:100;
-    height:100vh;height:100dvh;
+    height:100vh;height:100svh;
     display:none;
     background:var(--ivory-deep);
   }
@@ -435,6 +435,7 @@
     display:flex;align-items:center;justify-content:center;
     transition:background .2s ease;
     flex:none;
+    appearance:none;-webkit-appearance:none;
   }
   .mag-close:hover, .mag-close:focus-visible{background:var(--rose);color:var(--ivory);border-color:var(--rose);}
   .mag-stage{
@@ -445,13 +446,13 @@
   }
   .mag-page{
     width:100%;height:100%;
-    max-width:1100px;
+    max-width:min(96vw,1100px);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     transition:opacity .28s ease, transform .28s ease;
   }
   #magPageHost{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 
-  .mag-clickzone{position:absolute;top:0;bottom:0;width:16%;z-index:3;cursor:pointer;}
+  .mag-clickzone{position:absolute;top:0;bottom:0;width:16%;z-index:3;cursor:pointer;background:none;border:0;padding:0;appearance:none;-webkit-appearance:none;}
   .mag-clickzone.left{left:0;}
   .mag-clickzone.right{right:0;}
 
@@ -465,6 +466,7 @@
     display:flex;align-items:center;justify-content:center;
     transition:background .2s ease, color .2s ease, opacity .2s ease;
     box-shadow:0 4px 14px rgba(43,27,26,0.14);
+    appearance:none;-webkit-appearance:none;
   }
   .mag-nav:hover, .mag-nav:focus-visible{background:var(--rose);color:var(--ivory);}
   .mag-nav[disabled]{opacity:0;pointer-events:none;}
@@ -480,19 +482,20 @@
   }
 
   /* cover page inside reader */
-  .mag-cover-page{width:100%;height:100%;max-width:720px;display:flex;flex-direction:column;}
-  .mag-cover-art{position:relative;flex:1 1 62%;min-height:0;overflow:hidden;box-shadow:0 18px 44px rgba(43,27,26,0.24);}
+  .mag-cover-page{width:100%;max-height:100%;max-width:min(94vw,720px);display:flex;flex-direction:column;min-height:0;}
+  .mag-cover-art{position:relative;flex:1 1 auto;aspect-ratio:4/5;min-height:0;overflow:hidden;box-shadow:0 18px 44px rgba(43,27,26,0.24);}
   .mag-cover-art img{width:100%;height:100%;object-fit:cover;object-position:30% 35%;display:block;}
   .mag-cover-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(43,27,26,0.02) 55%, rgba(20,12,11,0.55) 100%);}
   .mag-cover-mast{position:absolute;left:0;right:0;bottom:0;padding:1.8rem;color:var(--ivory);text-align:center;}
   .mag-cover-mast .eyebrow{color:var(--gold-soft);}
   .mag-cover-mast h2{font-family:var(--font-display);font-weight:500;font-size:clamp(2.4rem,6vw,3.4rem);margin:0.3rem 0;}
   .mag-cover-mast p{font-family:var(--font-display);font-style:italic;font-size:1.05rem;opacity:0.9;margin:0;}
-  .mag-toc{flex:1 1 38%;min-height:0;overflow-y:auto;padding:1.6rem 0.4rem 0.4rem;display:flex;flex-direction:column;gap:0.7rem;}
+  .mag-toc{flex:0 1 auto;min-height:0;overflow-y:auto;padding:1.6rem 0.4rem 0.4rem;display:flex;flex-direction:column;gap:0.7rem;}
   .mag-toc-item{
     display:flex;align-items:baseline;gap:1rem;
     background:none;border:0;border-top:1px solid var(--rule);
     padding:0.8rem 0.3rem;width:100%;text-align:left;cursor:pointer;font:inherit;
+    appearance:none;-webkit-appearance:none;
   }
   .mag-toc-item:last-child{border-bottom:1px solid var(--rule);}
   .mag-toc-item .num{font-family:var(--font-display);font-style:italic;font-size:1.3rem;color:var(--gold);flex:none;}
@@ -534,7 +537,7 @@
     .mag-spread{flex-direction:column;gap:0.6rem;}
     .mag-spread.type-duo img, .mag-spread.type-trio img{width:auto;height:auto;max-width:92%;max-height:42%;}
     .mag-spread.type-solo img, .mag-spread.type-solo-landscape img{max-height:96%;}
-    .mag-cover-page{max-width:420px;}
+    .mag-cover-page{max-width:min(90vw,480px);}
     .mag-cover-mast{padding:1.2rem;}
     .mag-cover-mast h2{font-size:clamp(1.9rem,8vw,2.6rem);margin:0.2rem 0;}
     .mag-toc{padding:1.1rem 0.2rem 0.2rem;gap:0.5rem;}
@@ -970,6 +973,9 @@
       progress.style.width = (((currentIndex + 1) / PAGES.length) * 100) + '%';
       prevBtn.disabled = currentIndex <= 0;
       nextBtn.disabled = currentIndex >= PAGES.length - 1;
+      var isCover = page.type === 'cover';
+      zoneLeft.style.display = isCover ? 'none' : '';
+      zoneRight.style.display = isCover ? 'none' : '';
     }
 
     function goTo(index, direction){
