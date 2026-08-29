@@ -16,8 +16,10 @@ Nhà gái: Ông Bùi Văn Phiền, Bà Phùng Thị Ánh Loan (Minh Phụng, Tp.
 ## Cấu trúc
 
 - `index.html` — toàn bộ trang, không phụ thuộc build tool. Ảnh dùng đường dẫn tương đối tới `images/`, KHÔNG nhúng base64.
-- `images/` — 3 ảnh cưới (chất lượng đầy đủ, đã resize/nén, EXIF đã xoay đúng).
-- Gallery ("Khoảnh khắc"): ảnh hiển thị full (không crop, `object-fit:contain`-style qua natural aspect ratio), click/tap mở ảnh gốc ở tab mới.
+- `images/hero.jpg` — ảnh hero (bản hậu kỳ hoàn chỉnh của ảnh bìa album, gốc `IMG_5960_BIA.jpg`).
+- `images/album/album-01.jpg` … `album-33.jpg` — toàn bộ 33 ảnh album cưới đã hậu kỳ (nguồn: folder "18.7 HUY MINH VO │ Le Thanh Phuong Bridal_XOG" trong Downloads), resize max 2000px cạnh dài, quality 82, EXIF đã xoay đúng.
+- Gallery ("Khoảnh khắc"): masonry layout (CSS `column-count`, responsive 3/2/1 cột), ảnh hiển thị full không crop. Click/tap mở **lightbox riêng của trang** (không phải tab mới) với nút Trước/Sau, đếm số ảnh (`x / 33`), phím mũi tên trái/phải, vuốt trái/phải trên mobile, Esc để đóng. Có chặn nhẹ right-click/kéo-thả ảnh (chỉ cản người dùng thông thường, không chặn được screenshot/DevTools).
+- Khi cần thêm/đổi ảnh album: xử lý ảnh gốc bằng Pillow (`ImageOps.exif_transpose` + resize max 2000px + `quality=82`) trước khi bỏ vào `images/album/`, đặt tên tuần tự `album-NN.jpg`, rồi generate lại các `<button class="g-item">` tương ứng trong `index.html` (xem cấu trúc 1 button mẫu trong file).
 
 ## Design system
 

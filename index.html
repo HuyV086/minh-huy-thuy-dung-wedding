@@ -325,13 +325,18 @@
 
   /* ---------- gallery ---------- */
   .gallery{background:var(--ivory-deep);}
+  .gallery-count{
+    text-align:center;
+    margin:-2.2rem auto 2.6rem;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+  }
   .gallery-grid{
-    max-width:1080px;
+    max-width:1120px;
     margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(3, 1fr);
-    gap:1.6rem;
-    align-items:start;
+    column-count:3;
+    column-gap:1.4rem;
   }
   .g-item{
     display:block;
@@ -339,10 +344,12 @@
     border:0;
     background:none;
     padding:0;
+    margin:0 0 1.4rem;
     font:inherit;
     text-align:left;
     text-decoration:none;
     cursor:zoom-in;
+    break-inside:avoid;
   }
   .g-item figure{
     margin:0;
@@ -350,12 +357,13 @@
     overflow:hidden;
     background:var(--ivory);
     box-shadow:0 1px 3px rgba(43,27,26,0.12);
+    transition:box-shadow .3s ease;
   }
+  .g-item:hover figure, .g-item:focus-visible figure{box-shadow:0 10px 28px rgba(43,27,26,0.22);}
   .g-item img{
     width:100%;
     height:auto;
     display:block;
-    object-fit:contain;
     transition:transform .5s ease;
   }
   .g-item img, #lightboxImg{
@@ -363,38 +371,42 @@
     -webkit-touch-callout:none;
     user-select:none;
   }
-  .g-item:hover img, .g-item:focus-visible img{transform:scale(1.03);}
+  .g-item:hover img, .g-item:focus-visible img{transform:scale(1.035);}
   .g-item:focus-visible{outline:2px solid var(--gold);outline-offset:4px;}
-  figcaption{
-    position:absolute;left:14px;bottom:12px;
-    font-family:var(--font-display);font-style:italic;font-size:0.85rem;
-    color:var(--ivory);text-shadow:0 1px 6px rgba(0,0,0,0.45);
-  }
   .g-item .expand{
     position:absolute;right:12px;bottom:12px;
     width:30px;height:30px;border-radius:50%;
     background:rgba(43,27,26,0.55);
     display:flex;align-items:center;justify-content:center;
-    opacity:0.85;transition:opacity .2s ease, background .2s ease;
+    opacity:0;transition:opacity .2s ease, background .2s ease;
   }
   .g-item:hover .expand, .g-item:focus-visible .expand{opacity:1;background:var(--rose);}
   .g-item .expand svg{width:14px;height:14px;fill:none;stroke:var(--ivory);stroke-width:2;}
+  @media (hover:none){ .g-item .expand{opacity:0.85;} }
 
   /* ---------- lightbox ---------- */
   .lightbox{
     position:fixed;inset:0;z-index:100;
     display:none;
     align-items:center;justify-content:center;
-    background:rgba(20,12,11,0.94);
-    padding:8vh 6vw;
+    background:rgba(20,12,11,0.96);
+    padding:9vh 5vw;
   }
   .lightbox.open{display:flex;}
-  .lightbox img{
+  .lightbox-stage{
+    position:relative;
     max-width:100%;max-height:100%;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .lightbox img{
+    max-width:100%;max-height:82vh;
     object-fit:contain;
     box-shadow:0 12px 48px rgba(0,0,0,0.5);
     pointer-events:none;
+    opacity:0;
+    transition:opacity .25s ease;
   }
+  .lightbox img.loaded{opacity:1;}
   .lightbox-close{
     position:absolute;top:20px;right:20px;
     width:42px;height:42px;border-radius:50%;
@@ -405,12 +417,34 @@
     cursor:pointer;
     display:flex;align-items:center;justify-content:center;
     transition:background .2s ease;
+    z-index:2;
   }
   .lightbox-close:hover, .lightbox-close:focus-visible{background:rgba(251,246,239,0.2);}
+  .lightbox-nav{
+    position:absolute;top:50%;transform:translateY(-50%);
+    width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(251,246,239,0.35);
+    background:rgba(251,246,239,0.08);
+    color:var(--ivory);
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+    z-index:2;
+  }
+  .lightbox-nav:hover, .lightbox-nav:focus-visible{background:rgba(251,246,239,0.2);}
+  .lightbox-nav svg{width:20px;height:20px;fill:none;stroke:var(--ivory);stroke-width:2;}
+  .lightbox-prev{left:20px;}
+  .lightbox-next{right:20px;}
   .lightbox-cap{
-    position:absolute;left:24px;bottom:18px;
-    font-family:var(--font-display);font-style:italic;
-    color:var(--ivory);font-size:1rem;opacity:0.85;
+    position:absolute;left:0;bottom:-38px;
+    font-family:var(--font-body);font-weight:600;letter-spacing:0.08em;
+    color:var(--ivory);font-size:0.8rem;opacity:0.75;
+    font-variant-numeric:tabular-nums;
+  }
+  @media (max-width:900px){
+    .lightbox-prev{left:6px;}
+    .lightbox-next{right:6px;}
+    .lightbox-nav{width:38px;height:38px;background:rgba(20,12,11,0.5);}
   }
 
   /* ---------- footer ---------- */
@@ -460,6 +494,9 @@
   }
 
   /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .gallery-grid{column-count:2;}
+  }
   @media (max-width:860px){
     .hero{grid-template-columns:1fr;}
     .hero-photo{min-height:56vh;}
@@ -469,8 +506,10 @@
     .families-mono{flex-direction:row;padding:0;}
     .families-mono .stick{width:64px;height:1px;}
     .timeline{grid-template-columns:1fr;}
-    .gallery-grid{grid-template-columns:1fr;max-width:420px;}
     section{padding:5rem 6vw;}
+  }
+  @media (max-width:520px){
+    .gallery-grid{column-count:1;max-width:420px;}
   }
 </style>
 
@@ -478,7 +517,7 @@
 <body>
 <div class="hero">
   <div class="hero-photo">
-    <img src="images/hero-bao-tang.jpg" alt="Minh Huy và Thuỳ Dung">
+    <img src="images/hero.jpg" alt="Minh Huy và Thuỳ Dung">
     <div class="frame-tag">Bảo tàng, Sài Gòn</div>
   </div>
   <div class="hero-info">
@@ -570,25 +609,203 @@
     <span class="eyebrow">Khoảnh khắc</span>
     <h2>Album trước ngày cưới</h2>
   </div>
+  <p class="gallery-count">33 khoảnh khắc từ buổi chụp ảnh cưới — chạm vào ảnh để xem đầy đủ</p>
   <div class="gallery-grid">
-    <button type="button" class="g-item" data-src="images/ba-son.jpg" data-caption="Ba Son" aria-label="Xem ảnh Ba Son phóng to">
+    <button type="button" class="g-item" data-src="images/album/album-01.jpg" aria-label="Xem ảnh 1 phóng to">
       <figure>
-        <img src="images/ba-son.jpg" alt="Ảnh cưới bên cầu, Ba Son" loading="lazy">
-        <figcaption>Ba Son</figcaption>
+        <img src="images/album/album-01.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 1" loading="lazy">
         <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
       </figure>
     </button>
-    <button type="button" class="g-item" data-src="images/diamond.jpg" data-caption="Diamond" aria-label="Xem ảnh Diamond phóng to">
+    <button type="button" class="g-item" data-src="images/album/album-02.jpg" aria-label="Xem ảnh 2 phóng to">
       <figure>
-        <img src="images/diamond.jpg" alt="Ảnh cưới phố, Diamond" loading="lazy">
-        <figcaption>Diamond</figcaption>
+        <img src="images/album/album-02.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 2" loading="lazy">
         <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
       </figure>
     </button>
-    <button type="button" class="g-item" data-src="images/hero-bao-tang.jpg" data-caption="Bảo tàng" aria-label="Xem ảnh Bảo tàng phóng to">
+    <button type="button" class="g-item" data-src="images/album/album-03.jpg" aria-label="Xem ảnh 3 phóng to">
       <figure>
-        <img src="images/hero-bao-tang.jpg" alt="Ảnh cưới tại Bảo tàng" loading="lazy">
-        <figcaption>Bảo tàng</figcaption>
+        <img src="images/album/album-03.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 3" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-04.jpg" aria-label="Xem ảnh 4 phóng to">
+      <figure>
+        <img src="images/album/album-04.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 4" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-05.jpg" aria-label="Xem ảnh 5 phóng to">
+      <figure>
+        <img src="images/album/album-05.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 5" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-06.jpg" aria-label="Xem ảnh 6 phóng to">
+      <figure>
+        <img src="images/album/album-06.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 6" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-07.jpg" aria-label="Xem ảnh 7 phóng to">
+      <figure>
+        <img src="images/album/album-07.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 7" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-08.jpg" aria-label="Xem ảnh 8 phóng to">
+      <figure>
+        <img src="images/album/album-08.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 8" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-09.jpg" aria-label="Xem ảnh 9 phóng to">
+      <figure>
+        <img src="images/album/album-09.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 9" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-10.jpg" aria-label="Xem ảnh 10 phóng to">
+      <figure>
+        <img src="images/album/album-10.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 10" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-11.jpg" aria-label="Xem ảnh 11 phóng to">
+      <figure>
+        <img src="images/album/album-11.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 11" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-12.jpg" aria-label="Xem ảnh 12 phóng to">
+      <figure>
+        <img src="images/album/album-12.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 12" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-13.jpg" aria-label="Xem ảnh 13 phóng to">
+      <figure>
+        <img src="images/album/album-13.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 13" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-14.jpg" aria-label="Xem ảnh 14 phóng to">
+      <figure>
+        <img src="images/album/album-14.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 14" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-15.jpg" aria-label="Xem ảnh 15 phóng to">
+      <figure>
+        <img src="images/album/album-15.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 15" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-16.jpg" aria-label="Xem ảnh 16 phóng to">
+      <figure>
+        <img src="images/album/album-16.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 16" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-17.jpg" aria-label="Xem ảnh 17 phóng to">
+      <figure>
+        <img src="images/album/album-17.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 17" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-18.jpg" aria-label="Xem ảnh 18 phóng to">
+      <figure>
+        <img src="images/album/album-18.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 18" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-19.jpg" aria-label="Xem ảnh 19 phóng to">
+      <figure>
+        <img src="images/album/album-19.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 19" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-20.jpg" aria-label="Xem ảnh 20 phóng to">
+      <figure>
+        <img src="images/album/album-20.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 20" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-21.jpg" aria-label="Xem ảnh 21 phóng to">
+      <figure>
+        <img src="images/album/album-21.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 21" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-22.jpg" aria-label="Xem ảnh 22 phóng to">
+      <figure>
+        <img src="images/album/album-22.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 22" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-23.jpg" aria-label="Xem ảnh 23 phóng to">
+      <figure>
+        <img src="images/album/album-23.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 23" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-24.jpg" aria-label="Xem ảnh 24 phóng to">
+      <figure>
+        <img src="images/album/album-24.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 24" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-25.jpg" aria-label="Xem ảnh 25 phóng to">
+      <figure>
+        <img src="images/album/album-25.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 25" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-26.jpg" aria-label="Xem ảnh 26 phóng to">
+      <figure>
+        <img src="images/album/album-26.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 26" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-27.jpg" aria-label="Xem ảnh 27 phóng to">
+      <figure>
+        <img src="images/album/album-27.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 27" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-28.jpg" aria-label="Xem ảnh 28 phóng to">
+      <figure>
+        <img src="images/album/album-28.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 28" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-29.jpg" aria-label="Xem ảnh 29 phóng to">
+      <figure>
+        <img src="images/album/album-29.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 29" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-30.jpg" aria-label="Xem ảnh 30 phóng to">
+      <figure>
+        <img src="images/album/album-30.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 30" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-31.jpg" aria-label="Xem ảnh 31 phóng to">
+      <figure>
+        <img src="images/album/album-31.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 31" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-32.jpg" aria-label="Xem ảnh 32 phóng to">
+      <figure>
+        <img src="images/album/album-32.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 32" loading="lazy">
+        <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
+      </figure>
+    </button>
+    <button type="button" class="g-item" data-src="images/album/album-33.jpg" aria-label="Xem ảnh 33 phóng to">
+      <figure>
+        <img src="images/album/album-33.jpg" alt="Khoảnh khắc đám cưới Minh Huy và Thuỳ Dung, ảnh 33" loading="lazy">
         <span class="expand"><svg viewBox="0 0 24 24"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"/></svg></span>
       </figure>
     </button>
@@ -597,8 +814,16 @@
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh phóng to">
   <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Đóng">✕</button>
-  <img id="lightboxImg" src="" alt="">
-  <div class="lightbox-cap" id="lightboxCap"></div>
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Ảnh trước">
+    <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Ảnh tiếp theo">
+    <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <div class="lightbox-stage">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-cap" id="lightboxCap"></div>
+  </div>
 </div>
 
 <footer class="reveal">
@@ -644,14 +869,25 @@
     var lightboxImg = document.getElementById('lightboxImg');
     var lightboxCap = document.getElementById('lightboxCap');
     var closeBtn = document.getElementById('lightboxClose');
-    var items = document.querySelectorAll('.g-item');
+    var prevBtn = document.getElementById('lightboxPrev');
+    var nextBtn = document.getElementById('lightboxNext');
+    var items = Array.prototype.slice.call(document.querySelectorAll('.g-item'));
     var lastFocused = null;
+    var currentIndex = 0;
 
-    function openLightbox(btn){
-      lastFocused = btn;
+    function show(index){
+      currentIndex = (index + items.length) % items.length;
+      var btn = items[currentIndex];
+      lightboxImg.classList.remove('loaded');
       lightboxImg.src = btn.dataset.src;
       lightboxImg.alt = btn.querySelector('img').alt;
-      lightboxCap.textContent = btn.dataset.caption || '';
+      lightboxCap.textContent = (currentIndex + 1) + ' / ' + items.length;
+    }
+    lightboxImg.addEventListener('load', function(){ lightboxImg.classList.add('loaded'); });
+
+    function openLightbox(index){
+      lastFocused = document.activeElement;
+      show(index);
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
       closeBtn.focus();
@@ -662,16 +898,36 @@
       document.body.style.overflow = '';
       if(lastFocused){ lastFocused.focus(); }
     }
-    items.forEach(function(btn){
-      btn.addEventListener('click', function(){ openLightbox(btn); });
+    function nextImage(){ show(currentIndex + 1); }
+    function prevImage(){ show(currentIndex - 1); }
+
+    items.forEach(function(btn, i){
+      btn.addEventListener('click', function(){ openLightbox(i); });
     });
     closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', prevImage);
+    nextBtn.addEventListener('click', nextImage);
     lightbox.addEventListener('click', function(e){
       if(e.target === lightbox){ closeLightbox(); }
     });
     document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && lightbox.classList.contains('open')){ closeLightbox(); }
+      if(!lightbox.classList.contains('open')){ return; }
+      if(e.key === 'Escape'){ closeLightbox(); }
+      else if(e.key === 'ArrowRight'){ nextImage(); }
+      else if(e.key === 'ArrowLeft'){ prevImage(); }
     });
+
+    /* Vuốt trái/phải trên mobile để chuyển ảnh */
+    var touchStartX = null;
+    lightbox.addEventListener('touchstart', function(e){
+      touchStartX = e.changedTouches[0].clientX;
+    }, {passive:true});
+    lightbox.addEventListener('touchend', function(e){
+      if(touchStartX === null){ return; }
+      var dx = e.changedTouches[0].clientX - touchStartX;
+      if(Math.abs(dx) > 40){ dx < 0 ? nextImage() : prevImage(); }
+      touchStartX = null;
+    }, {passive:true});
 
     /* Hạn chế lưu ảnh: chặn menu chuột phải và kéo-thả trên ảnh gallery + ảnh phóng to.
        Đây chỉ là rào cản nhẹ cho người dùng thông thường, không chặn được người cố tình
