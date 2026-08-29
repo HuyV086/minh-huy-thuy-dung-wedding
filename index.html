@@ -75,7 +75,7 @@
     min-height:52vh;
   }
   .hero-photo img{
-    width:100%;height:100%;object-fit:cover;object-position:50% 22%;
+    width:100%;height:100%;object-fit:cover;object-position:30% 30%;
     transform:scale(1.02);
   }
   .hero-photo::after{
@@ -257,6 +257,26 @@
     color:var(--ink-soft);
     line-height:1.7;
   }
+  .union-block{
+    max-width:560px;margin:3rem auto 0;text-align:center;
+  }
+  .union-block .lead{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(1.5rem, 3.4vw, 2rem);
+    color:var(--ink);
+    margin:0 0 0.7rem;
+    text-wrap:balance;
+  }
+  .union-block .names{
+    font-family:var(--font-display);
+    font-style:italic;
+    font-size:1.2rem;
+    color:var(--rose);
+    line-height:1.6;
+    margin:0;
+  }
+  .union-block .names b{font-style:normal;font-weight:600;}
 
   /* ---------- timeline ---------- */
   .timeline{
@@ -349,7 +369,7 @@
     box-shadow:0 26px 56px rgba(43,27,26,0.34);
   }
   .mag-teaser:focus-visible{outline:2px solid var(--gold);outline-offset:6px;}
-  .mag-teaser-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mag-teaser-frame img{width:100%;height:100%;object-fit:cover;object-position:30% 35%;display:block;}
   .mag-teaser-frame::after{
     content:"";position:absolute;inset:0;
     background:linear-gradient(180deg, rgba(43,27,26,0.05) 40%, rgba(20,12,11,0.62) 100%);
@@ -460,7 +480,7 @@
   /* cover page inside reader */
   .mag-cover-page{width:100%;height:100%;max-width:720px;display:flex;flex-direction:column;}
   .mag-cover-art{position:relative;flex:1 1 62%;min-height:0;overflow:hidden;box-shadow:0 18px 44px rgba(43,27,26,0.24);}
-  .mag-cover-art img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mag-cover-art img{width:100%;height:100%;object-fit:cover;object-position:30% 35%;display:block;}
   .mag-cover-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(43,27,26,0.02) 55%, rgba(20,12,11,0.55) 100%);}
   .mag-cover-mast{position:absolute;left:0;right:0;bottom:0;padding:1.8rem;color:var(--ivory);text-align:center;}
   .mag-cover-mast .eyebrow{color:var(--gold-soft);}
@@ -618,7 +638,6 @@
 <section class="families reveal">
   <div class="section-head">
     <span class="eyebrow">Thành hôn</span>
-    <h2>Hai gia đình trân trọng<br>kính báo</h2>
   </div>
   <div class="families-grid">
     <div class="family-col">
@@ -637,19 +656,23 @@
       <div class="place">Minh Phụng, Tp. Hồ Chí Minh</div>
     </div>
   </div>
+  <div class="union-block">
+    <p class="lead">Gia đình chúng tôi trân trọng báo tin</p>
+    <p class="names">Út Nam <b>Võ Minh Huy</b><br>kết duyên cùng Trưởng Nữ <b>Bùi Việt Thùy Dung</b></p>
+  </div>
   <p class="invite-line">"Sự hiện diện của quý vị là niềm vinh hạnh cho gia đình chúng tôi<br>trong ngày vui trọng đại này."</p>
 </section>
 
 <section class="events reveal">
   <div class="section-head">
     <span class="eyebrow">Chương trình</span>
-    <h2>Ba dấu mốc của ngày vui</h2>
+    <h2>Sự kiện trọng đại</h2>
   </div>
   <div class="timeline">
     <div class="event-card">
       <div class="ev-date">18</div>
       <div class="ev-month">Tháng 10 · Lễ Gia Tiên</div>
-      <h3>Lễ Vu Quy</h3>
+      <h3>Vu Quy</h3>
       <div class="ev-time">09:00 sáng</div>
       <div class="ev-venue">Rước dâu &amp; lễ gia tiên<br>tại tư gia, Long Xuyên</div>
     </div>
@@ -675,7 +698,7 @@
 <section class="gallery reveal">
   <div class="section-head">
     <span class="eyebrow">Khoảnh khắc</span>
-    <h2>Album ảnh cưới</h2>
+    <h2>Hồ Chí Minh, 2026</h2>
   </div>
   <button type="button" class="mag-teaser" id="magOpen" aria-label="Mở album ảnh cưới">
     <div class="mag-teaser-frame">
