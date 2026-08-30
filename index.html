@@ -1128,8 +1128,11 @@
 
     var viewportMeta = document.querySelector('meta[name="viewport"]');
     var viewportDefault = viewportMeta ? viewportMeta.getAttribute('content') : null;
+    function isTouchDevice(){
+      return window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    }
     function disablePinchZoom(){
-      if(viewportMeta){ viewportMeta.setAttribute('content', viewportDefault + ', maximum-scale=1, user-scalable=no'); }
+      if(viewportMeta && isTouchDevice()){ viewportMeta.setAttribute('content', viewportDefault + ', maximum-scale=1, user-scalable=no'); }
     }
     function restorePinchZoom(){
       if(viewportMeta && viewportDefault){ viewportMeta.setAttribute('content', viewportDefault); }
