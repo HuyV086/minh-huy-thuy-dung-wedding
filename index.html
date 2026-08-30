@@ -685,7 +685,7 @@
 </div>
 <div class="hero">
   <div class="hero-photo">
-    <img src="images/hero.jpg" alt="Minh Huy và Thùy Dung">
+    <img src="images/hero.jpg" alt="Minh Huy và Thùy Dung" data-i18n-alt="heroPhotoAlt">
     <div class="frame-tag" data-i18n="heroFrameTag">Bảo tàng, Sài Gòn</div>
   </div>
   <div class="hero-info">
@@ -693,9 +693,9 @@
       <span class="eyebrow" data-i18n="heroEyebrow">Bạn có hẹn với</span>
     </div>
     <h1 class="names">
-      Minh Huy
+      <span data-i18n="groomNameShort">Minh Huy</span>
       <span class="amp">&amp;</span>
-      Thùy Dung
+      <span data-i18n="brideNameShort">Thùy Dung</span>
     </h1>
     <div class="hero-date">
       <div class="solar" data-i18n="heroDate">Tháng 10 · 2026</div>
@@ -736,14 +736,14 @@
     <div class="families-grid union-grid">
       <div class="family-col">
         <div class="role" data-i18n="roleGroom">Út Nam</div>
-        <div class="parents">Võ Minh Huy</div>
+        <div class="parents" data-i18n="groomFullName">Võ Minh Huy</div>
       </div>
       <div class="families-mono">
         <span class="mono ring-mono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="13" r="6.2"/><circle cx="15" cy="13" r="6.2"/></svg></span>
       </div>
       <div class="family-col">
         <div class="role" data-i18n="roleBride">Trưởng Nữ</div>
-        <div class="parents">Bùi Việt Thùy Dung</div>
+        <div class="parents" data-i18n="brideFullName">Bùi Việt Thùy Dung</div>
       </div>
     </div>
   </div>
@@ -788,7 +788,7 @@
   </div>
   <button type="button" class="mag-teaser" id="magOpen" aria-label="Mở album ảnh cưới" data-i18n-aria="magOpenAria">
     <div class="mag-teaser-frame">
-      <img src="images/hero.jpg" alt="Bìa album ảnh cưới Minh Huy và Thùy Dung" loading="lazy">
+      <img src="images/hero.jpg" alt="Bìa album ảnh cưới Minh Huy và Thùy Dung" loading="lazy" data-i18n-alt="teaserPhotoAlt">
       <div class="mag-teaser-mast">
         <span class="eyebrow" data-i18n="teaserEyebrow">Một hành trình mới</span>
         <h3 data-i18n="teaserTitle">Khoảnh Khắc</h3>
@@ -825,7 +825,7 @@
 <footer class="reveal">
   <div class="mono-big">H &amp; D</div>
   <p class="thanks" data-i18n="footerThanks">"Cảm ơn vì đã là một phần trong câu chuyện của chúng tôi — và sẽ tiếp tục là một phần trong chương mới này."</p>
-  <div class="foot-names">Minh Huy &amp; Thùy Dung · 18.10.2026</div>
+  <div class="foot-names" data-i18n="footNames">Minh Huy &amp; Thùy Dung · 18.10.2026</div>
 </footer>
 
 <script>
@@ -914,7 +914,7 @@
     function T(field){ return field[currentLang]; }
     var MAG_STRINGS = {
       vi: {coverEyebrow:'Album ảnh cưới', coverTitle:'Khoảnh Khắc', coverPeople:'Minh Huy & Thùy Dung · 18.10.2026', coverAlt:'Bìa album ảnh cưới Minh Huy và Thùy Dung', chapterWord:'Chương', coverLabel:'Bìa', pageWord:'Trang', altPrefix:'Khoảnh khắc ', altMiddle:', ảnh '},
-      en: {coverEyebrow:'Wedding Album', coverTitle:'Moments', coverPeople:'Minh Huy & Thùy Dung · 18.10.2026', coverAlt:"Cover of Minh Huy and Thùy Dung's wedding album", chapterWord:'Chapter', coverLabel:'Cover', pageWord:'Page', altPrefix:'Moment from ', altMiddle:', photo '}
+      en: {coverEyebrow:'Wedding Album', coverTitle:'Moments', coverPeople:'Hans Vo & Kate Nguyen · 18.10.2026', coverAlt:"Cover of Hans Vo and Kate Nguyen's wedding album", chapterWord:'Chapter', coverLabel:'Cover', pageWord:'Page', altPrefix:'Moment from ', altMiddle:', photo '}
     };
 
     var PAGES = [{type:'cover'}];
@@ -1199,6 +1199,14 @@
 
   (function(){
     var STATIC_I18N = {
+      pageTitle: {vi:'Minh Huy & Thùy Dung', en:'Hans Vo & Kate Nguyen'},
+      groomNameShort: {vi:'Minh Huy', en:'Hans Vo'},
+      brideNameShort: {vi:'Thùy Dung', en:'Kate Nguyen'},
+      groomFullName: {vi:'Võ Minh Huy', en:'Hans Vo'},
+      brideFullName: {vi:'Bùi Việt Thùy Dung', en:'Kate Nguyen'},
+      heroPhotoAlt: {vi:'Minh Huy và Thùy Dung', en:'Hans Vo and Kate Nguyen'},
+      teaserPhotoAlt: {vi:'Bìa album ảnh cưới Minh Huy và Thùy Dung', en:"Cover of Hans Vo and Kate Nguyen's wedding album"},
+      footNames: {vi:'Minh Huy &amp; Thùy Dung · 18.10.2026', en:'Hans Vo &amp; Kate Nguyen · 18.10.2026'},
       heroEyebrow: {vi:'Bạn có hẹn với', en:'You have a date with'},
       heroFrameTag: {vi:'Bảo tàng, Sài Gòn', en:'Museum, Saigon'},
       heroDate: {vi:'Tháng 10 · 2026', en:'October · 2026'},
@@ -1249,6 +1257,8 @@
 
     function applyStaticI18n(lang){
       document.documentElement.setAttribute('lang', lang);
+      var titleEntry = STATIC_I18N.pageTitle;
+      if(titleEntry){ document.title = titleEntry[lang]; }
       document.querySelectorAll('[data-i18n]').forEach(function(el){
         var entry = STATIC_I18N[el.getAttribute('data-i18n')];
         if(entry){ el.innerHTML = entry[lang]; }
@@ -1256,6 +1266,10 @@
       document.querySelectorAll('[data-i18n-aria]').forEach(function(el){
         var entry = STATIC_I18N[el.getAttribute('data-i18n-aria')];
         if(entry){ el.setAttribute('aria-label', entry[lang]); }
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(function(el){
+        var entry = STATIC_I18N[el.getAttribute('data-i18n-alt')];
+        if(entry){ el.setAttribute('alt', entry[lang]); }
       });
     }
 
