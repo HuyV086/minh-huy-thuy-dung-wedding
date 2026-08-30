@@ -435,6 +435,34 @@
     background:var(--ivory-deep);
   }
   .mag-reader.open{display:block;}
+  .mag-lightbox{
+    position:fixed;inset:0;z-index:200;
+    height:100vh;height:100svh;
+    display:none;
+    align-items:center;justify-content:center;
+    background:rgba(20,12,11,0.94);
+    padding:5vh 4vw;
+    cursor:zoom-out;
+  }
+  .mag-lightbox.open{display:flex;}
+  .mag-lightbox img{
+    max-width:100%;max-height:100%;
+    object-fit:contain;
+    box-shadow:0 24px 60px rgba(0,0,0,0.5);
+    -webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;
+  }
+  .mag-lightbox-close{
+    position:absolute;top:1.3rem;right:1.3rem;z-index:1;
+    width:42px;height:42px;border-radius:50%;
+    border:1px solid rgba(251,246,239,0.4);
+    background:rgba(251,246,239,0.12);
+    color:var(--ivory);
+    font-size:1.1rem;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:background .2s ease;
+    appearance:none;-webkit-appearance:none;
+  }
+  .mag-lightbox-close:hover, .mag-lightbox-close:focus-visible{background:rgba(251,246,239,0.28);}
   .mag-bar{
     position:absolute;top:0;left:0;right:0;z-index:5;
     display:flex;align-items:center;justify-content:space-between;
@@ -555,6 +583,7 @@
     box-shadow:0 14px 34px rgba(43,27,26,0.22);
     -webkit-user-drag:none;-webkit-touch-callout:none;user-select:none;
     min-width:0;min-height:0;
+    cursor:zoom-in;
   }
   .mag-spread.type-solo{max-width:520px;}
   .mag-spread.type-solo img{max-height:100%;max-width:100%;width:auto;height:auto;box-shadow:0 18px 40px rgba(43,27,26,0.26);}
@@ -788,6 +817,11 @@
   </div>
 </div>
 
+<div class="mag-lightbox" id="magLightbox" role="dialog" aria-modal="true">
+  <button type="button" class="mag-lightbox-close" id="magLightboxClose" aria-label="Đóng ảnh" data-i18n-aria="magLightboxCloseAria">✕</button>
+  <img id="magLightboxImg" src="" alt="">
+</div>
+
 <footer class="reveal">
   <div class="mono-big">H &amp; D</div>
   <p class="thanks" data-i18n="footerThanks">"Cảm ơn vì đã là một phần trong câu chuyện của chúng tôi — và sẽ tiếp tục là một phần trong chương mới này."</p>
@@ -905,6 +939,9 @@
     var nextBtn = document.getElementById('magNext');
     var zoneLeft = document.getElementById('magZoneLeft');
     var zoneRight = document.getElementById('magZoneRight');
+    var lightbox = document.getElementById('magLightbox');
+    var lightboxImg = document.getElementById('magLightboxImg');
+    var lightboxClose = document.getElementById('magLightboxClose');
 
     var currentIndex = -1;
     var lastFocused = null;
@@ -922,7 +959,18 @@
       img.alt = alt;
       img.loading = 'eager';
       protect(img);
+      img.addEventListener('click', function(){ openLightbox(img.src, alt); });
       return img;
+    }
+
+    function openLightbox(src, alt){
+      lightboxImg.src = src;
+      lightboxImg.alt = alt;
+      lightbox.classList.add('open');
+    }
+    function closeLightbox(){
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
     }
 
     function buildCover(container){
@@ -1072,6 +1120,7 @@
       reader.classList.remove('open');
       document.body.style.overflow = '';
       host.innerHTML = '';
+      closeLightbox();
       if(lastFocused){ lastFocused.focus(); }
     }
 
@@ -1081,8 +1130,14 @@
     nextBtn.addEventListener('click', nextPage);
     zoneLeft.addEventListener('click', prevPage);
     zoneRight.addEventListener('click', nextPage);
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', closeLightbox);
 
     document.addEventListener('keydown', function(e){
+      if(lightbox.classList.contains('open')){
+        if(e.key === 'Escape'){ closeLightbox(); }
+        return;
+      }
       if(!reader.classList.contains('open')){ return; }
       if(e.key === 'Escape'){ closeReader(); }
       else if(e.key === 'ArrowRight'){ nextPage(); }
@@ -1156,6 +1211,7 @@
       magCloseAria: {vi:'Đóng album', en:'Close album'},
       magPrevAria: {vi:'Trang trước', en:'Previous page'},
       magNextAria: {vi:'Trang sau', en:'Next page'},
+      magLightboxCloseAria: {vi:'Đóng ảnh', en:'Close photo'},
       footerThanks: {vi:'"Cảm ơn vì đã là một phần trong câu chuyện của chúng tôi — và sẽ tiếp tục là một phần trong chương mới này."', en:'"Thank you for being part of our story — and for continuing to be part of this new chapter."'}
     };
 
