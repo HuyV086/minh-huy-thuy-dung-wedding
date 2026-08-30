@@ -1126,10 +1126,20 @@
       window.scrollTo(0, lockedScrollY);
     }
 
+    var viewportMeta = document.querySelector('meta[name="viewport"]');
+    var viewportDefault = viewportMeta ? viewportMeta.getAttribute('content') : null;
+    function disablePinchZoom(){
+      if(viewportMeta){ viewportMeta.setAttribute('content', viewportDefault + ', maximum-scale=1, user-scalable=no'); }
+    }
+    function restorePinchZoom(){
+      if(viewportMeta && viewportDefault){ viewportMeta.setAttribute('content', viewportDefault); }
+    }
+
     function openReader(){
       lastFocused = document.activeElement;
       reader.classList.add('open');
       lockBodyScroll();
+      disablePinchZoom();
       currentIndex = -1;
       goTo(0, 'next');
       closeBtn.focus();
@@ -1137,6 +1147,7 @@
     function closeReader(){
       reader.classList.remove('open');
       unlockBodyScroll();
+      restorePinchZoom();
       host.innerHTML = '';
       closeLightbox();
       if(lastFocused){ lastFocused.focus(); }
