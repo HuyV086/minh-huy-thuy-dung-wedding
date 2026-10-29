@@ -30,6 +30,8 @@ CHAPTERS = [
     ("4-tan-hon", "tan-hon", "Tân hôn"),
     ("5-nha-hang", "nha-hang", "Nhà hàng"),
     ("6-hau-truong", "hau-truong", "Hậu trường"),
+    ("7-bao-hy", "bao-hy", "Báo hỷ"),
+    ("8-video", "video", "Video"),
 ]
 
 MAX_EDGE = 2000

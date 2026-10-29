@@ -58,11 +58,14 @@ Xem thử local: `python3 -m http.server 8000` rồi mở `http://localhost:8000
 
 ## Album ảnh/video (album.html)
 
-Trang riêng `album.html` (+ `album-admin.html` để sắp xếp) dùng chung repo/Pages với trang thiệp nhưng **độc lập, không có link qua lại với `index.html`** — mục đích là nơi lưu giữ lâu dài cho người thân/bạn bè xem lại, không gắn với trang thiệp nữa. Dữ liệu ở `data/media.json`, nguồn ảnh thật thả vào `album-media/<chương>/` rồi chạy `python3 scripts/build_album_manifest.py`. Xem chi tiết cấu trúc 6 chương (Ngoại cảnh/Đính hôn/Vu quy/Tân hôn/Nhà hàng/Hậu trường) trong `album-media/README.md`.
+Trang riêng `album.html` (+ `album-admin.html` để sắp xếp) dùng chung repo/Pages với trang thiệp nhưng **độc lập, không có link qua lại với `index.html`** — mục đích là nơi lưu giữ lâu dài cho người thân/bạn bè xem lại, không gắn với trang thiệp nữa. Dữ liệu ở `data/media.json`, nguồn ảnh thật thả vào `album-media/<chương>/` rồi chạy `python3 scripts/build_album_manifest.py`. Xem chi tiết cấu trúc 8 chương (Ngoại cảnh/Đính hôn/Vu quy/Tân hôn/Nhà hàng/Báo hỷ/Hậu trường/Video) trong `album-media/README.md`.
+
+**Giao diện (từ bản thiết kế thứ 2)**: mỗi chương là 1 hàng "cuốn album" thu gọn (bìa nhỏ + tên + số mục/"Sắp cập nhật"), bấm vào hàng để bung accordion thành lưới thumbnail (ảnh vuông 3:4, không còn masonry tự do như bản đầu). Bấm thumbnail mở lightbox xem từng ảnh/video, có nút **Tải về** (`<a download>`) cạnh số đếm. Chỉ 1 album mở cùng lúc (mở cái mới sẽ tự đóng cái đang mở). Bấm chip ở đầu trang sẽ tự mở + cuộn tới đúng album (dùng vòng lặp `requestAnimationFrame` giữ vị trí cuộn trong lúc album khác đang đóng lại, vì 2 animation chạy song song làm vị trí dịch chuyển nếu chỉ cuộn 1 lần).
 
 Trạng thái nội dung hiện tại (ảnh ngày cưới thật còn lâu mới có, nên page chạy live với phần đã có):
 - **Ngoại cảnh**: 33 ảnh hậu kỳ có sẵn trong `images/album/` (3 địa điểm Ba Son/Diamond Plaza/Bảo Tàng), kèm chú thích thật lấy lại từ `CHAPTERS` trong `index.html`.
-- **Nhà hàng**: 2 video "Một ngày hai mái nhà" có sẵn ở root repo.
+- **Nhà hàng**: 2 video "Một ngày hai mái nhà" có sẵn ở root repo (tên file ghi `tiec-bao-hy` — có thể đây là video giới thiệu cho chương Báo hỷ chứ không phải Nhà hàng; đã hỏi user, user chưa quyết, cứ để nguyên ở Nhà hàng cho tới khi có chỉ thị khác).
+- **Báo hỷ, Video**: chương mới thêm theo yêu cầu user, hiện trống (`comingSoon`); Video là nơi user sẽ tự chuyển 2 video trên (hoặc video mới) vào sau.
 - **Đính hôn / Vu quy / Tân hôn / Hậu trường**: chưa có ảnh thật, hiển thị trạng thái "Sắp cập nhật" (`"comingSoon": true` trong `media.json`, `album.html` tự render khối thông báo thay vì lưới trống). Khi có ảnh thật cho chương nào, bỏ vào `album-media/<chương>/` rồi chạy lại `scripts/build_album_manifest.py` — script tự build lại chương đó từ đầu (không còn cờ `comingSoon`) và giữ nguyên các chương vẫn còn trống.
 
 ## Việc đã lên lịch tự động

@@ -52,6 +52,8 @@
         { "type": "video", "src": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4", "caption": "Một ngày hai mái nhà — bản phụ đề" }
       ]
     },
-    { "id": "hau-truong", "title": "Hậu trường", "cover": null, "items": [], "comingSoon": true }
+    { "id": "bao-hy", "title": "Báo hỷ", "cover": null, "items": [], "comingSoon": true },
+    { "id": "hau-truong", "title": "Hậu trường", "cover": null, "items": [], "comingSoon": true },
+    { "id": "video", "title": "Video", "cover": null, "items": [], "comingSoon": true }
   ]
 }

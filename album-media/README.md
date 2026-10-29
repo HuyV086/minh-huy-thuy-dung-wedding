@@ -10,5 +10,7 @@ Thả ảnh/video đã chọn vào đúng folder chương dưới đây. Tên fi
 | `4-tan-hon/` | Tân hôn |
 | `5-nha-hang/` | Nhà hàng |
 | `6-hau-truong/` | Hậu trường |
+| `7-bao-hy/` | Báo hỷ |
+| `8-video/` | Video |
 
 Video (clip) cứ thả thẳng vào folder chương tương ứng cùng với ảnh — trang sẽ tự nhận diện theo phần mở rộng file (`.jpg/.png` vs `.mp4/.mov`).
