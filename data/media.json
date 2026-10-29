@@ -1,0 +1,82 @@
+{
+  "note": "MOCK DATA — ảnh thật sẽ thay khi anh bỏ hình vào album-media/ rồi chạy scripts/build_album_manifest.py",
+  "chapters": [
+    {
+      "id": "ngoai-canh",
+      "title": "Ngoại cảnh",
+      "cover": "images/album/album-02.jpg",
+      "items": [
+        { "type": "image", "src": "images/album/album-01.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-02.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-03.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-04.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-05.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-06.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "dinh-hon",
+      "title": "Đính hôn",
+      "cover": "images/album/album-08.jpg",
+      "items": [
+        { "type": "image", "src": "images/album/album-07.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-08.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-09.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-10.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-11.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "vu-quy",
+      "title": "Vu quy",
+      "cover": "images/album/album-13.jpg",
+      "items": [
+        { "type": "image", "src": "images/album/album-12.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-13.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-14.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-15.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-16.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-17.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "tan-hon",
+      "title": "Tân hôn",
+      "cover": "images/album/album-19.jpg",
+      "items": [
+        { "type": "image", "src": "images/album/album-18.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-19.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-20.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-21.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-22.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-23.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "nha-hang",
+      "title": "Nhà hàng",
+      "cover": "images/album/album-25.jpg",
+      "items": [
+        { "type": "image", "src": "images/album/album-24.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-25.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-26.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-27.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-28.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-29.jpg", "caption": "" }
+      ]
+    },
+    {
+      "id": "hau-truong",
+      "title": "Hậu trường",
+      "cover": "images/album/album-31.jpg",
+      "items": [
+        { "type": "image", "src": "images/album/album-30.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-31.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-32.jpg", "caption": "" },
+        { "type": "image", "src": "images/album/album-33.jpg", "caption": "" },
+        { "type": "video", "src": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v4.mp4", "caption": "Một ngày hai mái nhà — bản đầy đủ" },
+        { "type": "video", "src": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4", "caption": "Một ngày hai mái nhà — bản phụ đề" }
+      ]
+    }
+  ]
+}

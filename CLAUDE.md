@@ -56,9 +56,13 @@ gh api repos/HuyV086/minh-huy-thuy-dung-wedding/pages/builds/latest --jq .status
 
 Xem thử local: `python3 -m http.server 8000` rồi mở `http://localhost:8000`.
 
+## Album ảnh/video (album.html)
+
+Trang riêng `album.html` (+ `album-admin.html` để sắp xếp) dùng chung repo/Pages với trang thiệp nhưng **độc lập, không có link qua lại với `index.html`** — mục đích là nơi lưu giữ lâu dài cho người thân/bạn bè xem lại, không gắn với trang thiệp nữa. Dữ liệu ở `data/media.json`, nguồn ảnh thật thả vào `album-media/<chương>/` rồi chạy `python3 scripts/build_album_manifest.py`. Xem chi tiết cấu trúc 6 chương (Ngoại cảnh/Đính hôn/Vu quy/Tân hôn/Nhà hàng/Hậu trường) trong `album-media/README.md`.
+
 ## Việc đã lên lịch tự động
 
-Scheduled task **`disable-wedding-site-pages`** sẽ chạy **1/11/2026 09:00** (sau khi cả 2 tiệc kết thúc) để **tắt GitHub Pages** (`gh api -X DELETE repos/.../pages`) — không ai xem được trang nữa, nhưng repo vẫn Public. Nếu user đổi ý (dời ngày, huỷ, hoặc muốn ẩn luôn cả repo), cập nhật/huỷ task này thay vì tạo task mới trùng lặp.
+Không còn task tự tắt GitHub Pages — đã huỷ (trước đó có task `disable-wedding-site-pages` định tắt Pages ngày 1/11/2026, nhưng vì `album.html` cần chạy lâu dài nên đã huỷ, giữ Pages bật vĩnh viễn). Đừng tạo lại task kiểu này trừ khi user yêu cầu rõ ràng.
 
 ## Nguồn dữ liệu gốc
 
