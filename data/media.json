@@ -1,82 +1,57 @@
 {
-  "note": "MOCK DATA — ảnh thật sẽ thay khi anh bỏ hình vào album-media/ rồi chạy scripts/build_album_manifest.py",
   "chapters": [
     {
       "id": "ngoai-canh",
       "title": "Ngoại cảnh",
-      "cover": "images/album/album-02.jpg",
+      "cover": "images/album/album-04.jpg",
       "items": [
-        { "type": "image", "src": "images/album/album-01.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-02.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-03.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-04.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-05.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-06.jpg", "caption": "" }
+        { "type": "image", "src": "images/album/album-01.jpg", "caption": "Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy." },
+        { "type": "image", "src": "images/album/album-02.jpg", "caption": "Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy." },
+        { "type": "image", "src": "images/album/album-03.jpg", "caption": "Sông vẫn chảy, chỉ có lòng người là neo lại." },
+        { "type": "image", "src": "images/album/album-04.jpg", "caption": "Giữa thành phố rộng lớn, anh chỉ cần đứng đây, nhìn vào mắt em." },
+        { "type": "image", "src": "images/album/album-05.jpg", "caption": "Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài." },
+        { "type": "image", "src": "images/album/album-06.jpg", "caption": "Giữa đất trời rộng lớn, may mà có nhau." },
+        { "type": "image", "src": "images/album/album-07.jpg", "caption": "Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài." },
+        { "type": "image", "src": "images/album/album-08.jpg", "caption": "Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường." },
+        { "type": "image", "src": "images/album/album-09.jpg", "caption": "Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường." },
+        { "type": "image", "src": "images/album/album-10.jpg", "caption": "Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt." },
+        { "type": "image", "src": "images/album/album-11.jpg", "caption": "Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt." },
+        { "type": "image", "src": "images/album/album-12.jpg", "caption": "Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau." },
+        { "type": "image", "src": "images/album/album-13.jpg", "caption": "Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày." },
+        { "type": "image", "src": "images/album/album-14.jpg", "caption": "Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày." },
+        { "type": "image", "src": "images/album/album-15.jpg", "caption": "Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết." },
+        { "type": "image", "src": "images/album/album-16.jpg", "caption": "Cứ nắm tay chạy đi, ngày vui này không đợi ai cả." },
+        { "type": "image", "src": "images/album/album-17.jpg", "caption": "Tự tin lên, vì đằng sau luôn có một người thương mình vô điều kiện." },
+        { "type": "image", "src": "images/album/album-18.jpg", "caption": "Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau." },
+        { "type": "image", "src": "images/album/album-19.jpg", "caption": "Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết." },
+        { "type": "image", "src": "images/album/album-20.jpg", "caption": "Giữa những điều xưa cũ, tình yêu này vẫn còn rất mới." },
+        { "type": "image", "src": "images/album/album-21.jpg", "caption": "Cứ đi chậm lại một chút, để tận hưởng trọn vẹn ngày hôm nay." },
+        { "type": "image", "src": "images/album/album-22.jpg", "caption": "Một mình dạo bước, chẳng bao lâu đã có người theo cùng." },
+        { "type": "image", "src": "images/album/album-23.jpg", "caption": "Dưới mái ngói trăm năm, mình hẹn nhau một đời." },
+        { "type": "image", "src": "images/album/album-24.jpg", "caption": "Một mình dạo bước, chẳng bao lâu đã có người theo cùng." },
+        { "type": "image", "src": "images/album/album-25.jpg", "caption": "Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau." },
+        { "type": "image", "src": "images/album/album-26.jpg", "caption": "Đoá sen trắng trong tay, và một trái tim đỏ đã trao trọn." },
+        { "type": "image", "src": "images/album/album-27.jpg", "caption": "Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau." },
+        { "type": "image", "src": "images/album/album-28.jpg", "caption": "Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại." },
+        { "type": "image", "src": "images/album/album-29.jpg", "caption": "Không cần nói gì nhiều, chỉ cần đứng cạnh nhau là đủ." },
+        { "type": "image", "src": "images/album/album-30.jpg", "caption": "Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại." },
+        { "type": "image", "src": "images/album/album-31.jpg", "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày." },
+        { "type": "image", "src": "images/album/album-32.jpg", "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày." },
+        { "type": "image", "src": "images/album/album-33.jpg", "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày." }
       ]
     },
-    {
-      "id": "dinh-hon",
-      "title": "Đính hôn",
-      "cover": "images/album/album-08.jpg",
-      "items": [
-        { "type": "image", "src": "images/album/album-07.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-08.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-09.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-10.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-11.jpg", "caption": "" }
-      ]
-    },
-    {
-      "id": "vu-quy",
-      "title": "Vu quy",
-      "cover": "images/album/album-13.jpg",
-      "items": [
-        { "type": "image", "src": "images/album/album-12.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-13.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-14.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-15.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-16.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-17.jpg", "caption": "" }
-      ]
-    },
-    {
-      "id": "tan-hon",
-      "title": "Tân hôn",
-      "cover": "images/album/album-19.jpg",
-      "items": [
-        { "type": "image", "src": "images/album/album-18.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-19.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-20.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-21.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-22.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-23.jpg", "caption": "" }
-      ]
-    },
+    { "id": "dinh-hon", "title": "Đính hôn", "cover": null, "items": [], "comingSoon": true },
+    { "id": "vu-quy", "title": "Vu quy", "cover": null, "items": [], "comingSoon": true },
+    { "id": "tan-hon", "title": "Tân hôn", "cover": null, "items": [], "comingSoon": true },
     {
       "id": "nha-hang",
       "title": "Nhà hàng",
-      "cover": "images/album/album-25.jpg",
+      "cover": null,
       "items": [
-        { "type": "image", "src": "images/album/album-24.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-25.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-26.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-27.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-28.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-29.jpg", "caption": "" }
-      ]
-    },
-    {
-      "id": "hau-truong",
-      "title": "Hậu trường",
-      "cover": "images/album/album-31.jpg",
-      "items": [
-        { "type": "image", "src": "images/album/album-30.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-31.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-32.jpg", "caption": "" },
-        { "type": "image", "src": "images/album/album-33.jpg", "caption": "" },
         { "type": "video", "src": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v4.mp4", "caption": "Một ngày hai mái nhà — bản đầy đủ" },
         { "type": "video", "src": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4", "caption": "Một ngày hai mái nhà — bản phụ đề" }
       ]
-    }
+    },
+    { "id": "hau-truong", "title": "Hậu trường", "cover": null, "items": [], "comingSoon": true }
   ]
 }
