@@ -208,9 +208,693 @@
     {
       "id": "dinh-hon",
       "title": "Đính hôn",
-      "cover": null,
-      "items": [],
-      "comingSoon": true
+      "cover": "images/chapters/dinh-hon/01.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/01.jpg",
+          "caption": "",
+          "sourceFile": "DSC03951_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/02.jpg",
+          "caption": "",
+          "sourceFile": "DSC03968_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/03.jpg",
+          "caption": "",
+          "sourceFile": "DSC03973_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/04.jpg",
+          "caption": "",
+          "sourceFile": "DSC03998_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/05.jpg",
+          "caption": "",
+          "sourceFile": "DSC04004_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/06.jpg",
+          "caption": "",
+          "sourceFile": "DSC04010_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/07.jpg",
+          "caption": "",
+          "sourceFile": "DSC04013_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/08.jpg",
+          "caption": "",
+          "sourceFile": "DSC04016_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/09.jpg",
+          "caption": "",
+          "sourceFile": "DSC04021_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/10.jpg",
+          "caption": "",
+          "sourceFile": "DSC04028_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/11.jpg",
+          "caption": "",
+          "sourceFile": "DSC04043_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/12.jpg",
+          "caption": "",
+          "sourceFile": "DSC04051_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/13.jpg",
+          "caption": "",
+          "sourceFile": "DSC04053_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/14.jpg",
+          "caption": "",
+          "sourceFile": "DSC04058_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/15.jpg",
+          "caption": "",
+          "sourceFile": "DSC04061_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/16.jpg",
+          "caption": "",
+          "sourceFile": "DSC04066_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/17.jpg",
+          "caption": "",
+          "sourceFile": "DSC04069_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/18.jpg",
+          "caption": "",
+          "sourceFile": "DSC04072_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/19.jpg",
+          "caption": "",
+          "sourceFile": "DSC04081_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/20.jpg",
+          "caption": "",
+          "sourceFile": "DSC04083_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/21.jpg",
+          "caption": "",
+          "sourceFile": "DSC04084_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/22.jpg",
+          "caption": "",
+          "sourceFile": "DSC04086_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/23.jpg",
+          "caption": "",
+          "sourceFile": "DSC04087_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/24.jpg",
+          "caption": "",
+          "sourceFile": "DSC04089_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/25.jpg",
+          "caption": "",
+          "sourceFile": "DSC04093_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/26.jpg",
+          "caption": "",
+          "sourceFile": "DSC04096_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/27.jpg",
+          "caption": "",
+          "sourceFile": "DSC04098_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/28.jpg",
+          "caption": "",
+          "sourceFile": "DSC04101_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/29.jpg",
+          "caption": "",
+          "sourceFile": "DSC04104_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/30.jpg",
+          "caption": "",
+          "sourceFile": "DSC04126_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/31.jpg",
+          "caption": "",
+          "sourceFile": "DSC04136_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/32.jpg",
+          "caption": "",
+          "sourceFile": "DSC04144_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/33.jpg",
+          "caption": "",
+          "sourceFile": "DSC04145_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/34.jpg",
+          "caption": "",
+          "sourceFile": "DSC04146_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/35.jpg",
+          "caption": "",
+          "sourceFile": "DSC04151_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/36.jpg",
+          "caption": "",
+          "sourceFile": "DSC04156_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/37.jpg",
+          "caption": "",
+          "sourceFile": "DSC04162_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/38.jpg",
+          "caption": "",
+          "sourceFile": "DSC04165_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/39.jpg",
+          "caption": "",
+          "sourceFile": "DSC04170_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/40.jpg",
+          "caption": "",
+          "sourceFile": "DSC04172_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/41.jpg",
+          "caption": "",
+          "sourceFile": "DSC04182_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/42.jpg",
+          "caption": "",
+          "sourceFile": "DSC04232_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/43.jpg",
+          "caption": "",
+          "sourceFile": "DSC04235_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/44.jpg",
+          "caption": "",
+          "sourceFile": "DSC04245_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/45.jpg",
+          "caption": "",
+          "sourceFile": "DSC04248_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/46.jpg",
+          "caption": "",
+          "sourceFile": "DSC04251_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/47.jpg",
+          "caption": "",
+          "sourceFile": "DSC04254_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/48.jpg",
+          "caption": "",
+          "sourceFile": "DSC04256_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/49.jpg",
+          "caption": "",
+          "sourceFile": "DSC04260_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/50.jpg",
+          "caption": "",
+          "sourceFile": "DSC04262_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/51.jpg",
+          "caption": "",
+          "sourceFile": "DSC04288_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/52.jpg",
+          "caption": "",
+          "sourceFile": "DSC04292_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/53.jpg",
+          "caption": "",
+          "sourceFile": "DSC04294_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/54.jpg",
+          "caption": "",
+          "sourceFile": "DSC04296_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/55.jpg",
+          "caption": "",
+          "sourceFile": "DSC04311_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/56.jpg",
+          "caption": "",
+          "sourceFile": "DSC04313_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/57.jpg",
+          "caption": "",
+          "sourceFile": "DSC04322_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/58.jpg",
+          "caption": "",
+          "sourceFile": "DSC04336_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/59.jpg",
+          "caption": "",
+          "sourceFile": "DSC04345_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/60.jpg",
+          "caption": "",
+          "sourceFile": "DSC04350_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/61.jpg",
+          "caption": "",
+          "sourceFile": "DSC04354_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/62.jpg",
+          "caption": "",
+          "sourceFile": "DSC04356_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/63.jpg",
+          "caption": "",
+          "sourceFile": "DSC04368_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/64.jpg",
+          "caption": "",
+          "sourceFile": "DSC04392_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/65.jpg",
+          "caption": "",
+          "sourceFile": "DSC04396_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/66.jpg",
+          "caption": "",
+          "sourceFile": "DSC04402_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/67.jpg",
+          "caption": "",
+          "sourceFile": "DSC04407_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/68.jpg",
+          "caption": "",
+          "sourceFile": "DSC04408_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/69.jpg",
+          "caption": "",
+          "sourceFile": "DSC04410_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/70.jpg",
+          "caption": "",
+          "sourceFile": "DSC04450_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/71.jpg",
+          "caption": "",
+          "sourceFile": "DSC04451_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/72.jpg",
+          "caption": "",
+          "sourceFile": "DSC04464_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/73.jpg",
+          "caption": "",
+          "sourceFile": "DSC04477_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/74.jpg",
+          "caption": "",
+          "sourceFile": "DSC04483_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/75.jpg",
+          "caption": "",
+          "sourceFile": "DSC04496_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/76.jpg",
+          "caption": "",
+          "sourceFile": "DSC04515_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/77.jpg",
+          "caption": "",
+          "sourceFile": "DSC04517_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/78.jpg",
+          "caption": "",
+          "sourceFile": "DSC04528_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/79.jpg",
+          "caption": "",
+          "sourceFile": "DSC04540_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/80.jpg",
+          "caption": "",
+          "sourceFile": "DSC04542_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/81.jpg",
+          "caption": "",
+          "sourceFile": "DSC04561_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/82.jpg",
+          "caption": "",
+          "sourceFile": "DSC04567_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/83.jpg",
+          "caption": "",
+          "sourceFile": "DSC04572_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/84.jpg",
+          "caption": "",
+          "sourceFile": "DSC04576_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/85.jpg",
+          "caption": "",
+          "sourceFile": "DSC04579_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/86.jpg",
+          "caption": "",
+          "sourceFile": "DSC04586_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/87.jpg",
+          "caption": "",
+          "sourceFile": "DSC04590_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/88.jpg",
+          "caption": "",
+          "sourceFile": "DSC04594_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/89.jpg",
+          "caption": "",
+          "sourceFile": "DSC04610_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/90.jpg",
+          "caption": "",
+          "sourceFile": "DSC04612_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/91.jpg",
+          "caption": "",
+          "sourceFile": "DSC04616_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/92.jpg",
+          "caption": "",
+          "sourceFile": "DSC04617_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/93.jpg",
+          "caption": "",
+          "sourceFile": "DSC04627_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/94.jpg",
+          "caption": "",
+          "sourceFile": "DSC04630_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/95.jpg",
+          "caption": "",
+          "sourceFile": "DSC04633_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/96.jpg",
+          "caption": "",
+          "sourceFile": "DSC04635_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/97.jpg",
+          "caption": "",
+          "sourceFile": "DSC04639_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/98.jpg",
+          "caption": "",
+          "sourceFile": "DSC04644_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/99.jpg",
+          "caption": "",
+          "sourceFile": "DSC04660_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/100.jpg",
+          "caption": "",
+          "sourceFile": "DSC04667_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/101.jpg",
+          "caption": "",
+          "sourceFile": "DSC04674_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/102.jpg",
+          "caption": "",
+          "sourceFile": "DSC04679_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/103.jpg",
+          "caption": "",
+          "sourceFile": "DSC04685_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/104.jpg",
+          "caption": "",
+          "sourceFile": "DSC04694_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/105.jpg",
+          "caption": "",
+          "sourceFile": "DSC04696_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/106.jpg",
+          "caption": "",
+          "sourceFile": "DSC04703_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/107.jpg",
+          "caption": "",
+          "sourceFile": "DSC04714_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/108.jpg",
+          "caption": "",
+          "sourceFile": "DSC04719_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/109.jpg",
+          "caption": "",
+          "sourceFile": "DSC04722_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/110.jpg",
+          "caption": "",
+          "sourceFile": "DSC04728_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/111.jpg",
+          "caption": "",
+          "sourceFile": "DSC04761_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/112.jpg",
+          "caption": "",
+          "sourceFile": "DSC04772_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/113.jpg",
+          "caption": "",
+          "sourceFile": "DSC04793_edited.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/dinh-hon/114.jpg",
+          "caption": "",
+          "sourceFile": "DSC04841_edited.jpg"
+        }
+      ]
     },
     {
       "id": "vu-quy",
@@ -4254,9 +4938,21 @@
     {
       "id": "video",
       "title": "Video",
-      "cover": null,
-      "items": [],
-      "comingSoon": true
+      "cover": "videos/video/Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4",
+      "items": [
+        {
+          "type": "video",
+          "src": "videos/video/Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4",
+          "caption": "",
+          "sourceFile": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4"
+        },
+        {
+          "type": "video",
+          "src": "videos/video/Slide ngoai canh.mp4",
+          "caption": "",
+          "sourceFile": "Slide ngoai canh.mp4"
+        }
+      ]
     },
     {
       "id": "chua-xac-dinh",
