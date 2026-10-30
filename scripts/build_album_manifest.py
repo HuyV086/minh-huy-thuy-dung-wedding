@@ -27,11 +27,14 @@ CHAPTERS = [
     ("1-ngoai-canh", "ngoai-canh", "Ngoại cảnh"),
     ("2-dinh-hon", "dinh-hon", "Đính hôn"),
     ("3-vu-quy", "vu-quy", "Vu quy"),
+    ("9-gia-tien", "gia-tien", "Gia tiên"),
     ("4-tan-hon", "tan-hon", "Tân hôn"),
     ("5-nha-hang", "nha-hang", "Nhà hàng"),
-    ("6-hau-truong", "hau-truong", "Hậu trường"),
+    ("10-photo-booth", "photo-booth", "Photo booth"),
     ("7-bao-hy", "bao-hy", "Báo hỷ"),
+    ("6-hau-truong", "hau-truong", "Hậu trường"),
     ("8-video", "video", "Video"),
+    ("11-chua-xac-dinh", "chua-xac-dinh", "Chưa xác định sau"),
 ]
 
 MAX_EDGE = 2000
