@@ -86,12 +86,19 @@ img,video{max-width:100%; display:block;}
 .lightbox{position:fixed; inset:0; background:rgba(20,16,14,.95); z-index:100; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px;}
 .lightbox[hidden]{display:none;}
 .lightbox img, .lightbox video{max-width:min(90vw,860px); max-height:72vh; object-fit:contain; border-radius:2px;}
-.lightbox .lb-close, .lightbox .lb-nav{position:absolute; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:17px;}
+.lightbox img{touch-action:none; cursor:zoom-in; user-select:none;}
+.lightbox.zoomed img{cursor:grab;}
+.lightbox.zoomed img.is-dragging{cursor:grabbing;}
+.lightbox .lb-close, .lightbox .lb-nav, .lb-zoom-btn{position:absolute; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:17px;}
 .lightbox .lb-close{top:16px; right:16px;}
 .lightbox .lb-prev{left:12px; top:46%; transform:translateY(-50%);}
 .lightbox .lb-next{right:12px; top:46%; transform:translateY(-50%);}
 .lb-bar{display:flex; align-items:center; gap:14px; margin-top:16px;}
 .lb-count{color:rgba(255,255,255,.7); font-size:12px; letter-spacing:.07em;}
+.lb-zoom-controls{display:flex; align-items:center; gap:8px;}
+.lb-zoom-controls[hidden]{display:none;}
+.lb-zoom-btn{position:static; width:30px; height:30px; font-size:16px; font-weight:600;}
+.lb-zoom-btn:disabled{opacity:.35; cursor:default;}
 .lb-download{
   display:flex; align-items:center; gap:7px; background:var(--gold); color:#2b2420; border:none;
   border-radius:999px; padding:8px 16px; font-size:12.5px; font-weight:600; cursor:pointer; text-decoration:none;
@@ -125,6 +132,10 @@ img,video{max-width:100%; display:block;}
   <button class="lb-nav lb-next" id="lbNext" aria-label="Ảnh sau">›</button>
   <div class="lb-bar">
     <span class="lb-count" id="lbCount"></span>
+    <div class="lb-zoom-controls" id="lbZoomControls">
+      <button type="button" class="lb-zoom-btn" id="lbZoomOut" aria-label="Thu nhỏ">−</button>
+      <button type="button" class="lb-zoom-btn" id="lbZoomIn" aria-label="Phóng to">+</button>
+    </div>
     <a class="lb-download" id="lbDownload">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
       Tải về
@@ -283,22 +294,172 @@ img,video{max-width:100%; display:block;}
     var lbMedia = document.getElementById('lbMedia');
     var lbCount = document.getElementById('lbCount');
     var lbDownload = document.getElementById('lbDownload');
+    var lbZoomControls = document.getElementById('lbZoomControls');
+    var lbZoomIn = document.getElementById('lbZoomIn');
+    var lbZoomOut = document.getElementById('lbZoomOut');
     var cur = 0;
+
+    // --- Zoom/pan (ảnh) ---
+    var MIN_SCALE = 1, MAX_SCALE = 4, DBLTAP_SCALE = 2.5;
+    var activeImg = null;
+    var zoom = { scale:1, x:0, y:0 };
+
+    function setTransition(on){
+      if(activeImg) activeImg.style.transition = on ? 'transform .2s ease' : 'none';
+    }
+    function applyZoom(){
+      if(!activeImg) return;
+      activeImg.style.transform = 'translate('+zoom.x+'px,'+zoom.y+'px) scale('+zoom.scale+')';
+      lb.classList.toggle('zoomed', zoom.scale > 1.001);
+      lbZoomOut.disabled = zoom.scale <= MIN_SCALE + 0.001;
+      lbZoomIn.disabled = zoom.scale >= MAX_SCALE - 0.001;
+    }
+    function clampPan(){
+      if(!activeImg) return;
+      var maxX = activeImg.offsetWidth * (zoom.scale - 1) / 2;
+      var maxY = activeImg.offsetHeight * (zoom.scale - 1) / 2;
+      zoom.x = Math.max(-maxX, Math.min(maxX, zoom.x));
+      zoom.y = Math.max(-maxY, Math.min(maxY, zoom.y));
+    }
+    function resetZoom(){
+      zoom = { scale:1, x:0, y:0 };
+      if(activeImg) applyZoom();
+    }
+    // Giữ nguyên điểm ảnh đang ở dưới (clientX,clientY) khi đổi scale, thay vì zoom quanh tâm.
+    function zoomAt(clientX, clientY, newScale){
+      if(!activeImg) return;
+      newScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, newScale));
+      var rect0 = activeImg.getBoundingClientRect();
+      var rx = (clientX - rect0.left) / rect0.width;
+      var ry = (clientY - rect0.top) / rect0.height;
+      zoom.scale = newScale;
+      applyZoom();
+      var rect1 = activeImg.getBoundingClientRect();
+      zoom.x += (clientX - rx * rect1.width) - rect1.left;
+      zoom.y += (clientY - ry * rect1.height) - rect1.top;
+      clampPan();
+      applyZoom();
+    }
+
+    var drag = null; // {startX,startY,baseX,baseY}
+    function dragStart(x, y){
+      if(zoom.scale <= MIN_SCALE + 0.001) return;
+      drag = { startX:x, startY:y, baseX:zoom.x, baseY:zoom.y };
+      setTransition(false);
+      if(activeImg) activeImg.classList.add('is-dragging');
+    }
+    function dragMove(x, y){
+      if(!drag) return;
+      zoom.x = drag.baseX + (x - drag.startX);
+      zoom.y = drag.baseY + (y - drag.startY);
+      clampPan();
+      applyZoom();
+    }
+    function dragEnd(){
+      drag = null;
+      if(activeImg) activeImg.classList.remove('is-dragging');
+    }
+
+    function dist(t1, t2){ return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY); }
+    function mid(t1, t2){ return { x:(t1.clientX + t2.clientX)/2, y:(t1.clientY + t2.clientY)/2 }; }
+    var pinch = null; // {startDist, startScale}
+    var lastTap = 0;
+
+    function bindImgZoomHandlers(img){
+      img.addEventListener('wheel', function(e){
+        e.preventDefault();
+        setTransition(false);
+        zoomAt(e.clientX, e.clientY, zoom.scale * (e.deltaY < 0 ? 1.25 : 1/1.25));
+      }, { passive:false });
+
+      img.addEventListener('dblclick', function(e){
+        setTransition(true);
+        if(zoom.scale > MIN_SCALE + 0.001){ resetZoom(); }
+        else { zoomAt(e.clientX, e.clientY, DBLTAP_SCALE); }
+      });
+
+      img.addEventListener('mousedown', function(e){
+        if(zoom.scale <= MIN_SCALE + 0.001) return;
+        e.preventDefault();
+        dragStart(e.clientX, e.clientY);
+        function onMove(ev){ dragMove(ev.clientX, ev.clientY); }
+        function onUp(){ dragEnd(); document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp); }
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      });
+
+      img.addEventListener('touchstart', function(e){
+        if(e.touches.length === 2){
+          pinch = { startDist: dist(e.touches[0], e.touches[1]), startScale: zoom.scale };
+          drag = null;
+          setTransition(false);
+        } else if(e.touches.length === 1){
+          var t = e.touches[0];
+          var now = Date.now();
+          if(now - lastTap < 300){
+            setTransition(true);
+            if(zoom.scale > MIN_SCALE + 0.001){ resetZoom(); }
+            else { zoomAt(t.clientX, t.clientY, DBLTAP_SCALE); }
+            lastTap = 0;
+          } else {
+            lastTap = now;
+          }
+          dragStart(t.clientX, t.clientY);
+        }
+      }, { passive:true });
+
+      img.addEventListener('touchmove', function(e){
+        if(pinch && e.touches.length === 2){
+          e.preventDefault();
+          var d = dist(e.touches[0], e.touches[1]);
+          var m = mid(e.touches[0], e.touches[1]);
+          zoomAt(m.x, m.y, pinch.startScale * (d / pinch.startDist));
+        } else if(drag && e.touches.length === 1){
+          e.preventDefault();
+          dragMove(e.touches[0].clientX, e.touches[0].clientY);
+        }
+      }, { passive:false });
+
+      img.addEventListener('touchend', function(e){
+        if(e.touches.length < 2) pinch = null;
+        if(e.touches.length === 0) dragEnd();
+      });
+    }
+
+    lbZoomIn.addEventListener('click', function(){
+      setTransition(true);
+      if(!activeImg) return;
+      var r = activeImg.getBoundingClientRect();
+      zoomAt(r.left + r.width/2, r.top + r.height/2, zoom.scale * 1.6);
+    });
+    lbZoomOut.addEventListener('click', function(){
+      setTransition(true);
+      if(!activeImg) return;
+      var r = activeImg.getBoundingClientRect();
+      zoomAt(r.left + r.width/2, r.top + r.height/2, zoom.scale / 1.6);
+    });
 
     function show(i){
       cur = i;
       var item = flatItems[cur];
+      activeImg = null;
+      resetZoom();
       if(item.type === 'video'){
         lbMedia.innerHTML = '<video src="'+item.src+'" controls autoplay></video>';
+        lbZoomControls.hidden = true;
       } else {
         lbMedia.innerHTML = '<img src="'+item.src+'" alt="">';
+        activeImg = lbMedia.querySelector('img');
+        bindImgZoomHandlers(activeImg);
+        lbZoomControls.hidden = false;
+        applyZoom();
       }
       lbDownload.href = item.src;
       lbDownload.setAttribute('download', '');
       lbCount.textContent = (cur+1) + ' / ' + flatItems.length;
       lb.hidden = false;
     }
-    function close(){ lb.hidden = true; lbMedia.innerHTML = ''; }
+    function close(){ lb.hidden = true; lbMedia.innerHTML = ''; activeImg = null; resetZoom(); }
     function step(d){ show((cur + d + flatItems.length) % flatItems.length); }
 
     shelfEl.addEventListener('click', function(e){
@@ -312,8 +473,8 @@ img,video{max-width:100%; display:block;}
     document.addEventListener('keydown', function(e){
       if(lb.hidden) return;
       if(e.key === 'Escape') close();
-      if(e.key === 'ArrowLeft') step(-1);
-      if(e.key === 'ArrowRight') step(1);
+      if(e.key === 'ArrowLeft' && zoom.scale <= MIN_SCALE + 0.001) step(-1);
+      if(e.key === 'ArrowRight' && zoom.scale <= MIN_SCALE + 0.001) step(1);
     });
   }
 })();
