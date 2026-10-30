@@ -8,167 +8,200 @@
         {
           "type": "image",
           "src": "images/album/album-01.jpg",
-          "caption": "Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy."
+          "caption": "Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy.",
+          "sourceFile": "album-01.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-02.jpg",
-          "caption": "Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy."
+          "caption": "Một mình ngắm hoàng hôn, cho đến khi có một bàn tay khẽ nắm lấy.",
+          "sourceFile": "album-02.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-03.jpg",
-          "caption": "Sông vẫn chảy, chỉ có lòng người là neo lại."
+          "caption": "Sông vẫn chảy, chỉ có lòng người là neo lại.",
+          "sourceFile": "album-03.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-04.jpg",
-          "caption": "Giữa thành phố rộng lớn, anh chỉ cần đứng đây, nhìn vào mắt em."
+          "caption": "Giữa thành phố rộng lớn, anh chỉ cần đứng đây, nhìn vào mắt em.",
+          "sourceFile": "album-04.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-05.jpg",
-          "caption": "Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài."
+          "caption": "Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài.",
+          "sourceFile": "album-05.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-06.jpg",
-          "caption": "Giữa đất trời rộng lớn, may mà có nhau."
+          "caption": "Giữa đất trời rộng lớn, may mà có nhau.",
+          "sourceFile": "album-06.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-07.jpg",
-          "caption": "Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài."
+          "caption": "Chỉ một nụ hôn lên trán, cũng đủ làm dịu cả một ngày dài.",
+          "sourceFile": "album-07.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-08.jpg",
-          "caption": "Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường."
+          "caption": "Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường.",
+          "sourceFile": "album-08.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-09.jpg",
-          "caption": "Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường."
+          "caption": "Cứ cười thật tươi đi, vì từ nay sẽ luôn có người đứng đợi phía cuối con đường.",
+          "sourceFile": "album-09.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-10.jpg",
-          "caption": "Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt."
+          "caption": "Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt.",
+          "sourceFile": "album-10.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-11.jpg",
-          "caption": "Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt."
+          "caption": "Diện thật đẹp, vì hôm nay có người ngắm nhìn không rời mắt.",
+          "sourceFile": "album-11.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-12.jpg",
-          "caption": "Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau."
+          "caption": "Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau.",
+          "sourceFile": "album-12.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-13.jpg",
-          "caption": "Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày."
+          "caption": "Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày.",
+          "sourceFile": "album-13.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-14.jpg",
-          "caption": "Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày."
+          "caption": "Đứng cạnh anh, đi đâu em cũng thấy mình đẹp hơn thường ngày.",
+          "sourceFile": "album-14.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-15.jpg",
-          "caption": "Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết."
+          "caption": "Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết.",
+          "sourceFile": "album-15.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-16.jpg",
-          "caption": "Cứ nắm tay chạy đi, ngày vui này không đợi ai cả."
+          "caption": "Cứ nắm tay chạy đi, ngày vui này không đợi ai cả.",
+          "sourceFile": "album-16.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-17.jpg",
-          "caption": "Tự tin lên, vì đằng sau luôn có một người thương mình vô điều kiện."
+          "caption": "Tự tin lên, vì đằng sau luôn có một người thương mình vô điều kiện.",
+          "sourceFile": "album-17.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-18.jpg",
-          "caption": "Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau."
+          "caption": "Giữa phố xá hoa lệ, điều đẹp nhất vẫn là khi có nhau.",
+          "sourceFile": "album-18.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-19.jpg",
-          "caption": "Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết."
+          "caption": "Đeo nhẫn vào tay rồi, giờ khoe cho cả thế giới biết.",
+          "sourceFile": "album-19.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-20.jpg",
-          "caption": "Giữa những điều xưa cũ, tình yêu này vẫn còn rất mới."
+          "caption": "Giữa những điều xưa cũ, tình yêu này vẫn còn rất mới.",
+          "sourceFile": "album-20.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-21.jpg",
-          "caption": "Cứ đi chậm lại một chút, để tận hưởng trọn vẹn ngày hôm nay."
+          "caption": "Cứ đi chậm lại một chút, để tận hưởng trọn vẹn ngày hôm nay.",
+          "sourceFile": "album-21.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-22.jpg",
-          "caption": "Một mình dạo bước, chẳng bao lâu đã có người theo cùng."
+          "caption": "Một mình dạo bước, chẳng bao lâu đã có người theo cùng.",
+          "sourceFile": "album-22.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-23.jpg",
-          "caption": "Dưới mái ngói trăm năm, mình hẹn nhau một đời."
+          "caption": "Dưới mái ngói trăm năm, mình hẹn nhau một đời.",
+          "sourceFile": "album-23.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-24.jpg",
-          "caption": "Một mình dạo bước, chẳng bao lâu đã có người theo cùng."
+          "caption": "Một mình dạo bước, chẳng bao lâu đã có người theo cùng.",
+          "sourceFile": "album-24.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-25.jpg",
-          "caption": "Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau."
+          "caption": "Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau.",
+          "sourceFile": "album-25.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-26.jpg",
-          "caption": "Đoá sen trắng trong tay, và một trái tim đỏ đã trao trọn."
+          "caption": "Đoá sen trắng trong tay, và một trái tim đỏ đã trao trọn.",
+          "sourceFile": "album-26.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-27.jpg",
-          "caption": "Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau."
+          "caption": "Đi đâu cũng ngoái lại nhìn, sợ lỡ mất khoảnh khắc nào của nhau.",
+          "sourceFile": "album-27.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-28.jpg",
-          "caption": "Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại."
+          "caption": "Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại.",
+          "sourceFile": "album-28.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-29.jpg",
-          "caption": "Không cần nói gì nhiều, chỉ cần đứng cạnh nhau là đủ."
+          "caption": "Không cần nói gì nhiều, chỉ cần đứng cạnh nhau là đủ.",
+          "sourceFile": "album-29.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-30.jpg",
-          "caption": "Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại."
+          "caption": "Xoay một vòng thôi, cả thế giới quanh mình cũng chậm lại.",
+          "sourceFile": "album-30.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-31.jpg",
-          "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày."
+          "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày.",
+          "sourceFile": "album-31.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-32.jpg",
-          "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày."
+          "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày.",
+          "sourceFile": "album-32.jpg"
         },
         {
           "type": "image",
           "src": "images/album/album-33.jpg",
-          "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày."
+          "caption": "Và cứ thế, chúng ta viết tiếp câu chuyện này — cùng nhau, mỗi ngày.",
+          "sourceFile": "album-33.jpg"
         }
       ]
     },
