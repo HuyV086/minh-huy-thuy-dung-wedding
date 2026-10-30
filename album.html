@@ -180,19 +180,48 @@ img,video{max-width:100%; display:block;}
         var idx = flatItems.length;
         flatItems.push(item);
         if(item.type === 'video'){
-          return '<figure class="is-video" data-idx="'+idx+'"><video src="'+item.src+'" preload="metadata" muted></video></figure>';
+          return '<figure class="is-video" data-idx="'+idx+'"><video data-src="'+item.src+'" preload="none" muted></video></figure>';
         }
-        return '<figure data-idx="'+idx+'"><img src="'+item.src+'" loading="lazy" alt="'+(item.caption||'Ảnh cưới')+'"></figure>';
+        return '<figure data-idx="'+idx+'"><img data-src="'+item.src+'" alt="'+(item.caption||'Ảnh cưới')+'"></figure>';
       }).join('');
     });
 
     setupAccordion();
     setupLightbox();
+    setupLazyLoad();
 
     if(location.hash){
       var id = location.hash.slice(1);
       if(document.getElementById(id)) openAlbum(id, true);
     }
+  }
+
+  function setupLazyLoad(){
+    // Không dùng loading="lazy" của trình duyệt: khi mở album qua link/chip rồi tự cuộn tới
+    // (nhiều lần scrollIntoView liên tiếp), trình duyệt hiểu nhầm là đang cuộn rất nhanh và
+    // tải gần hết ảnh/video cùng lúc, dễ làm server quá tải và vài ảnh bị lỗi tải dở.
+    // Tự quản lý bằng IntersectionObserver để chỉ tải khi thật sự sắp vào khung nhìn.
+    var targets = Array.prototype.slice.call(shelfEl.querySelectorAll('img[data-src], video[data-src]'));
+    if(!('IntersectionObserver' in window)){
+      targets.forEach(loadMedia);
+      return;
+    }
+    var io = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          loadMedia(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '600px 0px' });
+    targets.forEach(function(el){ io.observe(el); });
+  }
+  function loadMedia(el){
+    var src = el.getAttribute('data-src');
+    if(!src) return;
+    el.removeAttribute('data-src');
+    if(el.tagName === 'VIDEO'){ el.preload = 'metadata'; }
+    el.src = src;
   }
 
   var albumEls = [];
@@ -204,9 +233,11 @@ img,video{max-width:100%; display:block;}
     });
   }
 
-  function toggleAlbum(el){
+  function toggleAlbum(el, onSettled){
     var isOpen = el.classList.contains('open');
+    var closingBody = null;
     albumEls.forEach(function(other){
+      if(other !== el && other.classList.contains('open')) closingBody = other.querySelector('.album-body');
       other.classList.remove('open');
       other.querySelector('.album-body').style.maxHeight = null;
     });
@@ -214,21 +245,30 @@ img,video{max-width:100%; display:block;}
       el.classList.add('open');
       el.querySelector('.album-body').style.maxHeight = el.querySelector('.album-body').scrollHeight + 'px';
     }
+    if(onSettled){
+      // Album khác đóng lại cùng lúc (transition .45s) làm trang dịch chuyển; cuộn ngay lúc
+      // đó vừa sai vị trí vừa khiến IntersectionObserver hiểu nhầm hàng loạt ảnh đang cần tải
+      // (do liên tục kích hoạt tính toán lại khi đang chạy animation). Đợi animation xong rồi mới cuộn 1 lần.
+      if(closingBody){
+        var done = false;
+        var finish = function(){ if(done) return; done = true; closingBody.removeEventListener('transitionend', finish); onSettled(); };
+        closingBody.addEventListener('transitionend', finish);
+        setTimeout(finish, 500);
+      } else {
+        onSettled();
+      }
+    }
   }
 
   function openAlbum(id, thenScroll){
     var el = document.getElementById(id);
     if(!el) return;
-    if(!el.classList.contains('open')) el.querySelector('.album-head').click();
-    if(thenScroll){
-      // album khác đang đóng lại cùng lúc (transition .45s) làm vị trí dịch chuyển,
-      // nên giữ vị trí cuộn trong lúc animation chạy thay vì cuộn 1 lần duy nhất
-      var tries = 0;
-      (function hold(){
-        el.scrollIntoView({block:'start'});
-        if(++tries < 30) requestAnimationFrame(hold);
-      })();
+    var scrollNow = function(){ el.scrollIntoView({block:'start'}); };
+    if(el.classList.contains('open')){
+      if(thenScroll) scrollNow();
+      return;
     }
+    toggleAlbum(el, thenScroll ? scrollNow : null);
   }
 
   chipsEl.addEventListener('click', function(e){
