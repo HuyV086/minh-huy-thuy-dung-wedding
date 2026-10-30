@@ -1,6 +1,6 @@
-# Wedding Website — Minh Huy & Thuỳ Dung
+# Wedding Website — Minh Huy & Thùy Dung
 
-Trang cưới tĩnh, 1 file, cho đám cưới **Võ Minh Huy & Bùi Việt Thuỳ Dung**, ngày cưới chính **Chủ Nhật 18/10/2026** (9/9 Âm lịch, Bính Ngọ).
+Trang cưới tĩnh, 1 file, cho đám cưới **Võ Minh Huy & Bùi Việt Thùy Dung**, ngày cưới chính **Chủ Nhật 18/10/2026** (9/9 Âm lịch, Bính Ngọ).
 
 ## Sự kiện
 
@@ -78,4 +78,4 @@ Không còn task tự tắt GitHub Pages — đã huỷ (trước đó có task 
 
 ## Nguồn dữ liệu gốc
 
-Toàn bộ nội dung (timeline, ngân sách, khách mời, nhà cung cấp...) được tổng hợp từ Google Drive, folder "Dự án gia đình" → "Đám cưới 10/2026" (tài khoản `huyvm86@gmail.com`), doc "Dự án Đám cưới Minh Huy & Thuỳ Dung — Quản lý tổng" là nguồn tổng hợp mới nhất.
+Toàn bộ nội dung (timeline, ngân sách, khách mời, nhà cung cấp...) được tổng hợp từ Google Drive, folder "Dự án gia đình" → "Đám cưới 10/2026" (tài khoản `huyvm86@gmail.com`), doc "Dự án Đám cưới Minh Huy & Thùy Dung — Quản lý tổng" là nguồn tổng hợp mới nhất.

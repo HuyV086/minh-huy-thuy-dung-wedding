@@ -1,6 +1,6 @@
-# Minh Huy & Thuỳ Dung — Wedding Website
+# Minh Huy & Thùy Dung — Wedding Website
 
-Trang cưới của Minh Huy & Thuỳ Dung, ngày cưới **18/10/2026** (9/9 Âm lịch, Bính Ngọ).
+Trang cưới của Minh Huy & Thùy Dung, ngày cưới **18/10/2026** (9/9 Âm lịch, Bính Ngọ).
 
 ## Cấu trúc
 

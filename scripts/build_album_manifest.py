@@ -28,14 +28,15 @@ CHAPTERS = [
     ("2-dinh-hon", "dinh-hon", "Đính hôn"),
     ("3-vu-quy", "vu-quy", "Vu quy"),
     ("4-tan-hon", "tan-hon", "Tân hôn"),
-    ("5-nha-hang", "nha-hang", "Nhà hàng"),
-    ("10-photobooth-18-10", "photobooth-18-10", "Photobooth 18/10"),
-    ("12-photobooth-31-10", "photobooth-31-10", "Photobooth 31/10"),
-    ("7-bao-hy", "bao-hy", "Báo hỷ"),
-    ("6-hau-truong", "hau-truong", "Hậu trường"),
-    ("8-video", "video", "Video"),
-    ("11-chua-xac-dinh", "chua-xac-dinh", "Chưa xác định sau"),
+    ("5-hoa-binh-2", "hoa-binh-2", "Hoà Bình 2"),
+    ("6-photobooth-18-10", "photobooth-18-10", "Photobooth 18/10"),
+    ("7-bach-viet", "bach-viet", "Bách Việt"),
+    ("8-photobooth-31-10", "photobooth-31-10", "Photobooth 31/10"),
+    ("9-video", "video", "Video"),
+    ("10-hau-truong", "hau-truong", "Hậu trường"),
 ]
+# "11-chua-xac-dinh/" không nằm trong danh sách này: đây là folder nội bộ để
+# chủ nhân tự tham khảo/điều chỉnh, KHÔNG build lên trang web.
 
 MAX_EDGE = 2000
 QUALITY = 82
@@ -121,7 +122,11 @@ def main():
             continue
 
         cover = existing.get("cover")
-        cover_still_valid = any(it["src"] == cover for it in items)
+        # Cover hợp lệ nếu vẫn là 1 trong các mục hiện tại, HOẶC là ảnh cover
+        # riêng (vd. thumbnail tự đặt cho chương Video) vẫn còn tồn tại trên đĩa.
+        cover_still_valid = bool(cover) and (
+            any(it["src"] == cover for it in items) or (ROOT / cover).is_file()
+        )
         new_chapters.append({
             "id": chapter_id,
             "title": title,
