@@ -58,19 +58,30 @@ Xem thử local: `python3 -m http.server 8000` rồi mở `http://localhost:8000
 
 ## Album ảnh/video (album.html)
 
-Trang riêng `album.html` (+ `album-admin.html` để sắp xếp) dùng chung repo/Pages với trang thiệp nhưng **độc lập, không có link qua lại với `index.html`** — mục đích là nơi lưu giữ lâu dài cho người thân/bạn bè xem lại, không gắn với trang thiệp nữa. Dữ liệu ở `data/media.json`, nguồn ảnh thật thả vào `album-media/<chương>/` rồi chạy `python3 scripts/build_album_manifest.py`. Xem chi tiết cấu trúc 11 chương trong `album-media/README.md` và danh sách `CHAPTERS` trong `scripts/build_album_manifest.py`.
+Trang riêng `album.html` dùng chung repo/Pages với trang thiệp nhưng **độc lập, không có link qua lại với `index.html`** — mục đích là nơi lưu giữ lâu dài cho người thân/bạn bè xem lại, không gắn với trang thiệp nữa. Dữ liệu ở `data/media.json`, nguồn ảnh/video thật thả vào `album-media/<chương>/` rồi chạy `python3 scripts/build_album_manifest.py`. Xem chi tiết cấu trúc chương trong `album-media/README.md` và danh sách `CHAPTERS` trong `scripts/build_album_manifest.py`.
 
-**Giao diện (từ bản thiết kế thứ 2)**: mỗi chương là 1 hàng "cuốn album" thu gọn (bìa nhỏ + tên + số mục/"Sắp cập nhật"), bấm vào hàng để bung accordion thành lưới thumbnail (ảnh vuông 3:4, không còn masonry tự do như bản đầu). Bấm thumbnail mở lightbox xem từng ảnh/video, có nút **Tải về** (`<a download>`) cạnh số đếm. Chỉ 1 album mở cùng lúc (mở cái mới sẽ tự đóng cái đang mở). Bấm chip ở đầu trang sẽ tự mở + cuộn tới đúng album (dùng vòng lặp `requestAnimationFrame` giữ vị trí cuộn trong lúc album khác đang đóng lại, vì 2 animation chạy song song làm vị trí dịch chuyển nếu chỉ cuộn 1 lần).
+Trước đây có `album-admin.html` (công cụ client-side để sắp xếp/đổi tên/xoá ảnh, export `media.json` qua tải file) nhưng **đã bị xoá khỏi repo** vì user tự sắp xếp ảnh trực tiếp trên máy rồi mới thả vào `album-media/`, không cần admin nữa — và vì trang này public trên GitHub Pages (không yêu cầu đăng nhập) nên xoá luôn để không ai vô tình truy cập được.
 
-Trạng thái nội dung hiện tại:
-- **Ngoại cảnh**: 33 ảnh hậu kỳ có sẵn trong `images/album/` (3 địa điểm Ba Son/Diamond Plaza/Bảo Tàng), kèm chú thích thật lấy lại từ `CHAPTERS` trong `index.html`.
-- **Vu quy / Gia tiên / Nhà hàng / Hậu trường / Photo booth**: ảnh thật ngày 18/10, nguồn từ 2 folder user tự thả vào root repo — `Hinh dam cuoi 18:10/` (673 ảnh photographer, KHÔNG commit vì ~5GB, đã gitignore) và `Photobooth 18:10/` (89 ảnh). Đã phân loại theo giờ chụp EXIF `DateTimeOriginal` (ranh giới do user chỉ định): 05h–06h30→Hậu trường (129 ảnh), 06h30–07h30→Vu quy (149), 07h30–10h→Gia tiên (158), 10h+→Nhà hàng (237 ảnh + 2 video "Một ngày hai mái nhà" giữ nguyên từ trước), toàn bộ Photobooth→Photo booth (89, không chia giờ). Không ảnh nào thiếu EXIF nên **Chưa xác định sau** hiện trống (không hiện trên trang vì không có mục nào).
-  - Nếu cần phân loại lại từ ảnh gốc: ảnh gốc 2 folder trên vẫn còn nguyên tại chỗ (không bị xoá/di chuyển), script phân loại dùng 1 lần không lưu trong repo — hỏi lại user trước khi chạy lại, vì sẽ ghi đè ảnh đã có trong `album-media/{3-vu-quy,9-gia-tien,5-nha-hang,6-hau-truong,10-photo-booth}/`.
-  - **User sẽ tự review và sắp xếp lại qua Admin** (đổi thứ tự, gộp/xoá ảnh trùng, sửa ranh giới giờ nếu lệch) rồi yêu cầu cập nhật tiếp — không tự ý phân loại lại trừ khi user yêu cầu.
-- **Nhà hàng**: 2 video gốc tên file ghi `tiec-bao-hy` — có thể là video giới thiệu cho chương Báo hỷ chứ không phải Nhà hàng; đã hỏi user, user chưa quyết, cứ để nguyên ở Nhà hàng cho tới khi có chỉ thị khác.
-- **Đính hôn / Tân hôn / Báo hỷ / Video**: chưa có ảnh thật, hiển thị "Sắp cập nhật" (`"comingSoon": true`). Video là nơi user sẽ tự chuyển 2 video trên (hoặc video mới) vào sau.
-- Khi có ảnh thật cho chương nào, bỏ vào `album-media/<chương>/` rồi chạy lại `scripts/build_album_manifest.py` — script tự build lại chương đó từ đầu (không còn cờ `comingSoon`) và giữ nguyên các chương vẫn còn trống. **Lưu ý**: script build lại TOÀN BỘ nội dung 1 chương từ folder `album-media/` tương ứng — nếu chương đó có mục không có file gốc trong `album-media/` (như 2 video Nhà hàng), rerun sẽ xoá mục đó khỏi `media.json` trừ khi thêm lại file gốc vào đúng folder hoặc tự vá lại `media.json` sau khi chạy script.
-- `album-media/` + `images/chapters/` cộng lại hiện ~530MB đã commit vào repo (đã nén quality 82, max 2000px/cạnh) — biết trước nếu thấy repo nặng lên nhiều.
+**Giao diện**: mỗi chương là 1 hàng "cuốn album" thu gọn (bìa nhỏ + tên + số mục/"Sắp cập nhật"), bấm vào hàng để bung accordion thành lưới thumbnail (ảnh vuông 3:4). Bấm thumbnail mở lightbox xem từng ảnh/video, có nút **Tải về** (`<a download>`) cạnh số đếm. Chỉ 1 album mở cùng lúc. Bấm chip ở đầu trang sẽ tự mở + cuộn tới đúng album. Ảnh lazy-load qua `IntersectionObserver` thủ công (không dùng `loading="lazy"` gốc — xem lịch sử sửa lỗi "ảnh bị lỗi" nếu cần).
+
+Trạng thái nội dung hiện tại (thứ tự chương đúng như hiển thị trên trang):
+1. **Ngoại cảnh** (33 ảnh, có chú thích thật)
+2. **Đính hôn** (114 ảnh)
+3. **Vu quy** (69 ảnh)
+4. **Tân hôn** (122 ảnh — gồm cả ảnh từng ở chương "Gia tiên" cũ, đã gộp vào đây rồi xoá chương Gia tiên vì dư thừa)
+5. **Hoà Bình 2** (220 ảnh — tên cũ "Nhà hàng", đã đổi tên cả chương lẫn folder `album-media/5-hoa-binh-2/`)
+6. **Photobooth 18/10** (89 ảnh)
+7. **Bách Việt** (trống, "Sắp cập nhật" — tên cũ "Báo hỷ", đã đổi tên cả chương lẫn folder `album-media/7-bach-viet/`)
+8. **Photobooth 31/10** (trống, "Sắp cập nhật" — chờ ảnh sau sự kiện 31/10)
+9. **Video** (2 clip nén 720p ~85MB/clip bằng ffmpeg two-pass vì bản gốc 204MB/449MB vượt giới hạn 100MB của GitHub; bản gốc full-quality giữ ở `Video goc/` tại root repo, đã gitignore. Có cover riêng `images/chapters/video/cover.jpg`)
+10. **Hậu trường** (165 ảnh)
+
+`album-media/11-chua-xac-dinh/` vẫn còn 30 ảnh nhưng **không nằm trong `CHAPTERS`** của script → không bao giờ hiện lên web, chỉ là nơi user tự tham khảo/điều chỉnh riêng.
+
+Lưu ý khi chạy lại `scripts/build_album_manifest.py`:
+- Script build lại TOÀN BỘ nội dung 1 chương từ folder `album-media/` tương ứng — chương nào folder trống thì giữ nguyên dữ liệu cũ (không xoá), chương nào có file thì rebuild từ đầu (mất hết mục không có file gốc tương ứng trong folder, kể cả video thêm tay).
+- Field `cover` của 1 chương được giữ nguyên qua các lần rebuild nếu nó vẫn là 1 trong các mục hiện tại CỦA chương đó, HOẶC là file ảnh riêng vẫn còn tồn tại trên đĩa (dùng cho trường hợp đặt cover thủ công ở ngoài `items`, như chương Video) — nếu không sẽ tự lấy ảnh đầu tiên làm cover.
+- `album-media/` + `images/chapters/` + `videos/` cộng lại hiện hơn 700MB đã commit vào repo (ảnh nén quality 82, max 2000px/cạnh; video nén 720p) — biết trước nếu thấy repo nặng lên nhiều.
 
 ## Việc đã lên lịch tự động
 
