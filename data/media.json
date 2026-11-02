@@ -3946,9 +3946,477 @@
     {
       "id": "photobooth-31-10",
       "title": "Photobooth 31/10",
-      "cover": null,
-      "items": [],
-      "comingSoon": true
+      "cover": "images/chapters/photobooth-31-10/01.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/01.jpg",
+          "caption": "",
+          "sourceFile": "20261031_174541_047.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/02.jpg",
+          "caption": "",
+          "sourceFile": "20261031_174710_653_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/03.jpg",
+          "caption": "",
+          "sourceFile": "20261031_174710_653_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/04.jpg",
+          "caption": "",
+          "sourceFile": "20261031_174847_736.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/05.jpg",
+          "caption": "",
+          "sourceFile": "20261031_174928_668.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/06.jpg",
+          "caption": "",
+          "sourceFile": "20261031_175007_089.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/07.jpg",
+          "caption": "",
+          "sourceFile": "20261031_175121_881.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/08.jpg",
+          "caption": "",
+          "sourceFile": "20261031_175423_643.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/09.jpg",
+          "caption": "",
+          "sourceFile": "20261031_175547_711_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/10.jpg",
+          "caption": "",
+          "sourceFile": "20261031_175547_711_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/11.jpg",
+          "caption": "",
+          "sourceFile": "20261031_175645_171.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/12.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180028_277_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/13.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180028_277_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/14.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180215_916.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/15.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180533_431_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/16.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180533_431_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/17.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180626_333.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/18.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180829_246.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/19.jpg",
+          "caption": "",
+          "sourceFile": "20261031_180916_879.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/20.jpg",
+          "caption": "",
+          "sourceFile": "20261031_181051_271_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/21.jpg",
+          "caption": "",
+          "sourceFile": "20261031_181051_271_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/22.jpg",
+          "caption": "",
+          "sourceFile": "20261031_181853_761.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/23.jpg",
+          "caption": "",
+          "sourceFile": "20261031_182344_701.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/24.jpg",
+          "caption": "",
+          "sourceFile": "20261031_182901_202.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/25.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184039_631.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/26.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184230_395.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/27.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184354_066.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/28.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184544_940_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/29.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184544_940_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/30.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184649_672.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/31.jpg",
+          "caption": "",
+          "sourceFile": "20261031_184820_851.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/32.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185002_593_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/33.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185002_593_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/34.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185206_859.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/35.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185254_139.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/36.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185352_996.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/37.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185440_376.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/38.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185549_551_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/39.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185549_551_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/40.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185712_222.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/41.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185830_359.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/42.jpg",
+          "caption": "",
+          "sourceFile": "20261031_185958_913.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/43.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190046_156.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/44.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190119_747.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/45.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190146_683.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/46.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190255_429_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/47.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190255_429_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/48.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190428_067_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/49.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190428_067_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/50.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190550_701_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/51.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190550_701_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/52.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190632_648.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/53.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190706_482.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/54.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190748_212.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/55.jpg",
+          "caption": "",
+          "sourceFile": "20261031_190901_874.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/56.jpg",
+          "caption": "",
+          "sourceFile": "20261031_191056_470.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/57.jpg",
+          "caption": "",
+          "sourceFile": "20261031_191158_871.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/58.jpg",
+          "caption": "",
+          "sourceFile": "20261031_191250_059.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/59.jpg",
+          "caption": "",
+          "sourceFile": "20261031_191334_031.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/60.jpg",
+          "caption": "",
+          "sourceFile": "20261031_210554_866.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/61.jpg",
+          "caption": "",
+          "sourceFile": "20261031_210656_036.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/62.jpg",
+          "caption": "",
+          "sourceFile": "20261031_210755_929.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/63.jpg",
+          "caption": "",
+          "sourceFile": "20261031_210853_039.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/64.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211228_256_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/65.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211228_256_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/66.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211333_401.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/67.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211406_782.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/68.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211603_259_1x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/69.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211603_259_2x.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/70.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211720_475.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/71.jpg",
+          "caption": "",
+          "sourceFile": "20261031_211927_331.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/72.jpg",
+          "caption": "",
+          "sourceFile": "20261031_212629_740.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/73.jpg",
+          "caption": "",
+          "sourceFile": "20261031_212725_655.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/74.jpg",
+          "caption": "",
+          "sourceFile": "20261031_212755_028.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/75.jpg",
+          "caption": "",
+          "sourceFile": "20261031_212822_188.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/76.jpg",
+          "caption": "",
+          "sourceFile": "20261031_212857_767.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/77.jpg",
+          "caption": "",
+          "sourceFile": "20261031_213115_038.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/photobooth-31-10/78.jpg",
+          "caption": "",
+          "sourceFile": "20261031_213215_260.jpg"
+        }
+      ]
     },
     {
       "id": "video",
@@ -3959,13 +4427,29 @@
           "type": "video",
           "src": "videos/video/Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4",
           "caption": "",
-          "sourceFile": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4"
+          "sourceFile": "Mot-ngay-hai-mai-nha_tiec-bao-hy_v5_VI.mp4",
+          "poster": "images/chapters/video/posters/tiec-bao-hy.jpg"
         },
         {
           "type": "video",
           "src": "videos/video/Slide ngoai canh.mp4",
           "caption": "",
-          "sourceFile": "Slide ngoai canh.mp4"
+          "sourceFile": "Slide ngoai canh.mp4",
+          "poster": "images/chapters/video/posters/ngoai-canh.jpg"
+        },
+        {
+          "type": "video",
+          "src": "videos/video/Special-Thanks_credits_v6.mp4",
+          "caption": "",
+          "sourceFile": "Special-Thanks_credits_v6.mp4",
+          "poster": "images/chapters/video/posters/special-thanks.jpg"
+        },
+        {
+          "type": "video",
+          "src": "videos/video/Telephotobooth.mp4",
+          "caption": "",
+          "sourceFile": "Telephotobooth.mp4",
+          "poster": "images/chapters/video/posters/telephotobooth.jpg"
         }
       ]
     },

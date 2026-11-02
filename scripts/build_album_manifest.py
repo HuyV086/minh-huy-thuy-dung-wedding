@@ -89,12 +89,17 @@ def build_chapter_items(folder_name, chapter_id, existing_by_source):
             out_dir.mkdir(parents=True, exist_ok=True)
             out_path = out_dir / f.name
             shutil.copy2(f, out_path)
-            items.append({
+            item = {
                 "type": "video",
                 "src": f"videos/{chapter_id}/{f.name}",
                 "caption": prev.get("caption", ""),
                 "sourceFile": f.name,
-            })
+            }
+            # poster: thumbnail ảnh hiển thị trước khi video được tải/phát. Không tự tạo
+            # được (video gốc không có), nên chỉ giữ lại giá trị đã đặt tay trước đó.
+            if prev.get("poster"):
+                item["poster"] = prev["poster"]
+            items.append(item)
         else:
             print(f"  (bỏ qua, không nhận diện được loại file: {f.name})")
     return items

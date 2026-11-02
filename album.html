@@ -191,7 +191,8 @@ img,video{max-width:100%; display:block;}
         var idx = flatItems.length;
         flatItems.push(item);
         if(item.type === 'video'){
-          return '<figure class="is-video" data-idx="'+idx+'"><video data-src="'+item.src+'" preload="none" muted></video></figure>';
+          var posterAttr = item.poster ? ' poster="'+item.poster+'"' : '';
+          return '<figure class="is-video" data-idx="'+idx+'"><video data-src="'+item.src+'"'+posterAttr+' preload="none" muted></video></figure>';
         }
         return '<figure data-idx="'+idx+'"><img data-src="'+item.src+'" alt="'+(item.caption||'Ảnh cưới')+'"></figure>';
       }).join('');
@@ -445,7 +446,8 @@ img,video{max-width:100%; display:block;}
       activeImg = null;
       resetZoom();
       if(item.type === 'video'){
-        lbMedia.innerHTML = '<video src="'+item.src+'" controls autoplay></video>';
+        var posterAttr = item.poster ? ' poster="'+item.poster+'"' : '';
+        lbMedia.innerHTML = '<video src="'+item.src+'"'+posterAttr+' controls autoplay></video>';
         lbZoomControls.hidden = true;
       } else {
         lbMedia.innerHTML = '<img src="'+item.src+'" alt="">';
