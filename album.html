@@ -89,10 +89,16 @@ img,video{max-width:100%; display:block;}
 .lightbox img{touch-action:none; cursor:zoom-in; user-select:none;}
 .lightbox.zoomed img{cursor:grab;}
 .lightbox.zoomed img.is-dragging{cursor:grabbing;}
-.lightbox .lb-close, .lightbox .lb-nav, .lb-zoom-btn{position:absolute; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.25); color:#fff; border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:17px;}
+.lightbox .lb-close, .lightbox .lb-nav, .lb-zoom-btn{position:absolute; z-index:5; background:rgba(20,16,14,.6); border:1px solid rgba(255,255,255,.45); color:#fff; border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:17px; box-shadow:0 2px 10px rgba(0,0,0,.35);}
 .lightbox .lb-close{top:16px; right:16px;}
 .lightbox .lb-prev{left:12px; top:46%; transform:translateY(-50%);}
 .lightbox .lb-next{right:12px; top:46%; transform:translateY(-50%);}
+@media (max-width:640px){
+  .lightbox img, .lightbox video{max-width:78vw;}
+  .lightbox .lb-close, .lightbox .lb-nav{width:46px; height:46px; font-size:20px;}
+  .lightbox .lb-prev{left:6px;}
+  .lightbox .lb-next{right:6px;}
+}
 .lb-bar{display:flex; align-items:center; gap:14px; margin-top:16px;}
 .lb-count{color:rgba(255,255,255,.7); font-size:12px; letter-spacing:.07em;}
 .lb-zoom-controls{display:flex; align-items:center; gap:8px;}
