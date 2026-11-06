@@ -110,6 +110,7 @@ img,video{max-width:100%; display:block;}
   border-radius:999px; padding:8px 16px; font-size:12.5px; font-weight:600; cursor:pointer; text-decoration:none;
 }
 .lb-download svg{width:14px; height:14px;}
+.lb-download.is-loading{opacity:.55; pointer-events:none;}
 </style>
 </head>
 <body>
@@ -144,7 +145,7 @@ img,video{max-width:100%; display:block;}
     </div>
     <a class="lb-download" id="lbDownload">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
-      Tải về
+      <span id="lbDownloadLabel">Tải về</span>
     </a>
   </div>
 </div>
@@ -301,10 +302,53 @@ img,video{max-width:100%; display:block;}
     var lbMedia = document.getElementById('lbMedia');
     var lbCount = document.getElementById('lbCount');
     var lbDownload = document.getElementById('lbDownload');
+    var lbDownloadLabel = document.getElementById('lbDownloadLabel');
     var lbZoomControls = document.getElementById('lbZoomControls');
     var lbZoomIn = document.getElementById('lbZoomIn');
     var lbZoomOut = document.getElementById('lbZoomOut');
     var cur = 0;
+    var curItem = null;
+
+    // --- Tải về máy (iOS/Android) ---
+    // iOS Safari/Chrome bỏ qua thuộc tính `download` trên <a> (chỉ mở ảnh ra xem),
+    // nên bấm "Tải về" không thực sự lưu được vào Photos. Dùng Web Share API
+    // (chia sẻ file) để mở Share Sheet có sẵn nút "Lưu vào Ảnh" của hệ thống.
+    // Nơi không hỗ trợ (desktop, Android cũ...) thì fallback về tải file qua blob.
+    function guessMime(src){
+      var ext = src.split('.').pop().toLowerCase();
+      if(ext === 'png') return 'image/png';
+      if(ext === 'mov') return 'video/quicktime';
+      if(ext === 'mp4') return 'video/mp4';
+      return 'image/jpeg';
+    }
+    lbDownload.addEventListener('click', function(e){
+      if(!curItem || lbDownload.classList.contains('is-loading')) return;
+      e.preventDefault();
+      var item = curItem;
+      var filename = item.src.split('/').pop();
+      lbDownload.classList.add('is-loading');
+      lbDownloadLabel.textContent = 'Đang tải…';
+      fetch(item.src).then(function(resp){ return resp.blob(); }).then(function(blob){
+        var file = null;
+        try { file = new File([blob], filename, {type: blob.type || guessMime(item.src)}); } catch(_e){}
+        if(file && navigator.canShare && navigator.canShare({files:[file]})){
+          return navigator.share({files:[file]}).catch(function(err){
+            if(err && err.name === 'AbortError') return; // người dùng tự đóng Share Sheet
+            throw err;
+          });
+        }
+        var objUrl = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = objUrl; a.download = filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        setTimeout(function(){ URL.revokeObjectURL(objUrl); }, 10000);
+      }).catch(function(){
+        window.open(item.src, '_blank');
+      }).then(function(){
+        lbDownload.classList.remove('is-loading');
+        lbDownloadLabel.textContent = 'Tải về';
+      });
+    });
 
     // --- Zoom/pan (ảnh) ---
     var MIN_SCALE = 1, MAX_SCALE = 4, DBLTAP_SCALE = 2.5;
@@ -449,6 +493,7 @@ img,video{max-width:100%; display:block;}
     function show(i){
       cur = i;
       var item = flatItems[cur];
+      curItem = item;
       activeImg = null;
       resetZoom();
       if(item.type === 'video'){
