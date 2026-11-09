@@ -43,6 +43,10 @@ img,video{max-width:100%; display:block;}
 .chips::-webkit-scrollbar{display:none;}
 .chip{flex:0 0 auto; font-size:12.5px; font-weight:500; padding:8px 15px; border-radius:999px; border:1px solid rgba(124,27,39,.25); background:var(--ivory-deep); color:var(--rose); cursor:pointer; white-space:nowrap; text-decoration:none;}
 .chip.soon{opacity:.6;}
+.chip{position:relative;}
+.chip-dot{position:absolute; top:-3px; right:-3px; width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 2px var(--ivory-light);}
+
+.badge-new{display:inline-block; margin-left:9px; padding:2px 9px 1px; border:1px solid rgba(184,144,63,.55); border-radius:999px; background:rgba(184,144,63,.1); color:var(--gold); font-size:9.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; vertical-align:middle; font-family:var(--font-body);}
 
 .shelf{padding:4px 20px 40px; max-width:900px; margin:0 auto;}
 
@@ -111,9 +115,21 @@ img,video{max-width:100%; display:block;}
 }
 .lb-download svg{width:14px; height:14px;}
 .lb-download.is-loading{opacity:.55; pointer-events:none;}
+
+.petals{position:fixed; inset:0; z-index:35; pointer-events:none; overflow:hidden;}
+.petal{position:absolute; top:-24px; border-radius:0 100% 0 100%; background:linear-gradient(135deg, rgba(231,110,140,.95), rgba(248,186,198,.85)); box-shadow:0 1px 5px rgba(124,27,39,.35); opacity:0; animation:petal-fall linear forwards;}
+@keyframes petal-fall{
+  0%{transform:translate(0,-5vh) rotate(0deg); opacity:0;}
+  8%{opacity:.85;}
+  92%{opacity:.75;}
+  100%{transform:translate(var(--petal-drift,60px),108vh) rotate(var(--petal-spin,420deg)); opacity:0;}
+}
+@media (prefers-reduced-motion: reduce){ .petals{display:none;} }
 </style>
 </head>
 <body>
+
+<div class="petals" id="petals" aria-hidden="true"></div>
 
 <div class="nav">
   <div class="brand">Minh Huy &amp; Thùy Dung</div>
@@ -164,7 +180,8 @@ img,video{max-width:100%; display:block;}
 
   function render(chapters){
     chipsEl.innerHTML = chapters.map(function(c){
-      return '<a class="chip'+(c.comingSoon?' soon':'')+'" href="#'+c.id+'">'+c.title+'</a>';
+      var dot = c.badge === 'new' ? '<span class="chip-dot" aria-hidden="true"></span>' : '';
+      return '<a class="chip'+(c.comingSoon?' soon':'')+'" href="#'+c.id+'">'+c.title+dot+'</a>';
     }).join('');
 
     shelfEl.innerHTML = chapters.map(function(c){
@@ -177,10 +194,11 @@ img,video{max-width:100%; display:block;}
         coverHtml = '<div class="cover icon">▶</div>';
       }
       var meta = c.comingSoon ? 'Sắp cập nhật' : (c.items.length + ' mục');
+      var badge = c.badge === 'new' ? '<span class="badge-new">Mới</span>' : '';
       return '<div class="album" id="'+c.id+'" data-id="'+c.id+'">'+
         '<button type="button" class="album-head">'+
           coverHtml+
-          '<div class="info"><h2>'+c.title+'</h2><div class="meta'+(c.comingSoon?' soon':'')+'">'+meta+'</div></div>'+
+          '<div class="info"><h2>'+c.title+badge+'</h2><div class="meta'+(c.comingSoon?' soon':'')+'">'+meta+'</div></div>'+
           '<div class="chevron">▾</div>'+
         '</button>'+
         '<div class="album-body"><div class="album-body-inner">'+
@@ -529,6 +547,46 @@ img,video{max-width:100%; display:block;}
       if(e.key === 'ArrowRight' && zoom.scale <= MIN_SCALE + 0.001) step(1);
     });
   }
+})();
+</script>
+
+<script>
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var container = document.getElementById('petals');
+  if(!container) return;
+
+  function spawnPetal(){
+    var petal = document.createElement('div');
+    petal.className = 'petal';
+    var size = 14 + Math.random() * 12;
+    var left = Math.random() * 100;
+    var duration = 7 + Math.random() * 5;
+    var drift = Math.round(Math.random() * 160 - 80) + 'px';
+    var spin = Math.round(300 + Math.random() * 500) + 'deg';
+    petal.style.left = left + 'vw';
+    petal.style.width = size + 'px';
+    petal.style.height = (size * 0.8) + 'px';
+    petal.style.animationDuration = duration + 's';
+    petal.style.setProperty('--petal-drift', drift);
+    petal.style.setProperty('--petal-spin', spin);
+    container.appendChild(petal);
+    setTimeout(function(){ petal.remove(); }, duration * 1000 + 200);
+  }
+
+  function scheduleNext(){
+    var gap = 3500 + Math.random() * 4500;
+    setTimeout(function(){
+      spawnPetal();
+      if(Math.random() < 0.3){
+        setTimeout(spawnPetal, 300 + Math.random() * 500);
+      }
+      scheduleNext();
+    }, gap);
+  }
+
+  spawnPetal();
+  scheduleNext();
 })();
 </script>
 </body>

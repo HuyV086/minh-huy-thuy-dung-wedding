@@ -6,3 +6,15 @@
 
 # Video gốc chưa nén (rất nặng, vượt giới hạn GitHub) — bản đã nén nằm trong album-media/8-video/
 /Video goc/
+
+# Ảnh gốc Bách Việt chưa qua xử lý (~3.2GB) — bản đã resize nằm trong images/chapters/bach-viet/
+/Bach Viet goc/
+
+# Ảnh gốc Bách Việt (DSLR nặng, ~7MB/ảnh, ~2.6GB tổng) đã chuyển vào album-media/7-bach-viet/
+# để build — bản đã resize nằm trong images/chapters/bach-viet/, không cần commit bản gốc.
+/album-media/7-bach-viet/*.jpg
+
+# Ảnh gốc mới bổ sung vào Hậu trường (cùng đợt chụp nặng ký như Bách Việt) — bản đã resize
+# nằm trong images/chapters/hau-truong/. Các ảnh Hậu trường cũ (đã nén sẵn) vẫn được track bình thường.
+/album-media/10-hau-truong/DSC04*.jpg
+/album-media/10-hau-truong/*.textClipping

@@ -3939,9 +3939,2188 @@
     {
       "id": "bach-viet",
       "title": "Bách Việt",
-      "cover": null,
-      "items": [],
-      "comingSoon": true
+      "cover": "images/chapters/bach-viet/01.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/01.jpg",
+          "caption": "",
+          "sourceFile": "002_DSC05934.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/02.jpg",
+          "caption": "",
+          "sourceFile": "003_DSC05925.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/03.jpg",
+          "caption": "",
+          "sourceFile": "004_DSC06022.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/04.jpg",
+          "caption": "",
+          "sourceFile": "007_DSC05885.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/05.jpg",
+          "caption": "",
+          "sourceFile": "008_DSC05888.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/06.jpg",
+          "caption": "",
+          "sourceFile": "009_DSC05921.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/07.jpg",
+          "caption": "",
+          "sourceFile": "011_DSC05828.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/08.jpg",
+          "caption": "",
+          "sourceFile": "012_DSC05878.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/09.jpg",
+          "caption": "",
+          "sourceFile": "013_DSC05527.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/10.jpg",
+          "caption": "",
+          "sourceFile": "014_DSC05814.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/11.jpg",
+          "caption": "",
+          "sourceFile": "016_DSC05677.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/12.jpg",
+          "caption": "",
+          "sourceFile": "017_DSC05743.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/13.jpg",
+          "caption": "",
+          "sourceFile": "018_DSC05764.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/14.jpg",
+          "caption": "",
+          "sourceFile": "019_DSC05781.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/15.jpg",
+          "caption": "",
+          "sourceFile": "020_DSC05787.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/16.jpg",
+          "caption": "",
+          "sourceFile": "021_DSC05631.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/17.jpg",
+          "caption": "",
+          "sourceFile": "022_DSC05657.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/18.jpg",
+          "caption": "",
+          "sourceFile": "023_DSC05741.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/19.jpg",
+          "caption": "",
+          "sourceFile": "024_DSC05805.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/20.jpg",
+          "caption": "",
+          "sourceFile": "026_DSC05263.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/21.jpg",
+          "caption": "",
+          "sourceFile": "027_DSC05313.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/22.jpg",
+          "caption": "",
+          "sourceFile": "028_DSC05691.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/23.jpg",
+          "caption": "",
+          "sourceFile": "029_DSC05747.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/24.jpg",
+          "caption": "",
+          "sourceFile": "030_DSC05761.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/25.jpg",
+          "caption": "",
+          "sourceFile": "031_DSC05779.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/26.jpg",
+          "caption": "",
+          "sourceFile": "032_DSC05821.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/27.jpg",
+          "caption": "",
+          "sourceFile": "033_DSC05846.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/28.jpg",
+          "caption": "",
+          "sourceFile": "034_DSC05869.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/29.jpg",
+          "caption": "",
+          "sourceFile": "035_DSC05243.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/30.jpg",
+          "caption": "",
+          "sourceFile": "036_DSC05308.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/31.jpg",
+          "caption": "",
+          "sourceFile": "037_DSC05351.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/32.jpg",
+          "caption": "",
+          "sourceFile": "038_DSC05511.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/33.jpg",
+          "caption": "",
+          "sourceFile": "039_DSC05633.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/34.jpg",
+          "caption": "",
+          "sourceFile": "040_DSC05696.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/35.jpg",
+          "caption": "",
+          "sourceFile": "041_DSC05750.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/36.jpg",
+          "caption": "",
+          "sourceFile": "042_DSC05757.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/37.jpg",
+          "caption": "",
+          "sourceFile": "043_DSC05768.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/38.jpg",
+          "caption": "",
+          "sourceFile": "044_DSC05797.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/39.jpg",
+          "caption": "",
+          "sourceFile": "045_DSC05941.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/40.jpg",
+          "caption": "",
+          "sourceFile": "046_DSC05947.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/41.jpg",
+          "caption": "",
+          "sourceFile": "047_DSC05952.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/42.jpg",
+          "caption": "",
+          "sourceFile": "048_DSC05956.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/43.jpg",
+          "caption": "",
+          "sourceFile": "049_DSC04940.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/44.jpg",
+          "caption": "",
+          "sourceFile": "051_DSC05244.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/45.jpg",
+          "caption": "",
+          "sourceFile": "052_DSC05367.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/46.jpg",
+          "caption": "",
+          "sourceFile": "053_DSC05385.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/47.jpg",
+          "caption": "",
+          "sourceFile": "054_DSC05403.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/48.jpg",
+          "caption": "",
+          "sourceFile": "055_DSC05509.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/49.jpg",
+          "caption": "",
+          "sourceFile": "056_DSC05536.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/50.jpg",
+          "caption": "",
+          "sourceFile": "057_DSC05568.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/51.jpg",
+          "caption": "",
+          "sourceFile": "059_DSC05611.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/52.jpg",
+          "caption": "",
+          "sourceFile": "060_DSC05636.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/53.jpg",
+          "caption": "",
+          "sourceFile": "061_DSC05659.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/54.jpg",
+          "caption": "",
+          "sourceFile": "062_DSC05774.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/55.jpg",
+          "caption": "",
+          "sourceFile": "063_DSC05801.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/56.jpg",
+          "caption": "",
+          "sourceFile": "064_DSC05863.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/57.jpg",
+          "caption": "",
+          "sourceFile": "065_DSC05884.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/58.jpg",
+          "caption": "",
+          "sourceFile": "066_DSC05963.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/59.jpg",
+          "caption": "",
+          "sourceFile": "067_DSC04938.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/60.jpg",
+          "caption": "",
+          "sourceFile": "068_DSC05160.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/61.jpg",
+          "caption": "",
+          "sourceFile": "069_DSC05240.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/62.jpg",
+          "caption": "",
+          "sourceFile": "070_DSC05248.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/63.jpg",
+          "caption": "",
+          "sourceFile": "071_DSC05272.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/64.jpg",
+          "caption": "",
+          "sourceFile": "072_DSC05289.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/65.jpg",
+          "caption": "",
+          "sourceFile": "073_DSC05359.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/66.jpg",
+          "caption": "",
+          "sourceFile": "074_DSC05411.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/67.jpg",
+          "caption": "",
+          "sourceFile": "075_DSC05447.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/68.jpg",
+          "caption": "",
+          "sourceFile": "076_DSC05453.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/69.jpg",
+          "caption": "",
+          "sourceFile": "077_DSC05459.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/70.jpg",
+          "caption": "",
+          "sourceFile": "078_DSC05469.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/71.jpg",
+          "caption": "",
+          "sourceFile": "079_DSC05483.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/72.jpg",
+          "caption": "",
+          "sourceFile": "080_DSC05488.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/73.jpg",
+          "caption": "",
+          "sourceFile": "081_DSC05505.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/74.jpg",
+          "caption": "",
+          "sourceFile": "082_DSC05654.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/75.jpg",
+          "caption": "",
+          "sourceFile": "083_DSC05682.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/76.jpg",
+          "caption": "",
+          "sourceFile": "084_DSC05737.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/77.jpg",
+          "caption": "",
+          "sourceFile": "085_DSC05763.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/78.jpg",
+          "caption": "",
+          "sourceFile": "086_DSC05772.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/79.jpg",
+          "caption": "",
+          "sourceFile": "087_DSC05967.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/80.jpg",
+          "caption": "",
+          "sourceFile": "088_DSC05990.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/81.jpg",
+          "caption": "",
+          "sourceFile": "089_DSC05993.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/82.jpg",
+          "caption": "",
+          "sourceFile": "090_DSC06006.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/83.jpg",
+          "caption": "",
+          "sourceFile": "091_DSC04957.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/84.jpg",
+          "caption": "",
+          "sourceFile": "092_DSC04979.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/85.jpg",
+          "caption": "",
+          "sourceFile": "093_DSC05269.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/86.jpg",
+          "caption": "",
+          "sourceFile": "094_DSC05292.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/87.jpg",
+          "caption": "",
+          "sourceFile": "095_DSC05317.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/88.jpg",
+          "caption": "",
+          "sourceFile": "096_DSC05400.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/89.jpg",
+          "caption": "",
+          "sourceFile": "097_DSC05406.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/90.jpg",
+          "caption": "",
+          "sourceFile": "098_DSC05449.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/91.jpg",
+          "caption": "",
+          "sourceFile": "099_DSC05471.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/92.jpg",
+          "caption": "",
+          "sourceFile": "100_DSC05477.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/93.jpg",
+          "caption": "",
+          "sourceFile": "101_DSC05500.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/94.jpg",
+          "caption": "",
+          "sourceFile": "102_DSC05515.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/95.jpg",
+          "caption": "",
+          "sourceFile": "103_DSC05544.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/96.jpg",
+          "caption": "",
+          "sourceFile": "104_DSC05573.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/97.jpg",
+          "caption": "",
+          "sourceFile": "105_DSC05607.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/98.jpg",
+          "caption": "",
+          "sourceFile": "106_DSC05614.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/99.jpg",
+          "caption": "",
+          "sourceFile": "107_DSC05671.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/100.jpg",
+          "caption": "",
+          "sourceFile": "108_DSC05703.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/101.jpg",
+          "caption": "",
+          "sourceFile": "109_DSC05909.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/102.jpg",
+          "caption": "",
+          "sourceFile": "110_DSC05912.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/103.jpg",
+          "caption": "",
+          "sourceFile": "111_DSC04929.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/104.jpg",
+          "caption": "",
+          "sourceFile": "113_DSC04955.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/105.jpg",
+          "caption": "",
+          "sourceFile": "114_DSC05200.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/106.jpg",
+          "caption": "",
+          "sourceFile": "115_DSC05260.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/107.jpg",
+          "caption": "",
+          "sourceFile": "116_DSC05324.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/108.jpg",
+          "caption": "",
+          "sourceFile": "117_DSC05349.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/109.jpg",
+          "caption": "",
+          "sourceFile": "118_DSC05425.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/110.jpg",
+          "caption": "",
+          "sourceFile": "119_DSC05464.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/111.jpg",
+          "caption": "",
+          "sourceFile": "120_DSC05479.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/112.jpg",
+          "caption": "",
+          "sourceFile": "121_DSC05485.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/113.jpg",
+          "caption": "",
+          "sourceFile": "122_DSC05538.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/114.jpg",
+          "caption": "",
+          "sourceFile": "123_DSC05564.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/115.jpg",
+          "caption": "",
+          "sourceFile": "124_DSC05620.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/116.jpg",
+          "caption": "",
+          "sourceFile": "125_DSC05630.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/117.jpg",
+          "caption": "",
+          "sourceFile": "126_DSC05635.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/118.jpg",
+          "caption": "",
+          "sourceFile": "127_DSC05688.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/119.jpg",
+          "caption": "",
+          "sourceFile": "128_DSC05700.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/120.jpg",
+          "caption": "",
+          "sourceFile": "129_DSC05811.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/121.jpg",
+          "caption": "",
+          "sourceFile": "130_DSC05818.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/122.jpg",
+          "caption": "",
+          "sourceFile": "131_DSC05852.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/123.jpg",
+          "caption": "",
+          "sourceFile": "132_DSC05868.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/124.jpg",
+          "caption": "",
+          "sourceFile": "133_DSC05928.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/125.jpg",
+          "caption": "",
+          "sourceFile": "134_DSC05982.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/126.jpg",
+          "caption": "",
+          "sourceFile": "135_DSC04783.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/127.jpg",
+          "caption": "",
+          "sourceFile": "136_DSC04817.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/128.jpg",
+          "caption": "",
+          "sourceFile": "137_DSC04833.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/129.jpg",
+          "caption": "",
+          "sourceFile": "138_DSC04934.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/130.jpg",
+          "caption": "",
+          "sourceFile": "139_DSC04945.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/131.jpg",
+          "caption": "",
+          "sourceFile": "140_DSC04950.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/132.jpg",
+          "caption": "",
+          "sourceFile": "141_DSC05015.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/133.jpg",
+          "caption": "",
+          "sourceFile": "142_DSC05042.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/134.jpg",
+          "caption": "",
+          "sourceFile": "143_DSC05150.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/135.jpg",
+          "caption": "",
+          "sourceFile": "144_DSC05161.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/136.jpg",
+          "caption": "",
+          "sourceFile": "145_DSC05163.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/137.jpg",
+          "caption": "",
+          "sourceFile": "146_DSC05202.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/138.jpg",
+          "caption": "",
+          "sourceFile": "147_DSC05230.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/139.jpg",
+          "caption": "",
+          "sourceFile": "148_DSC05238.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/140.jpg",
+          "caption": "",
+          "sourceFile": "149_DSC05278.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/141.jpg",
+          "caption": "",
+          "sourceFile": "151_DSC05325.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/142.jpg",
+          "caption": "",
+          "sourceFile": "152_DSC05328.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/143.jpg",
+          "caption": "",
+          "sourceFile": "153_DSC05341.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/144.jpg",
+          "caption": "",
+          "sourceFile": "154_DSC05347.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/145.jpg",
+          "caption": "",
+          "sourceFile": "155_DSC05363.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/146.jpg",
+          "caption": "",
+          "sourceFile": "156_DSC05389.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/147.jpg",
+          "caption": "",
+          "sourceFile": "157_DSC05430.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/148.jpg",
+          "caption": "",
+          "sourceFile": "158_DSC05495.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/149.jpg",
+          "caption": "",
+          "sourceFile": "159_DSC05541.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/150.jpg",
+          "caption": "",
+          "sourceFile": "160_DSC05549.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/151.jpg",
+          "caption": "",
+          "sourceFile": "161_DSC05551.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/152.jpg",
+          "caption": "",
+          "sourceFile": "162_DSC05554.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/153.jpg",
+          "caption": "",
+          "sourceFile": "163_DSC05588.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/154.jpg",
+          "caption": "",
+          "sourceFile": "164_DSC05610.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/155.jpg",
+          "caption": "",
+          "sourceFile": "165_DSC05628.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/156.jpg",
+          "caption": "",
+          "sourceFile": "166_DSC05649.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/157.jpg",
+          "caption": "",
+          "sourceFile": "167_DSC05719.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/158.jpg",
+          "caption": "",
+          "sourceFile": "168_DSC05862.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/159.jpg",
+          "caption": "",
+          "sourceFile": "169_DSC05895.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/160.jpg",
+          "caption": "",
+          "sourceFile": "170_DSC06001.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/161.jpg",
+          "caption": "",
+          "sourceFile": "171_DSC06003.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/162.jpg",
+          "caption": "",
+          "sourceFile": "172_DSC06013.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/163.jpg",
+          "caption": "",
+          "sourceFile": "173_DSC06017.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/164.jpg",
+          "caption": "",
+          "sourceFile": "174_DSC04790.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/165.jpg",
+          "caption": "",
+          "sourceFile": "175_DSC04820.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/166.jpg",
+          "caption": "",
+          "sourceFile": "176_DSC04891.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/167.jpg",
+          "caption": "",
+          "sourceFile": "177_DSC04920.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/168.jpg",
+          "caption": "",
+          "sourceFile": "178_DSC04924.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/169.jpg",
+          "caption": "",
+          "sourceFile": "179_DSC04982.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/170.jpg",
+          "caption": "",
+          "sourceFile": "180_DSC05047.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/171.jpg",
+          "caption": "",
+          "sourceFile": "181_DSC05050.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/172.jpg",
+          "caption": "",
+          "sourceFile": "182_DSC05075.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/173.jpg",
+          "caption": "",
+          "sourceFile": "183_DSC05127.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/174.jpg",
+          "caption": "",
+          "sourceFile": "184_DSC05152.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/175.jpg",
+          "caption": "",
+          "sourceFile": "185_DSC05176.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/176.jpg",
+          "caption": "",
+          "sourceFile": "186_DSC05190.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/177.jpg",
+          "caption": "",
+          "sourceFile": "188_DSC05203.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/178.jpg",
+          "caption": "",
+          "sourceFile": "189_DSC05211.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/179.jpg",
+          "caption": "",
+          "sourceFile": "190_DSC05216.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/180.jpg",
+          "caption": "",
+          "sourceFile": "191_DSC05251.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/181.jpg",
+          "caption": "",
+          "sourceFile": "192_DSC05280.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/182.jpg",
+          "caption": "",
+          "sourceFile": "195_DSC05374.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/183.jpg",
+          "caption": "",
+          "sourceFile": "197_DSC05391.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/184.jpg",
+          "caption": "",
+          "sourceFile": "198_DSC05393.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/185.jpg",
+          "caption": "",
+          "sourceFile": "200_DSC05436.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/186.jpg",
+          "caption": "",
+          "sourceFile": "201_DSC05487.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/187.jpg",
+          "caption": "",
+          "sourceFile": "202_DSC05493.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/188.jpg",
+          "caption": "",
+          "sourceFile": "203_DSC05518.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/189.jpg",
+          "caption": "",
+          "sourceFile": "204_DSC05558.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/190.jpg",
+          "caption": "",
+          "sourceFile": "205_DSC05574.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/191.jpg",
+          "caption": "",
+          "sourceFile": "206_DSC05582.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/192.jpg",
+          "caption": "",
+          "sourceFile": "207_DSC05595.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/193.jpg",
+          "caption": "",
+          "sourceFile": "208_DSC05612.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/194.jpg",
+          "caption": "",
+          "sourceFile": "209_DSC05618.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/195.jpg",
+          "caption": "",
+          "sourceFile": "210_DSC05623.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/196.jpg",
+          "caption": "",
+          "sourceFile": "211_DSC05652.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/197.jpg",
+          "caption": "",
+          "sourceFile": "212_DSC05694.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/198.jpg",
+          "caption": "",
+          "sourceFile": "213_DSC05697.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/199.jpg",
+          "caption": "",
+          "sourceFile": "214_DSC05712.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/200.jpg",
+          "caption": "",
+          "sourceFile": "215_DSC05773.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/201.jpg",
+          "caption": "",
+          "sourceFile": "216_DSC05854.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/202.jpg",
+          "caption": "",
+          "sourceFile": "217_DSC05874.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/203.jpg",
+          "caption": "",
+          "sourceFile": "218_DSC05902.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/204.jpg",
+          "caption": "",
+          "sourceFile": "219_DSC05915.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/205.jpg",
+          "caption": "",
+          "sourceFile": "220_DSC05970.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/206.jpg",
+          "caption": "",
+          "sourceFile": "221_DSC05973.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/207.jpg",
+          "caption": "",
+          "sourceFile": "222_DSC05980.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/208.jpg",
+          "caption": "",
+          "sourceFile": "223_DSC06020.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/209.jpg",
+          "caption": "",
+          "sourceFile": "224_DSC04786.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/210.jpg",
+          "caption": "",
+          "sourceFile": "225_DSC04808.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/211.jpg",
+          "caption": "",
+          "sourceFile": "226_DSC04826.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/212.jpg",
+          "caption": "",
+          "sourceFile": "227_DSC04839.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/213.jpg",
+          "caption": "",
+          "sourceFile": "228_DSC04918.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/214.jpg",
+          "caption": "",
+          "sourceFile": "229_DSC04988.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/215.jpg",
+          "caption": "",
+          "sourceFile": "230_DSC04989.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/216.jpg",
+          "caption": "",
+          "sourceFile": "231_DSC04998.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/217.jpg",
+          "caption": "",
+          "sourceFile": "232_DSC05017.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/218.jpg",
+          "caption": "",
+          "sourceFile": "233_DSC05031.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/219.jpg",
+          "caption": "",
+          "sourceFile": "234_DSC05036.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/220.jpg",
+          "caption": "",
+          "sourceFile": "235_DSC05053.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/221.jpg",
+          "caption": "",
+          "sourceFile": "236_DSC05059.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/222.jpg",
+          "caption": "",
+          "sourceFile": "237_DSC05062.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/223.jpg",
+          "caption": "",
+          "sourceFile": "238_DSC05089.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/224.jpg",
+          "caption": "",
+          "sourceFile": "239_DSC05095.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/225.jpg",
+          "caption": "",
+          "sourceFile": "240_DSC05106.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/226.jpg",
+          "caption": "",
+          "sourceFile": "241_DSC05115.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/227.jpg",
+          "caption": "",
+          "sourceFile": "243_DSC05172.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/228.jpg",
+          "caption": "",
+          "sourceFile": "244_DSC05193.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/229.jpg",
+          "caption": "",
+          "sourceFile": "245_DSC05214.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/230.jpg",
+          "caption": "",
+          "sourceFile": "246_DSC05219.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/231.jpg",
+          "caption": "",
+          "sourceFile": "247_DSC05222.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/232.jpg",
+          "caption": "",
+          "sourceFile": "249_DSC05228.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/233.jpg",
+          "caption": "",
+          "sourceFile": "250_DSC05237.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/234.jpg",
+          "caption": "",
+          "sourceFile": "251_DSC05256.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/235.jpg",
+          "caption": "",
+          "sourceFile": "252_DSC05282.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/236.jpg",
+          "caption": "",
+          "sourceFile": "253_DSC05285.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/237.jpg",
+          "caption": "",
+          "sourceFile": "254_DSC05294.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/238.jpg",
+          "caption": "",
+          "sourceFile": "255_DSC05300.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/239.jpg",
+          "caption": "",
+          "sourceFile": "256_DSC05334.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/240.jpg",
+          "caption": "",
+          "sourceFile": "257_DSC05339.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/241.jpg",
+          "caption": "",
+          "sourceFile": "258_DSC05376.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/242.jpg",
+          "caption": "",
+          "sourceFile": "259_DSC05383.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/243.jpg",
+          "caption": "",
+          "sourceFile": "260_DSC05394.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/244.jpg",
+          "caption": "",
+          "sourceFile": "261_DSC05397.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/245.jpg",
+          "caption": "",
+          "sourceFile": "263_DSC05445.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/246.jpg",
+          "caption": "",
+          "sourceFile": "264_DSC05474.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/247.jpg",
+          "caption": "",
+          "sourceFile": "265_DSC05489.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/248.jpg",
+          "caption": "",
+          "sourceFile": "266_DSC05491.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/249.jpg",
+          "caption": "",
+          "sourceFile": "267_DSC05546.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/250.jpg",
+          "caption": "",
+          "sourceFile": "268_DSC05547.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/251.jpg",
+          "caption": "",
+          "sourceFile": "269_DSC05565.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/252.jpg",
+          "caption": "",
+          "sourceFile": "270_DSC05589.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/253.jpg",
+          "caption": "",
+          "sourceFile": "271_DSC05593.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/254.jpg",
+          "caption": "",
+          "sourceFile": "272_DSC05601.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/255.jpg",
+          "caption": "",
+          "sourceFile": "273_DSC05615.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/256.jpg",
+          "caption": "",
+          "sourceFile": "274_DSC05622.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/257.jpg",
+          "caption": "",
+          "sourceFile": "275_DSC05626.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/258.jpg",
+          "caption": "",
+          "sourceFile": "278_DSC05663.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/259.jpg",
+          "caption": "",
+          "sourceFile": "281_DSC05710.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/260.jpg",
+          "caption": "",
+          "sourceFile": "282_DSC05715.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/261.jpg",
+          "caption": "",
+          "sourceFile": "283_DSC05717.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/262.jpg",
+          "caption": "",
+          "sourceFile": "284_DSC05753.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/263.jpg",
+          "caption": "",
+          "sourceFile": "285_DSC05838.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/264.jpg",
+          "caption": "",
+          "sourceFile": "286_DSC05892.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/265.jpg",
+          "caption": "",
+          "sourceFile": "287_DSC05897.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/266.jpg",
+          "caption": "",
+          "sourceFile": "288_DSC05917.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/267.jpg",
+          "caption": "",
+          "sourceFile": "289_DSC05959.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/268.jpg",
+          "caption": "",
+          "sourceFile": "290_DSC05966.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/269.jpg",
+          "caption": "",
+          "sourceFile": "291_DSC05988.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/270.jpg",
+          "caption": "",
+          "sourceFile": "292_DSC04793.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/271.jpg",
+          "caption": "",
+          "sourceFile": "294_DSC04798.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/272.jpg",
+          "caption": "",
+          "sourceFile": "295_DSC04823.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/273.jpg",
+          "caption": "",
+          "sourceFile": "296_DSC04832.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/274.jpg",
+          "caption": "",
+          "sourceFile": "297_DSC04856.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/275.jpg",
+          "caption": "",
+          "sourceFile": "298_DSC04867.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/276.jpg",
+          "caption": "",
+          "sourceFile": "299_DSC04897.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/277.jpg",
+          "caption": "",
+          "sourceFile": "301_DSC04964.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/278.jpg",
+          "caption": "",
+          "sourceFile": "303_DSC04974.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/279.jpg",
+          "caption": "",
+          "sourceFile": "305_DSC04985.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/280.jpg",
+          "caption": "",
+          "sourceFile": "306_DSC04991.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/281.jpg",
+          "caption": "",
+          "sourceFile": "307_DSC04994.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/282.jpg",
+          "caption": "",
+          "sourceFile": "308_DSC05002.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/283.jpg",
+          "caption": "",
+          "sourceFile": "309_DSC05008.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/284.jpg",
+          "caption": "",
+          "sourceFile": "310_DSC05016.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/285.jpg",
+          "caption": "",
+          "sourceFile": "311_DSC05020.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/286.jpg",
+          "caption": "",
+          "sourceFile": "312_DSC05029.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/287.jpg",
+          "caption": "",
+          "sourceFile": "313_DSC05056.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/288.jpg",
+          "caption": "",
+          "sourceFile": "314_DSC05057.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/289.jpg",
+          "caption": "",
+          "sourceFile": "316_DSC05072.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/290.jpg",
+          "caption": "",
+          "sourceFile": "317_DSC05073.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/291.jpg",
+          "caption": "",
+          "sourceFile": "318_DSC05083.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/292.jpg",
+          "caption": "",
+          "sourceFile": "319_DSC05085.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/293.jpg",
+          "caption": "",
+          "sourceFile": "320_DSC05104.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/294.jpg",
+          "caption": "",
+          "sourceFile": "321_DSC05110.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/295.jpg",
+          "caption": "",
+          "sourceFile": "322_DSC05118.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/296.jpg",
+          "caption": "",
+          "sourceFile": "323_DSC05121.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/297.jpg",
+          "caption": "",
+          "sourceFile": "324_DSC05134.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/298.jpg",
+          "caption": "",
+          "sourceFile": "325_DSC05141.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/299.jpg",
+          "caption": "",
+          "sourceFile": "326_DSC05168.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/300.jpg",
+          "caption": "",
+          "sourceFile": "327_DSC05179.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/301.jpg",
+          "caption": "",
+          "sourceFile": "328_DSC05184.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/302.jpg",
+          "caption": "",
+          "sourceFile": "329_DSC05192.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/303.jpg",
+          "caption": "",
+          "sourceFile": "330_DSC05205.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/304.jpg",
+          "caption": "",
+          "sourceFile": "331_DSC05208.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/305.jpg",
+          "caption": "",
+          "sourceFile": "332_DSC05296.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/306.jpg",
+          "caption": "",
+          "sourceFile": "333_DSC05306.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/307.jpg",
+          "caption": "",
+          "sourceFile": "334_DSC05335.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/308.jpg",
+          "caption": "",
+          "sourceFile": "335_DSC05342.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/309.jpg",
+          "caption": "",
+          "sourceFile": "336_DSC05364.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/310.jpg",
+          "caption": "",
+          "sourceFile": "337_DSC05398.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/311.jpg",
+          "caption": "",
+          "sourceFile": "338_DSC05417.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/312.jpg",
+          "caption": "",
+          "sourceFile": "339_DSC05423.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/313.jpg",
+          "caption": "",
+          "sourceFile": "340_DSC05433.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/314.jpg",
+          "caption": "",
+          "sourceFile": "341_DSC05439.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/315.jpg",
+          "caption": "",
+          "sourceFile": "342_DSC05457.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/316.jpg",
+          "caption": "",
+          "sourceFile": "343_DSC05537.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/317.jpg",
+          "caption": "",
+          "sourceFile": "344_DSC05557.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/318.jpg",
+          "caption": "",
+          "sourceFile": "346_DSC05583.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/319.jpg",
+          "caption": "",
+          "sourceFile": "347_DSC05603.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/320.jpg",
+          "caption": "",
+          "sourceFile": "348_DSC05606.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/321.jpg",
+          "caption": "",
+          "sourceFile": "349_DSC05617.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/322.jpg",
+          "caption": "",
+          "sourceFile": "350_DSC05632.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/323.jpg",
+          "caption": "",
+          "sourceFile": "351_DSC05668.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/324.jpg",
+          "caption": "",
+          "sourceFile": "352_DSC05675.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/325.jpg",
+          "caption": "",
+          "sourceFile": "353_DSC05680.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/326.jpg",
+          "caption": "",
+          "sourceFile": "355_DSC05723.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/327.jpg",
+          "caption": "",
+          "sourceFile": "356_DSC05729.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/328.jpg",
+          "caption": "",
+          "sourceFile": "357_DSC05850.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/329.jpg",
+          "caption": "",
+          "sourceFile": "358_DSC05855.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/330.jpg",
+          "caption": "",
+          "sourceFile": "360_DSC06016.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/331.jpg",
+          "caption": "",
+          "sourceFile": "361_DSC04828.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/332.jpg",
+          "caption": "",
+          "sourceFile": "362_DSC04847.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/333.jpg",
+          "caption": "",
+          "sourceFile": "363_DSC04871.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/334.jpg",
+          "caption": "",
+          "sourceFile": "364_DSC04902.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/335.jpg",
+          "caption": "",
+          "sourceFile": "365_DSC04970.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/336.jpg",
+          "caption": "",
+          "sourceFile": "366_DSC05026.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/337.jpg",
+          "caption": "",
+          "sourceFile": "367_DSC05045.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/338.jpg",
+          "caption": "",
+          "sourceFile": "369_DSC05068.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/339.jpg",
+          "caption": "",
+          "sourceFile": "370_DSC05079.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/340.jpg",
+          "caption": "",
+          "sourceFile": "371_DSC05100.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/341.jpg",
+          "caption": "",
+          "sourceFile": "373_DSC05130.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/342.jpg",
+          "caption": "",
+          "sourceFile": "374_DSC05187.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/343.jpg",
+          "caption": "",
+          "sourceFile": "375_DSC05231.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/344.jpg",
+          "caption": "",
+          "sourceFile": "376_DSC05233.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/345.jpg",
+          "caption": "",
+          "sourceFile": "377_DSC05357.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/346.jpg",
+          "caption": "",
+          "sourceFile": "378_DSC05579.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/347.jpg",
+          "caption": "",
+          "sourceFile": "379_DSC05599.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/348.jpg",
+          "caption": "",
+          "sourceFile": "380_DSC05673.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/349.jpg",
+          "caption": "",
+          "sourceFile": "381_DSC05674.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/350.jpg",
+          "caption": "",
+          "sourceFile": "383_DSC05734.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/351.jpg",
+          "caption": "",
+          "sourceFile": "384_DSC05992.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/352.jpg",
+          "caption": "",
+          "sourceFile": "385_DSC06008.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/353.jpg",
+          "caption": "",
+          "sourceFile": "387_DSC04875.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/354.jpg",
+          "caption": "",
+          "sourceFile": "388_DSC04878.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/355.jpg",
+          "caption": "",
+          "sourceFile": "389_DSC05006.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/356.jpg",
+          "caption": "",
+          "sourceFile": "390_DSC05012.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/357.jpg",
+          "caption": "",
+          "sourceFile": "392_DSC05137.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/358.jpg",
+          "caption": "",
+          "sourceFile": "396_DSC05229.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/359.jpg",
+          "caption": "",
+          "sourceFile": "397_DSC05575.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/360.jpg",
+          "caption": "",
+          "sourceFile": "398_DSC05722.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/361.jpg",
+          "caption": "",
+          "sourceFile": "399_DSC05842.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/362.jpg",
+          "caption": "",
+          "sourceFile": "400_DSC05904.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/bach-viet/363.jpg",
+          "caption": "",
+          "sourceFile": "401_DSC05908.jpg"
+        }
+      ],
+      "badge": "new"
     },
     {
       "id": "photobooth-31-10",
@@ -5435,6 +7614,240 @@
           "src": "images/chapters/hau-truong/163.jpg",
           "caption": "",
           "sourceFile": "DSC03969.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/164.jpg",
+          "caption": "",
+          "sourceFile": "DSC04755.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/165.jpg",
+          "caption": "",
+          "sourceFile": "DSC04759.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/166.jpg",
+          "caption": "",
+          "sourceFile": "DSC04760.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/167.jpg",
+          "caption": "",
+          "sourceFile": "DSC04761.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/168.jpg",
+          "caption": "",
+          "sourceFile": "DSC04762.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/169.jpg",
+          "caption": "",
+          "sourceFile": "DSC04763.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/170.jpg",
+          "caption": "",
+          "sourceFile": "DSC04764.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/171.jpg",
+          "caption": "",
+          "sourceFile": "DSC04765.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/172.jpg",
+          "caption": "",
+          "sourceFile": "DSC04767.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/173.jpg",
+          "caption": "",
+          "sourceFile": "DSC04768.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/174.jpg",
+          "caption": "",
+          "sourceFile": "DSC04769.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/175.jpg",
+          "caption": "",
+          "sourceFile": "DSC04770.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/176.jpg",
+          "caption": "",
+          "sourceFile": "DSC04774.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/177.jpg",
+          "caption": "",
+          "sourceFile": "DSC04776.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/178.jpg",
+          "caption": "",
+          "sourceFile": "DSC04777.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/179.jpg",
+          "caption": "",
+          "sourceFile": "DSC04779.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/180.jpg",
+          "caption": "",
+          "sourceFile": "DSC04810.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/181.jpg",
+          "caption": "",
+          "sourceFile": "DSC04811.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/182.jpg",
+          "caption": "",
+          "sourceFile": "DSC04815.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/183.jpg",
+          "caption": "",
+          "sourceFile": "DSC04829.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/184.jpg",
+          "caption": "",
+          "sourceFile": "DSC04844.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/185.jpg",
+          "caption": "",
+          "sourceFile": "DSC04846.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/186.jpg",
+          "caption": "",
+          "sourceFile": "DSC04849.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/187.jpg",
+          "caption": "",
+          "sourceFile": "DSC04852.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/188.jpg",
+          "caption": "",
+          "sourceFile": "DSC04854.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/189.jpg",
+          "caption": "",
+          "sourceFile": "DSC04855.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/190.jpg",
+          "caption": "",
+          "sourceFile": "DSC04862.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/191.jpg",
+          "caption": "",
+          "sourceFile": "DSC04863.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/192.jpg",
+          "caption": "",
+          "sourceFile": "DSC04869.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/193.jpg",
+          "caption": "",
+          "sourceFile": "DSC04880.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/194.jpg",
+          "caption": "",
+          "sourceFile": "DSC04881.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/195.jpg",
+          "caption": "",
+          "sourceFile": "DSC04885.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/196.jpg",
+          "caption": "",
+          "sourceFile": "DSC04887.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/197.jpg",
+          "caption": "",
+          "sourceFile": "DSC04888.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/198.jpg",
+          "caption": "",
+          "sourceFile": "DSC04890.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/199.jpg",
+          "caption": "",
+          "sourceFile": "DSC04905.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/200.jpg",
+          "caption": "",
+          "sourceFile": "DSC04911.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/201.jpg",
+          "caption": "",
+          "sourceFile": "DSC04915.jpg"
+        },
+        {
+          "type": "image",
+          "src": "images/chapters/hau-truong/202.jpg",
+          "caption": "",
+          "sourceFile": "DSC04972.jpg"
         }
       ]
     }

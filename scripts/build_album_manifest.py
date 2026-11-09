@@ -132,12 +132,17 @@ def main():
         cover_still_valid = bool(cover) and (
             any(it["src"] == cover for it in items) or (ROOT / cover).is_file()
         )
-        new_chapters.append({
+        new_chapter = {
             "id": chapter_id,
             "title": title,
             "cover": cover if cover_still_valid else (items[0]["src"] if items else None),
             "items": items,
-        })
+        }
+        # Giữ lại các field tuỳ chỉnh đặt tay (vd. "badge": "new") không do script này sinh ra.
+        for key, value in existing.items():
+            if key not in new_chapter:
+                new_chapter[key] = value
+        new_chapters.append(new_chapter)
         print(f"- {title}: build lại {len(items)} mục từ album-media/{folder_name}/")
 
     manifest["chapters"] = new_chapters
