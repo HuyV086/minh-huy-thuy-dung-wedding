@@ -1,20 +1,18 @@
 .DS_Store
 
-# Ảnh gốc chưa qua xử lý (rất nặng) — bản đã nén nằm trong album-media/ rồi images/chapters/
+# Ảnh gốc chưa qua xử lý (rất nặng)
 /Hinh dam cuoi 18:10/
 /Photobooth 18:10/
 
-# Video gốc chưa nén (rất nặng, vượt giới hạn GitHub) — bản đã nén nằm trong album-media/8-video/
+# Video gốc chưa nén (rất nặng, vượt giới hạn GitHub)
 /Video goc/
 
-# Ảnh gốc Bách Việt chưa qua xử lý (~3.2GB) — bản đã resize nằm trong images/chapters/bach-viet/
+# Ảnh gốc Bách Việt chưa qua xử lý
 /Bach Viet goc/
 
-# Ảnh gốc Bách Việt (DSLR nặng, ~7MB/ảnh, ~2.6GB tổng) đã chuyển vào album-media/7-bach-viet/
-# để build — bản đã resize nằm trong images/chapters/bach-viet/, không cần commit bản gốc.
-/album-media/7-bach-viet/*.jpg
-
-# Ảnh gốc mới bổ sung vào Hậu trường (cùng đợt chụp nặng ký như Bách Việt) — bản đã resize
-# nằm trong images/chapters/hau-truong/. Các ảnh Hậu trường cũ (đã nén sẵn) vẫn được track bình thường.
-/album-media/10-hau-truong/DSC04*.jpg
-/album-media/10-hau-truong/*.textClipping
+# album-media/: thư mục nguồn để script build_album_manifest.py xử lý/resize ra
+# images/chapters/ (bản thực sự được deploy lên web). album-media/ không được
+# trang web tham chiếu trực tiếp, nên không cần commit — commit toàn bộ sẽ vượt
+# giới hạn 1GB của GitHub Pages deployment artifact (gặp lỗi deploy ngày 09/11/2026
+# khi tổng dung lượng tracked lên ~1.4GB). Giữ lại local để tiện xử lý/phân loại.
+/album-media/
